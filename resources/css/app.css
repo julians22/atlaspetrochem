@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .alert{
+        @apply relative py-2 px-3 border border-transparent rounded-sm;
+    }
+
+    .alert-info{
+        @apply bg-blue-100 border-blue-200;
+    }
+
+    ul#menu li{
+        @apply flex justify-center items-center px-4 relative font-bold text-sm;
+    }
+
+    ul#menu li span{
+        @apply absolute right-0 my-auto h-3 border border-black opacity-75 md:block hidden;
+    }
+
+    .swiper-video .swiper-pagination .swiper-pagination-bullet{
+        @apply w-8 h-8 bg-gray-300 opacity-50;
+    }
+
+    .swiper-video .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        @apply bg-api-red;
+    }
+}

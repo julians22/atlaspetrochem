@@ -1,0 +1,28 @@
+@import "../global";
+
+// Pages
+@import 'pages/dashboard';
+
+@import 'component/navbar';
+@import 'component/banner';
+
+// Swiper Styles
+@import "~swiper/swiper-bundle.css";
+
+html, body{
+    height: 100%;
+}
+
+html{
+    font-family: 'Montserrat', 'system-ui', sans-serif, monospace;
+    font-weight: inherit;
+    background-image: url('../../image/background_layout.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+}
+
+body{
+    font-family: 'Montserrat', 'system-ui', sans-serif, monospace;
+}

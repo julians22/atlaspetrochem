@@ -1,0 +1,16 @@
+#nav-wrapper {
+    height: 100px;
+
+    &:after {
+        height: 100%;
+        width: 100%;
+        display: block;
+        background: transparent;
+        position: relative;
+        content: ' ';
+    }
+
+    nav {
+        height: 100px !important;
+    }
+}
