@@ -40,6 +40,10 @@
             @include('frontend.includes.footer')
         </div><!-- #app -->
 
+        <a href="#" class="w-14 transition duration-700 transform hover:-translate-y-1 hover:scale-110 ease-in-out fixed bottom-6 right-6">
+            <img src="{{ asset('img/frontend/icons/whatsapp_icons.png') }}" alt="" class="w-full">
+        </a>
+
         <!-- Scripts -->
         @stack('before-scripts')
         {!! script(mix('js/manifest.js')) !!}

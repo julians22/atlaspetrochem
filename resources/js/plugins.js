@@ -1,5 +1,7 @@
 const { default: Swiper } = require("swiper");
 
+import 'alpinejs';
+
 /**
  * Allows you to add data-method="METHOD to links to automatically inject a form
  * with the method on click
@@ -93,13 +95,28 @@ $(function () {
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true
         }
     });
 
     var videoSlide = new Swiper(".swiper-video", {
         pagination: {
             el: ".swiper-pagination",
-            type: "bullets"
+            type: "bullets",
+            clickable: true
+        },
+        navigation: false
+    });
+    
+    var teamSwiper = new Swiper(".swiper-team", {
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true
         },
         navigation: false
     });

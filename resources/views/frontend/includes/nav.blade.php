@@ -13,7 +13,7 @@
                     <span></span>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }}">
                         COMPANY 
                     </a>
                     <span></span>

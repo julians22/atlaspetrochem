@@ -19,11 +19,23 @@
         @apply absolute right-0 my-auto h-3 border border-black opacity-75 md:block hidden;
     }
 
-    .swiper-video .swiper-pagination .swiper-pagination-bullet{
+    .swiper-pagination .swiper-pagination-bullet{
         @apply w-8 h-8 bg-gray-300 opacity-50;
     }
 
-    .swiper-video .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
         @apply bg-api-red;
+    }
+
+    .form-group{
+        @apply mb-2;
+    }
+
+    .form-group label{
+        @apply block font-semibold text-base;
+    }
+
+    .form-group label .mandatory{
+        @apply text-api-red;
     }
 }

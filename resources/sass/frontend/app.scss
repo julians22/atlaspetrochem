@@ -2,12 +2,15 @@
 
 // Pages
 @import 'pages/dashboard';
+@import 'pages/company';
+@import 'pages/contact';
 
 @import 'component/navbar';
 @import 'component/banner';
 
 // Swiper Styles
 @import "~swiper/swiper-bundle.css";
+@import "~animate.css/animate.css";
 
 html, body{
     height: 100%;

@@ -3,99 +3,79 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
 
 @section('content')
-    <div class="row justify-content-center">
-        <div class="col col-sm-8 align-self-center">
-            <div class="card">
-                <div class="card-header">
-                    <strong>
-                        @lang('labels.frontend.contact.box_title')
-                    </strong>
-                </div><!--card-header-->
+    <section class="mx-auto py-10 w-2/3 container">
+        <h2 class="text-3xl font-extrabold text-black text-center mb-4">CONTACT US</h2>
 
-                <div class="card-body">
-                    {{ html()->form('POST', route('frontend.contact.send'))->open() }}
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.name'))->for('name') }}
+        <div class="grid grid-cols-2 gap-6 bg-white shadow-md p-4">
+            <div class="form-wrapper">
+                <form action="" class="w-full flex flex-col">
+                    <div class="form-group">
+                        <label for="name">Full Name <span class="mandatory"></span></label>
+                        <input type="text" name="name" id="name" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company/Organitation <span class="mandatory"></span></label>
+                        <input type="text" name="company" id="company" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Company/Organitation">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country <span class="mandatory"></span></label>
+                        <select name="country" id="country" class="w-full bg-gray-300 p-2 focus:outline-none">
+                            <option selected disabled>Select Country</option>
+                            <option value="Indonesia">Indonesia</option>
+                            <option value="Malaysia">Malaysia</option>
+                            <option value="USA">USA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone <span class="mandatory"></span></label>
+                        <input type="text" name="phone" id="phone" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Phone Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span class="mandatory"></span></label>
+                        <input type="text" name="email" id="email" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Active Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="reason">Contact Reason <span class="mandatory"></span></label>
+                        <select name="reason" id="reason" class="w-full bg-gray-300 p-2 focus:outline-none">
+                            <option selected disabled>Choose Contact Reason</option>
+                            <option value="Indonesia">1</option>
+                            <option value="Malaysia">2</option>
+                            <option value="USA">3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="mandatory"></span></label>
+                        <input type="text" name="subject" id="subject" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Subject">
+                    </div>
 
-                                    {{ html()->text('name', optional(auth()->user())->name)
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.name'))
-                                        ->attribute('maxlength', 191)
-                                        ->required()
-                                        ->autofocus() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+                    <div class="form-group">
+                        <label for="message">Question or Comments <span class="mandatory"></span></label>
+                        <textarea name="message" class="focus:outline-none p-2 bg-gray-300 w-full" id="message" cols="6" rows="10" placeholder="Your questions or comments Minimum 20 characters, Maximum 1000 characters"></textarea>
+                    </div>
+                </form>
+            </div>
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.email'))->for('email') }}
+            <div class="faq-wrapper">
+                <h4 class="text-xl text-api-red font-bold tracking-widest mb-4">FAQs</h4>
+                <ul class="flex flex-col">
+                    @for ($i = 0; $i < 7; $i++)
+                        <li class="mb-4 border-b-2 border-black">
+                            <div x-data="{open:false}">
+                                <h4 class="text-lg text-black font-semibold tracking-widest cursor-pointer" @click="open = true">Lorem Ipsum</h4>
+                                <p class="animate_animated animate__slideInDown mb-2" x-show="open" @click.away="open = false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias, debitis voluptatem obcaecati a aliquam, delectus placeat libero necessitatibus pariatur laborum dolorum veniam!</p>
+                            </div>
+                        </li>
+                    @endfor
+                </ul>
 
-                                    {{ html()->email('email', optional(auth()->user())->email)
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.email'))
-                                        ->attribute('maxlength', 191)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
+            </div>
+        </div>
 
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.phone'))->for('phone') }}
-
-                                    {{ html()->text('phone')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.phone'))
-                                        ->attribute('maxlength', 191)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    {{ html()->label(__('validation.attributes.frontend.message'))->for('message') }}
-
-                                    {{ html()->textarea('message')
-                                        ->class('form-control')
-                                        ->placeholder(__('validation.attributes.frontend.message'))
-                                        ->attribute('rows', 3)
-                                        ->required() }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-
-                        @if(config('access.captcha.contact'))
-                            <div class="row">
-                                <div class="col">
-                                    @captcha
-                                    {{ html()->hidden('captcha_status', 'true') }}
-                                </div><!--col-->
-                            </div><!--row-->
-                        @endif
-
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group mb-0 clearfix">
-                                    {{ form_submit(__('labels.frontend.contact.button')) }}
-                                </div><!--form-group-->
-                            </div><!--col-->
-                        </div><!--row-->
-                    {{ html()->form()->close() }}
-                </div><!--card-body-->
-            </div><!--card-->
-        </div><!--col-->
-    </div><!--row-->
+    </section>
 @endsection
 
-@push('after-scripts')
+{{-- @push('after-scripts')
     @if(config('access.captcha.contact'))
         @captchaScripts
     @endif
-@endpush
+@endpush --}}

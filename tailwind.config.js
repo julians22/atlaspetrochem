@@ -9,6 +9,7 @@ module.exports = {
         extend: {
             colors: {
                 api: {
+                    redLighten: "#e01f26",
                     red: "#e01f26",
                     redDarken: "#ad1419"
                 }
@@ -19,7 +20,9 @@ module.exports = {
         }
     },
     variants: {
-        extend: {}
+        extend: {
+            display: ['group-hover'],
+        }
     },
     plugins: []
 };
