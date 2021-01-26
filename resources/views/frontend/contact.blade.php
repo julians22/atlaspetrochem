@@ -52,6 +52,8 @@
                         <label for="message">Question or Comments <span class="mandatory"></span></label>
                         <textarea name="message" class="focus:outline-none p-2 bg-gray-300 w-full" id="message" cols="6" rows="10" placeholder="Your questions or comments Minimum 20 characters, Maximum 1000 characters"></textarea>
                     </div>
+
+                    <button class="bg-api-red self-end text-white hover:bg-api-redDarken">Submit</button>
                 </form>
             </div>
 
