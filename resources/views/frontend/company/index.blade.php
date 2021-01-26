@@ -31,13 +31,13 @@
         <div class="swiper-container swiper-team border-b-2 border-gray-100  shadow-lg">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="{{ asset('img/frontend/banner/banner_team.png.') }}" alt="" class="w-full">
+                    <img src="{{ asset('img/frontend/banner/banner_team.png') }}" alt="" class="w-full">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{ asset('img/frontend/banner/banner_team.png.') }}" alt="" class="w-full">
+                    <img src="{{ asset('img/frontend/banner/banner_team.png') }}" alt="" class="w-full">
                 </div>
                 <div class="swiper-slide">
-                    <img src="{{ asset('img/frontend/banner/banner_team.png.') }}" alt="" class="w-full">
+                    <img src="{{ asset('img/frontend/banner/banner_team.png') }}" alt="" class="w-full">
                 </div>
             </div>
 
