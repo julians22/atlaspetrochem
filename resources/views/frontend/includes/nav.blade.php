@@ -8,31 +8,31 @@
             <ul class="flex items-end justify-start font-semibold" id="menu">
                 <li>
                     <a href="{{ route('frontend.index') }}" class="{{ active_class(Route::is('frontend.index'), 'text-api-red', 'hover:text-api-red') }}">
-                        HOME 
+                        HOME
                     </a>
                     <span></span>
                 </li>
                 <li>
                     <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }}">
-                        COMPANY 
+                        COMPANY
                     </a>
                     <span></span>
                 </li>
                 <li>
-                    <a href="">
-                        PRODUCTS 
+                    <a href="#">
+                        PRODUCTS
                     </a>
                     <span></span>
                 </li>
                 <li>
-                    <a href="">
-                        NEWS & GALERY 
+                    <a href="#">
+                        NEWS & GALERY
                     </a>
                     <span></span>
                 </li>
                 <li>
-                    <a href="">
-                        CAREERS 
+                    <a href="#">
+                        CAREERS
                     </a>
                     <span></span>
                 </li>

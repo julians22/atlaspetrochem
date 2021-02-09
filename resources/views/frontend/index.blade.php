@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <section class="py-6">
+    <section class="py-6" data-aos="fade-in">
         <h4 class="text-2xl font-bold text-center tracking-widest">THE LEADING LUBRICANT</h4>
         <h5 class="text-xl font-semibold text-gray-800 text-center tracking-widest">FROM JAPAN</h5>
         <div class="w-full mx-auto relative mt-4">
@@ -36,7 +36,7 @@
         </div>
     </section>
 
-    <section class="py-6 transform -skew-y-3">
+    <section class="py-6 transform -skew-y-3" id="counter-trigger-point">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">PERUSAHAAN UNGGULAN</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red">
             <img src="{{ asset('img/frontend/section_img_1.jpg') }}" alt="">
@@ -45,12 +45,15 @@
         </div>
     </section>
 
-    <section class="py-12 container mx-auto">
+    <section class="py-12 container mx-auto" data-aos="fade-in">
         <div class="w-3/4 mx-auto">
             <h4 class="text-2xl font-bold text-center tracking-widest">SDM UNGGULAN</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6">
                 <div class="text-center border-0 md:border-r border-black">
-                    <h3 class="text-6xl font-extrabold text-api-red">2000+</h3>
+                    <h3 class="text-6xl font-extrabold text-api-red">
+                        <span class="counter" data-value="2000" data-duration="50"></span>
+                        <span>+</span>
+                    </h3>
                     <h5 class="font-light tracking-widest">EMPLOYES</h5>
                 </div>
                 <div class="text-center border-0 md:border-l border-black">

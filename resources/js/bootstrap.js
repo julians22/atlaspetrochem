@@ -9,7 +9,9 @@ import $ from 'jquery';
 import 'popper.js'; // Required for BS4
 import 'bootstrap';
 import Swiper from "swiper/bundle";
+import AOS from "aos";
 
+import "aos/dist/aos.css";
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -20,6 +22,7 @@ window.$ = window.jQuery = $;
 window.Swal = Swal;
 window._ = _; // Lodash
 window.Swiper = Swiper;
+window.AOS = AOS;
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

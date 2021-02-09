@@ -12,5 +12,13 @@
 
     nav {
         height: 100px !important;
+
+        ul#menu{
+             li {
+                a::after{
+                    content: ' ';
+                }
+            }
+        }
     }
 }

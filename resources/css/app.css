@@ -23,6 +23,14 @@
         @apply absolute right-0 my-auto h-3 border border-black opacity-75 md:block hidden;
     }
 
+    ul#menu li a::after{
+        @apply bg-transparent w-full h-1 mx-auto transition ease-in-out duration-500 block;
+    }
+
+    ul#menu li:hover a::after{
+        @apply bg-api-red;
+    }
+
     .swiper-pagination .swiper-pagination-bullet{
         @apply w-8 h-8 bg-gray-300 opacity-50;
     }

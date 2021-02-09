@@ -1,6 +1,8 @@
 const { default: Swiper } = require("swiper");
-
 import 'alpinejs';
+
+import 'waypoints/lib/noframework.waypoints';
+import { CountUp } from 'countup.js';
 
 /**
  * Allows you to add data-method="METHOD to links to automatically inject a form
@@ -12,6 +14,7 @@ import 'alpinejs';
  * Injects a form with that's fired on click of the link with a DELETE request.
  * Good because you don't have to dirty your HTML with delete forms everywhere.
  */
+
 function addDeleteForms() {
     $('[data-method]').append(function () {
         if (!$(this).find('form').length > 0) {
@@ -26,6 +29,7 @@ function addDeleteForms() {
         .attr('onclick', '$(this).find("form").submit();');
 }
 
+AOS.init();
 /**
  * Place any jQuery/helper plugins in here.
  */
@@ -34,6 +38,24 @@ $(function () {
      * Add the data-method="delete" forms to all delete links
      */
     addDeleteForms();
+
+    if ($("#counter-trigger-point").length) {
+        const triggerCount = new Waypoint({
+            element: document.getElementById("counter-trigger-point"),
+            handler: function(direction) {
+                $(".counter").each(function(i, elem) {
+                    var countUp = new CountUp(
+                        elem,
+                        $(elem).data("value"),
+                        $(elem).data("duration")
+                    );
+                    countUp.start();
+                });
+            },
+            offset: 100
+        });
+    }
+
 
     /**
      * Disable all submit buttons once clicked
@@ -88,10 +110,10 @@ $(function () {
     });
 
     var BannerSlider = new Swiper(".swiper-banner", {
-        // autoplay: {
-        //     delay: 4000,
-        //     disableOnInteraction: false
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
@@ -111,7 +133,7 @@ $(function () {
         },
         navigation: false
     });
-    
+
     var teamSwiper = new Swiper(".swiper-team", {
         pagination: {
             el: ".swiper-pagination",

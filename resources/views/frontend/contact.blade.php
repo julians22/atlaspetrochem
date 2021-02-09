@@ -11,15 +11,15 @@
                 <form action="" class="w-full flex flex-col">
                     <div class="form-group">
                         <label for="name">Full Name <span class="mandatory"></span></label>
-                        <input type="text" name="name" id="name" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Full Name">
+                        <input type="text" name="name" id="name" class="p-2 w-full focus:outline-none" placeholder="Your Full Name">
                     </div>
                     <div class="form-group">
                         <label for="company">Company/Organitation <span class="mandatory"></span></label>
-                        <input type="text" name="company" id="company" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Company/Organitation">
+                        <input type="text" name="company" id="company" class="p-2 w-full focus:outline-none" placeholder="Your Company/Organitation">
                     </div>
                     <div class="form-group">
                         <label for="country">Country <span class="mandatory"></span></label>
-                        <select name="country" id="country" class="w-full bg-gray-300 p-2 focus:outline-none">
+                        <select name="country" id="country" class="w-full p-2 focus:outline-none">
                             <option selected disabled>Select Country</option>
                             <option value="Indonesia">Indonesia</option>
                             <option value="Malaysia">Malaysia</option>
@@ -28,15 +28,15 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone <span class="mandatory"></span></label>
-                        <input type="text" name="phone" id="phone" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Phone Number">
+                        <input type="text" name="phone" id="phone" class="p-2 w-full focus:outline-none" placeholder="Your Phone Number">
                     </div>
                     <div class="form-group">
                         <label for="email">Email <span class="mandatory"></span></label>
-                        <input type="text" name="email" id="email" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Active Email">
+                        <input type="text" name="email" id="email" class="p-2 w-full focus:outline-none" placeholder="Your Active Email">
                     </div>
                     <div class="form-group">
                         <label for="reason">Contact Reason <span class="mandatory"></span></label>
-                        <select name="reason" id="reason" class="w-full bg-gray-300 p-2 focus:outline-none">
+                        <select name="reason" id="reason" class="w-full p-2 focus:outline-none">
                             <option selected disabled>Choose Contact Reason</option>
                             <option value="Indonesia">1</option>
                             <option value="Malaysia">2</option>
@@ -45,12 +45,12 @@
                     </div>
                     <div class="form-group">
                         <label for="subject">Subject <span class="mandatory"></span></label>
-                        <input type="text" name="subject" id="subject" class="p-2 w-full focus:outline-none bg-gray-300" placeholder="Your Subject">
+                        <input type="text" name="subject" id="subject" class="p-2 w-full focus:outline-none" placeholder="Your Subject">
                     </div>
 
                     <div class="form-group">
                         <label for="message">Question or Comments <span class="mandatory"></span></label>
-                        <textarea name="message" class="focus:outline-none p-2 bg-gray-300 w-full" id="message" cols="6" rows="10" placeholder="Your questions or comments Minimum 20 characters, Maximum 1000 characters"></textarea>
+                        <textarea name="message" class="focus:outline-none p-2 w-full" id="message" cols="6" rows="10" placeholder="Your questions or comments Minimum 20 characters, Maximum 1000 characters"></textarea>
                     </div>
 
                     <button class="bg-api-red self-end text-white hover:bg-api-redDarken">Submit</button>
