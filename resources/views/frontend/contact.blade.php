@@ -53,7 +53,7 @@
                         <textarea name="message" class="focus:outline-none p-2 w-full" id="message" cols="6" rows="10" placeholder="Your questions or comments Minimum 20 characters, Maximum 1000 characters"></textarea>
                     </div>
 
-                    <button class="bg-api-red self-end text-white hover:bg-api-redDarken">Submit</button>
+                    <button class="bg-api-red self-end text-white hover:bg-api-redDarken p-1">Submit</button>
                 </form>
             </div>
 

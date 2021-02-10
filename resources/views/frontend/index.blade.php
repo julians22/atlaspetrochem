@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <section class="py-6" data-aos="fade-in">
+    <section class="py-6" data-aos="fade-up" data-aos-duration="2000">
         <h4 class="text-2xl font-bold text-center tracking-widest">THE LEADING LUBRICANT</h4>
         <h5 class="text-xl font-semibold text-gray-800 text-center tracking-widest">FROM JAPAN</h5>
         <div class="w-full mx-auto relative mt-4">
@@ -45,10 +45,10 @@
         </div>
     </section>
 
-    <section class="py-12 container mx-auto" data-aos="fade-in">
+    <section class="py-12 container mx-auto" data-aos="fade-in" data-aos-duration="1500">
         <div class="w-3/4 mx-auto">
             <h4 class="text-2xl font-bold text-center tracking-widest">SDM UNGGULAN</h4>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6" data-aos="fade-up" data-aos-duration="2000">
                 <div class="text-center border-0 md:border-r border-black">
                     <h3 class="text-6xl font-extrabold text-api-red">
                         <span class="counter" data-value="2000" data-duration="50"></span>
@@ -56,7 +56,7 @@
                     </h3>
                     <h5 class="font-light tracking-widest">EMPLOYES</h5>
                 </div>
-                <div class="text-center border-0 md:border-l border-black">
+                <div class="text-center border-0 md:border-l border-black" data-aos="fade-up" data-aos-duration="2000">
                     <h3 class="text-6xl font-extrabold text-api-red">HIGH</h3>
                     <h5 class="font-light tracking-widest">EDUCATION LEVEL</h5>
                 </div>
@@ -75,8 +75,8 @@
 
     <section class="py-12 container mx-auto">
         <div class="w-3/4 mx-auto">
-            <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white">VIDEO TITLE</span>
-            <div id="video-frame" class="border-8 border-api-red w-full">
+            <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="2000">VIDEO TITLE</span>
+            <div id="video-frame" class="border-8 border-api-red w-full" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="swiper-container swiper-video">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide relative">
@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <div class="text-box md:px-14 md:py-10 text-center">
+            <div class="text-box md:px-14 md:py-10 text-center" data-aos="fade-up" data-aos-duration="1500">
                 <p class="text-center text-black text-sm font-medium mb-6">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, alias illo. Illum dolorum harum quidem ratione rerum nemo quasi voluptatum nisi ipsa quod? Deleniti ab a blanditiis provident in molestias dolor ut iste! Sapiente nemo quibusdam officia doloremque, error, ab iste distinctio impedit accusantium labore nobis sint similique iusto, quis voluptates quo a architecto assumenda delectus? Cumque quidem itaque aspernatur!
                 </p>
