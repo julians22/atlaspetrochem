@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Articles\Galery;
+use App\Models\Articles\News;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -20,9 +22,17 @@ class DatabaseSeeder extends Seeder
             'ledgers',
             'jobs',
             'sessions',
+            'news',
+            'galeries',
+            'careers'
         ]);
 
-        $this->call(AuthTableSeeder::class);
+        $news = factory(News::class, 30)->create();
+        $galeries= factory(Galery::class, 6)->create();
+
+        $this->call(CareerTableSeeder::class);
+
+        // $this->call(AuthTableSeeder::class);
 
         Model::reguard();
     }

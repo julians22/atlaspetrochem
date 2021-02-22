@@ -1,6 +1,6 @@
 <footer class="w-full md:pt-6 text-white bg-gradient-to-b from-api-red to-api-redDarken">
-    <div class="container mx-auto">
-        <div class="mx-auto w-3/4 flex md:flex-row">
+    <div class="container mx-auto w-3/4 ">
+        <div class="flex md:flex-row w-full">
             <div class="box-1 flex flex-col justify-between w-2/5 md:pr-10">
                 <h4 class="company-name text-base font-semibold md:mb-4">PT ATLAS PETROCHEM INDO</h4>
                 <div class="address mb-4 text-sm font-medium">

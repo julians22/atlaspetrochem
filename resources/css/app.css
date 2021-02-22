@@ -19,6 +19,10 @@
         @apply flex justify-center items-center px-4 relative font-bold text-sm;
     }
 
+    ul#menu li.dropdown ul li{
+        @apply block px-4 font-bold text-sm relative py-1;
+    }
+
     ul#menu li span{
         @apply absolute right-0 my-auto h-3 border border-black opacity-75 md:block hidden;
     }
@@ -27,8 +31,12 @@
         @apply bg-transparent w-full h-1 mx-auto transition ease-in-out duration-500 block;
     }
 
-    ul#menu li:hover a::after{
+    ul#menu li:not(.dropdown):hover a::after{
         @apply bg-api-red;
+    }
+
+    ul#menu li.dropdown ul li a::after{
+        @apply hidden;
     }
 
     .swiper-pagination .swiper-pagination-bullet{

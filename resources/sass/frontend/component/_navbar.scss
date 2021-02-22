@@ -11,7 +11,11 @@
     }
 
     nav {
-        height: 100px !important;
+        height: 100px;
+
+        &.scrollUp {
+            transform: translateY(-100px)
+        }
 
         ul#menu{
              li {

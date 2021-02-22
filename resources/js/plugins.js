@@ -4,6 +4,43 @@ import 'alpinejs';
 import 'waypoints/lib/noframework.waypoints';
 import { CountUp } from 'countup.js';
 
+
+// Animation array
+
+var animationArray = [
+    "fade-up",
+    "fade-down",
+    "fade-left",
+    "fade-right",
+    "fade-up-right",
+    "fade-up-left",
+    "fade-down-right",
+    "fade-down-left",
+    "flip-up",
+    "flip-down",
+    "flip-left",
+    "flip-right",
+    "slide-up",
+    "slide-down",
+    "slide-left",
+    "slide-right",
+    "zoom-in",
+    "zoom-in-up",
+    "zoom-in-down",
+    "zoom-in-left",
+    "zoom-in-right",
+    "zoom-out",
+    "zoom-out-up",
+    "zoom-out-down",
+    "zoom-out-left",
+    "zoom-out-right"
+];
+
+function addAnimationToBannerWithText(element) {
+    const randomAnimation = Math.floor(Math.random() * animationArray.length);
+    $(element).attr("data-aos", animationArray[randomAnimation]);
+}
+
 /**
  * Allows you to add data-method="METHOD to links to automatically inject a form
  * with the method on click
@@ -122,6 +159,21 @@ $(function () {
             el: ".swiper-pagination",
             type: "bullets",
             clickable: true
+        },
+        on: {
+            slideChangeTransitionStart: function () {
+                if ($('#banner-description').length > 0) {
+                    $('.banner-text').hide(0);
+                    $('.banner-text').removeClass('aos-init').removeClass('aos-animate');
+                }
+            },
+            slideChangeTransitionEnd: function () {
+                if ($('#banner-description').length > 0) {
+                    $('.banner-text').show(0);
+                    addAnimationToBannerWithText($(".banner-text"));
+                    AOS.init();
+                }
+            }
         }
     });
 

@@ -7,6 +7,8 @@
 
 import '../bootstrap';
 import '../plugins';
+
+import './navbarAnimation';
 // import Vue from 'vue';
 
 // window.Vue = Vue;

@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\Frontend\Article\GaleryController;
+use App\Http\Controllers\Frontend\Article\NewsController;
+use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\CompanyController;
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ProductController;
 use App\Http\Controllers\Frontend\User\AccountController;
 use App\Http\Controllers\Frontend\User\DashboardController;
 use App\Http\Controllers\Frontend\User\ProfileController;
@@ -13,6 +17,19 @@ use App\Http\Controllers\Frontend\User\ProfileController;
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+
+Route::group(['prefix' => 'article', 'as' => 'article.'], function (){
+    Route::get('news', [NewsController::class, 'index'])->name('news.index');
+    Route::get('mews/{slug}', [NewsController::class, 'show'])->name('news.show');
+    Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
+});
+
+Route::get('career', [CareerController::class, 'index'])->name('career');
+Route::get('career/{career_id}', [CareerController::class, 'show'])->name('career.show');
+Route::post('career/{career_id}/send', [CareerController::class, 'send'])->name('career.send');
+
+
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 

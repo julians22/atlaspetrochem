@@ -19,6 +19,8 @@
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
 
+        @livewireStyles
+
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         {{ style(mix('css/tailwind.css')) }}
@@ -27,7 +29,7 @@
         @stack('after-styles')
     </head>
     <body>
-        
+
         <div id="app">
             @include('frontend.includes.nav')
             @include('includes.partials.read-only')
@@ -49,7 +51,9 @@
         {!! script(mix('js/manifest.js')) !!}
         {!! script(mix('js/vendor.js')) !!}
         {!! script(mix('js/frontend.js')) !!}
+        @livewireScripts
         @stack('after-scripts')
+
 
         @include('includes.partials.ga')
     </body>

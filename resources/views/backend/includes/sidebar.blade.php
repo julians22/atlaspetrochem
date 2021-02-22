@@ -13,6 +13,29 @@
                 </a>
             </li>
 
+            <li class="nav-title">
+                Website
+            </li>
+
+            <li class="nav-item nav-dropdown {{ 
+                active_class(Route::is('admin/slider*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-images"></i>
+                    Slider Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{ 
+                            active_class('admin/slider/banner*') 
+                            }}">
+                            Banner
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">
                     @lang('menus.backend.sidebar.system')

@@ -7,6 +7,9 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {
+            boxShadow: {
+                "3xl": "1px 3px 7px 1px rgba(0,0,0,0.75)"
+            },
             colors: {
                 api: {
                     redLighten: "#e01f26",
@@ -21,7 +24,10 @@ module.exports = {
     },
     variants: {
         extend: {
-            display: ['group-hover'],
+            display: ["group-hover"],
+            height: ["group-hover"],
+            scale: ["group-hover"],
+            translate: ["group-hover"]
         }
     },
     plugins: []
