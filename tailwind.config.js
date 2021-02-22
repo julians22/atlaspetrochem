@@ -27,7 +27,9 @@ module.exports = {
             display: ["group-hover"],
             height: ["group-hover"],
             scale: ["group-hover"],
-            translate: ["group-hover"]
+            backgroundSize: ["hover", "focus"],
+            translate: ["group-hover"],
+            inset: ["group-hover", "hover"]
         }
     },
     plugins: []

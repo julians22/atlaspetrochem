@@ -15,7 +15,7 @@
 
             <div class="flex flex-row w-full absolute top-5 inset-x-0 bottom-0 overflow-hidden">
                 <div class="w-1/2 h-full group">
-                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full hidden group-hover:block animate__animated animate__slideInLeft">
+                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full -left-full group-hover:left-0 relative animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
                         <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 ml-auto px-4 mb-4 relative">
                             <h4 class="text-xl font-bold tracking-widest text-white">DIVISI AUTOMOTIVE</h4>
                             <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
                 <div class="w-1/2 h-full group">
-                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full hidden group-hover:block animate__animated animate__slideInRight">
+                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full -right-full group-hover:right-0 relative animate__animated animate__slideInRight transition-all duration-1000 ease-in-out">
                         <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 mr-auto px-4 mb-4 relative">
                             <h4 class="text-xl font-bold tracking-widest text-white">DIVISI INDUSTRIAL</h4>
                             <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
@@ -67,15 +67,12 @@
         </div>
     </section>
 
-    <section class="py-6 transform skew-y-3" style="height: 580px">
+    <section class="py-6 transform skew-y-3" id="article-thumbnail">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">NEWS & GALLERY</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
-            <div class="bg-no-repeat bg-bottom bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_1.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-bottom bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_2.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-bottom bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_3.jpg') }}')"></div>
-            {{-- <img src="{{ asset('img/frontend/news_img_1.jpg') }}" alt="">
-            <img src="{{ asset('img/frontend/news_img_2.jpg') }}" alt="">
-            <img src="{{ asset('img/frontend/news_img_3.jpg') }}" alt=""> --}}
+            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_1.jpg') }}')"></div>
+            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_2.jpg') }}')"></div>
+            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_3.jpg') }}')"></div>
         </div>
     </section>
 
