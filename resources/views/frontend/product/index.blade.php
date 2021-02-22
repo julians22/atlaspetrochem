@@ -11,7 +11,7 @@
 
             <div class="flex flex-row w-full absolute top-0 inset-x-0 bottom-0 overflow-hidden">
                 <div class="w-1/2 h-full group">
-                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full -left-full group-hover:left-0 animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
+                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full -left-full group-hover:left-0 animate__animated animate__slideInLeft relative transition-all duration-1000 ease-in-out">
                         <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 ml-auto px-4 mb-4 relative">
                             <h4 class="text-xl font-bold tracking-widest text-white">DIVISI AUTOMOTIVE</h4>
                             <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="w-1/2 h-full group">
-                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full -right-full group-hover:right-0 animate__animated animate__slideInRight transition-all duration-1000 ease-in-out">
+                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full -right-full group-hover:right-0 animate__animated animate__slideInRight relative transition-all duration-1000 ease-in-out">
                         <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 mr-auto px-4 mb-4 relative">
                             <h4 class="text-xl font-bold tracking-widest text-white">DIVISI INDUSTRIAL</h4>
                             <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
