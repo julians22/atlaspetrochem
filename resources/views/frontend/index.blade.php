@@ -36,15 +36,12 @@
         </div>
     </section>
 
-    <section class="py-6 transform -skew-y-3" id="counter-trigger-point" style="height: 580px">
+    <section class="py-6 transform -skew-y-3 perusahaan-unggulan" id="counter-trigger-point">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">PERUSAHAAN UNGGULAN</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
             <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_1.jpg') }}')"></div>
             <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_2.jpg') }}')"></div>
             <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_3.jpg') }}')"></div>
-            {{-- <img src="{{ asset('img/frontend/section_img_1.jpg') }}" alt="">
-            <img src="{{ asset('img/frontend/section_img_2.jpg') }}" alt="">
-            <img src="{{ asset('img/frontend/section_img_3.jpg') }}" alt=""> --}}
         </div>
     </section>
 
@@ -70,9 +67,9 @@
     <section class="py-6 transform skew-y-3" id="article-thumbnail">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">NEWS & GALLERY</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
-            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_1.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_2.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-bottom bg-cover hover:bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_3.jpg') }}')"></div>
+            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_1.jpg') }}')"></div>
+            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_2.jpg') }}')"></div>
+            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_3.jpg') }}')"></div>
         </div>
     </section>
 

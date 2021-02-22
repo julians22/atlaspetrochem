@@ -28,6 +28,7 @@ module.exports = {
             height: ["group-hover"],
             scale: ["group-hover"],
             backgroundSize: ["hover", "focus"],
+            backgroundOpacity: ["hover", "focus"],
             translate: ["group-hover"],
             inset: ["group-hover", "hover"]
         }
