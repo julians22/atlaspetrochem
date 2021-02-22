@@ -9,7 +9,7 @@
                             @if ($showText)
                                 <div id="banner-description" class="absolute w-full h-full flex items-center">
                                     <div class="container w-3/4 mx-auto banner-text"
-                                        data-aos-mirror="true"
+                                        data-aos-mirror="false"
                                         data-aos-easing="ease-in-out"
                                         data-aos-duration="1000"
                                     >

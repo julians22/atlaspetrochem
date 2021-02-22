@@ -21,7 +21,7 @@ Route::get('/product', [ProductController::class, 'index'])->name('product');
 
 Route::group(['prefix' => 'article', 'as' => 'article.'], function (){
     Route::get('news', [NewsController::class, 'index'])->name('news.index');
-    Route::get('mews/{slug}', [NewsController::class, 'show'])->name('news.show');
+    Route::get('news/{slug}', [NewsController::class, 'show'])->name('news.show');
     Route::get('galery', [GaleryController::class, 'index'])->name('galery.index');
 });
 
