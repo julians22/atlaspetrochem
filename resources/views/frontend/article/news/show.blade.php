@@ -14,7 +14,7 @@
 
         <div class="flex justify-between my-10">
             <div class="w-4/12 h-80">
-                <div class="w-full h-full  bg-no-repeat bg-cover bg-center" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_1.jpg') }}')"></div>
+                <div class="w-full h-full  bg-no-repeat bg-cover bg-center" style="background-image: url('{{ $news->featured_image ? $news->featured_image : asset('img/frontend/news_img_1.jpg') }}')"></div>
             </div>
 
             <div class="w-7/12">
@@ -27,7 +27,7 @@
         </div>
 
         <div class="w-full">
-            {{ $news->value }}
+            {!! $news->value !!}
         </div>
 
         <div class="flex mt-10 md:flex-row flex-col">

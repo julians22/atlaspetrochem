@@ -35,6 +35,17 @@ return [
     ],
 
     'backend' => [
+        'articles' => [
+            'news' => [
+                'create' => 'Create News',
+                'edit' => 'Edit News',
+                'management' => 'News Management',
+
+                'table' => [
+                    'total' => 'news total|news total'
+                ]
+            ]
+        ],
         'access' => [
             'roles' => [
                 'create' => 'Create Role',

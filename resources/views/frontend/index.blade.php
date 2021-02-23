@@ -67,9 +67,20 @@
     <section class="py-6 transform skew-y-3" id="article-thumbnail">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">NEWS & GALLERY</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
-            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_1.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_2.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-center bg-cover" style="background-image: url('{{ asset('img/frontend/news_img_3.jpg') }}')"></div>
+            @foreach ($newses as $news)
+                <div class="bg-no-repeat bg-center bg-cover group" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
+                    <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
+                        <div class="mt-auto absolute inset-x-0 bottom-0 block transform -skew-y-3 text-white px-8 text-center text-lg font-semibold pb-8">
+                            <h4 class="text-xl font-bold text-yellow-400 uppercase">{{ $news->title }}</h4>
+                            <span class="h-1 w-16 bg-yellow-400 mx-auto block"></span>
+                            <blockquote class="text-sm mt-4">
+                                {{ $news->intro }}
+                            </blockquote>
+                            <a href="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}" class="w-40 bg-api-red hover:bg-api-redDarken transition-colors duration-300 mx-auto block text-sm mt-4 rounded-full">Read More >></a>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </section>
 

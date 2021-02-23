@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             'careers'
         ]);
 
-        $news = factory(News::class, 30)->create();
+        $news = factory(News::class, 5)->create();
         $galeries= factory(Galery::class, 6)->create();
 
         $this->call(CareerTableSeeder::class);

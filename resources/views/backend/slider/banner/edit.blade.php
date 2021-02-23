@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 {{-- @section('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.create')) --}}
-@section('title', 'Slider Banner Management | Create Slider Banner')
+@section('title', 'Slider Banner Management | Edit Slider Banner')
 
 @section('content')
     {{ html()->modelForm( $banner, 'PATCH', route('admin.slider.banner.update', $banner->id))->class('form-horizontal')->open() }}
@@ -11,7 +11,7 @@
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
                             Slider Banner Management
-                            <small class="text-muted">Create Slider Banner</small>
+                            <small class="text-muted">Edit Slider Banner</small>
                         </h4>
                     </div><!--col-->
                 </div><!-- row -->

@@ -31,6 +31,17 @@ return [
     ],
 
     'backend' => [
+        'articles' => [
+            'news' => [
+                'create' => 'Buat News',
+                'edit' => 'Ubah News',
+                'management' => 'Manajemen Berita',
+
+                'table' => [
+                    'total' => 'total berita|total berita'
+                ]
+            ]
+        ],
         'access' => [
             'roles' => [
                 'create' => 'Buat Peran',

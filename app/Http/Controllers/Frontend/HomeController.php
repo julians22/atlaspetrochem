@@ -3,17 +3,28 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Services\Frontend\Articles\NewsServices;
 
 /**
  * Class HomeController.
  */
 class HomeController extends Controller
 {
+
+    protected $newsServices;
+
+    public function __construct(NewsServices $newsServices) {
+        $this->newsServices = $newsServices;
+    }
+
     /**
      * @return \Illuminate\View\View
      */
     public function index()
     {
-        return view('frontend.index')->withShowText(true);
+        return view('frontend.index', [
+            'showText' => true,
+            'newses' => $this->newsServices->getActiveThumbnail()
+        ]);
     }
 }

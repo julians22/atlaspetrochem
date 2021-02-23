@@ -17,7 +17,7 @@
                 Website
             </li>
 
-            <li class="nav-item nav-dropdown {{ 
+            <li class="nav-item nav-dropdown {{
                 active_class(Route::is('admin/slider*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
@@ -27,10 +27,29 @@
 
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
-                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{ 
-                            active_class('admin/slider/banner*') 
+                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
+                            active_class('admin/slider/banner*')
                             }}">
                             Banner
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item nav-dropdown {{
+                active_class(Route::is('admin/articles*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-newspaper"></i>
+                    Articles Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.articles.news') }}" class="nav-link {{
+                            active_class('admin/articles/news*')
+                            }}">
+                            News
                         </a>
                     </li>
                 </ul>

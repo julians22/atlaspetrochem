@@ -5,5 +5,6 @@ Breadcrumbs::for('admin.dashboard', function ($trail) {
 });
 
 require __DIR__.'/slider.php';
+require __DIR__.'/article.php';
 require __DIR__.'/auth.php';
 require __DIR__.'/log-viewer.php';

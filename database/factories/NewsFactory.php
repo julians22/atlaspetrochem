@@ -9,7 +9,7 @@ $factory->define(News::class, function (Faker $faker) {
     return [
         'title' => $faker->realText(30),
         'value' => $faker->paragraph(25),
-        'intro' => $faker->paragraph(10),
+        'intro' => $faker->paragraph(5),
         // 'thumb_location' => $faker->imageUrl(640, 800, 'race'),
     ];
 });
