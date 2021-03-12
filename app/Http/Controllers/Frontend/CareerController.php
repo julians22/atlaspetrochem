@@ -31,5 +31,6 @@ class CareerController extends Controller
     public function send(SendCareerRequest $request, $position_id)
     {
         $this->careerServices->store($position_id, $request->only('name', 'gender', 'email', 'phone', 'message'), $request->file('cv_file'));
+        return redirect()->route('frontend.career')->withToastSuccess('Your application has been submited, we will review your document. Thank You.');
     }
 }

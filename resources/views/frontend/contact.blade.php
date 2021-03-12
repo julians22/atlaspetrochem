@@ -61,11 +61,13 @@
             <div class="faq-wrapper">
                 <h4 class="text-xl text-api-red font-bold tracking-widest mb-4">FAQs</h4>
                 <ul class="flex flex-col">
-                    @for ($i = 0; $i < 7; $i++)
+                    @for ($i = 1; $i <= 7; $i++)
                         <li class="mb-4 border-b-2 border-black">
-                            <div x-data="{open:false}">
-                                <h4 class="text-lg text-black font-semibold tracking-widest cursor-pointer" @click="open = true">Lorem Ipsum</h4>
-                                <p class="animate_animated animate__slideInDown mb-2" x-show="open" @click.away="open = false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias, debitis voluptatem obcaecati a aliquam, delectus placeat libero necessitatibus pariatur laborum dolorum veniam!</p>
+                            <div x-data="{ faqOpen : null}">
+                                <h4 class="text-lg text-black font-semibold tracking-widest cursor-pointer" @click="faqOpen !== {{ $i }} ? faqOpen = {{ $i }} : faqOpen = null"">Lorem Ipsum</h4>
+                                <div class="transition-all duration-700 max-h-0 overflow-hidden bg-white" x-ref="faq{{$i}}" x-bind:style="faqOpen == {{$i}} ? 'max-height: ' + $refs.faq{{$i}}.scrollHeight + 'px' : ''">
+                                    <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias, debitis voluptatem obcaecati a aliquam, delectus placeat libero necessitatibus pariatur laborum dolorum veniam!</p>
+                                </div>
                             </div>
                         </li>
                     @endfor

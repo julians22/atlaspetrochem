@@ -55,6 +55,25 @@
                 </ul>
             </li>
 
+            <li class="nav-item nav-dropdown {{
+                active_class(Route::is('admin/career*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-user-tie"></i>
+                    Careers Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.career') }}" class="nav-link {{
+                            active_class('admin/career*')
+                            }}">
+                            All Careers
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">
                     @lang('menus.backend.sidebar.system')

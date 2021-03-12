@@ -19,7 +19,7 @@ return [
                 'change_password' => 'Ubah Sandi',
                 'clear_session' => 'Clear Session',
                 'confirm' => 'Confirm',
-                'deactivate' => 'Lumpuhkan',
+                'deactivate' => 'Matikan',
                 'delete_permanently' => 'Hapus Permanen',
                 'login_as' => 'Login sebagai :user',
                 'resend_email' => 'Kirim Ulang Email Konfirmasi',

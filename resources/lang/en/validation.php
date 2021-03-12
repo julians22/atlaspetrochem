@@ -188,6 +188,8 @@ return [
             ],
         ],
 
+        'job_desk' => 'Job Description',
+
         'frontend' => [
             'avatar' => 'Avatar Location',
             'email' => 'E-mail Address',

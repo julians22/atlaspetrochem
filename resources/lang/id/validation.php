@@ -180,6 +180,7 @@ return [
                 ],
             ],
         ],
+        'job_desk' => 'Deskipsi Pekerjaan',
 
         'frontend' => [
             'email' => 'Alamat E-mail',

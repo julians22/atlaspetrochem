@@ -29,7 +29,6 @@
         @stack('after-styles')
     </head>
     <body>
-
         <div id="app">
             @include('frontend.includes.nav')
             @include('includes.partials.read-only')
@@ -54,6 +53,7 @@
         @livewireScripts
         @stack('after-scripts')
 
+        @include('sweetalert::alert')
 
         @include('includes.partials.ga')
     </body>

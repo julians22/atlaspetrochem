@@ -191,6 +191,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         // Package Service Providers that aren't auto-discover...
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 
         // Application Service Providers...
         App\Providers\AppServiceProvider::class,
@@ -216,6 +217,7 @@ return [
 
     'aliases' => [
         'App' => Illuminate\Support\Facades\App::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

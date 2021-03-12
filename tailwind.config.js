@@ -33,5 +33,7 @@ module.exports = {
             inset: ["group-hover", "hover"]
         }
     },
-    plugins: []
+    plugins: [
+        require("@tailwindcss/typography"),
+    ]
 };

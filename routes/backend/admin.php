@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\Articles\NewsController;
+use App\Http\Controllers\Backend\CareerController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Sliders\BannerSliderController;
 
@@ -34,6 +35,20 @@ Route::group(['prefix' => 'articles', 'as' => 'articles.'], function (){
             Route::get('delete', [NewsController::class, 'delete'])->name('news.delete-permanently');
             Route::get('restore', [NewsController::class, 'restore'])->name('news.restore');
         });
+    });
+});
+
+Route::group(['prefix' => 'career'], function () {
+    Route::get('/', [CareerController::class, 'index'])->name('career');
+    Route::get('/create', [CareerController::class, 'create'])->name('career.create');
+    Route::post('/', [CareerController::class, 'store'])->name('career.store');
+    Route::group(['prefix' => '{career}'], function () {
+        Route::get('edit', [CareerController::class, 'edit'])->name('career.edit');
+        Route::patch('/', [CareerController::class, 'update'])->name('career.update');
+        Route::get('show', [CareerController::class, 'show'])->name('career.show');
+        Route::delete('/', [CareerController::class, 'destroy'])->name('career.destroy');
+        Route::get('delete', [NewsController::class, 'delete'])->name('career.delete-permanently');
+        Route::get('restore', [NewsController::class, 'restore'])->name('career.restore');
     });
 });
 

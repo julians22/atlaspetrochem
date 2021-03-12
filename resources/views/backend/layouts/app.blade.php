@@ -79,6 +79,8 @@
     {!! script(mix('js/manifest.js')) !!}
     {!! script(mix('js/vendor.js')) !!}
     {!! script(mix('js/backend.js')) !!}
+
+    @include('sweetalert::alert')
     @stack('after-scripts')
 </body>
 </html>

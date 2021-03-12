@@ -6,10 +6,11 @@ use App\ApplicationJob;
 use App\Models\Traits\Uuid;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Career extends Model
 {
-    use Uuid;
+    use Uuid, SoftDeletes;
 
     protected $fillable = [
         'position', 'job_desk', 'requirements', 'active'
@@ -35,5 +36,15 @@ class Career extends Model
     public function applications(): HasMany
     {
         return $this->hasMany(ApplicationJob::class);
+    }
+
+    public function countApply()
+    {
+        return $this->applications()->count();
+    }
+
+    public function isActive()
+    {
+        return $this->active;
     }
 }

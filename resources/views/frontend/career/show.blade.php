@@ -33,7 +33,9 @@
 
                     <div class="w-full">
                         <h4 class="text-2xl font-semibold leading-none mb-2">REQUIREMENTS</h4>
-                        <div class="mb-2">{{ $career->requirements }}</div>
+                        <div class="prose">
+                            {!! $career->requirements !!}
+                        </div>
                     </div>
                 </div>
             </div>
