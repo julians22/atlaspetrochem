@@ -39,9 +39,17 @@
     <section class="py-6 transform -skew-y-3 perusahaan-unggulan" id="counter-trigger-point">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">PERUSAHAAN UNGGULAN</span>
         <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
-            <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_1.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_2.jpg') }}')"></div>
-            <div class="bg-no-repeat bg-top bg-cover" style="background-image: url('{{ asset('img/frontend/section_img_3.jpg') }}')"></div>
+            @for ($i = 1; $i <= 3; $i++)
+                <div class="bg-no-repeat bg-top bg-cover group" style="background-image: url('{{ asset('img/frontend/section_img_'.$i.'.jpg') }}')">
+                    <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
+                        <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center">
+                            <blockquote class="text-base mt-4 opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, impedit.
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            @endfor
         </div>
     </section>
 
@@ -90,7 +98,19 @@
             <div id="video-frame" class="border-8 border-api-red w-full" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="swiper-container swiper-video">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide relative">
+                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
+                            {{-- <span class="w-16 absolute inset-0 mx-auto">
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
+                                        <g>
+                                            <path xmlns="http://www.w3.org/2000/svg" d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176  c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57  S349.156,266.641,344.48,269.57z" fill="#ffffff" data-original="#000000" style="" class=""/>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </span> --}}
+                            <iframe src="https://www.youtube.com/embed/zJ7hUvU-d2Q" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+                        </div>
+                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
                             <span class="w-16 absolute inset-0 mx-auto">
                                 <a href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
@@ -102,19 +122,7 @@
                             </span>
                             <img src="{{ asset('img/frontend/video/video1.jpg') }}" alt="" class="w-full">
                         </div>
-                        <div class="swiper-slide relative">
-                            <span class="w-16 absolute inset-0 mx-auto">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
-                                        <g>
-                                            <path xmlns="http://www.w3.org/2000/svg" d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176  c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57  S349.156,266.641,344.48,269.57z" fill="#ffffff" data-original="#000000" style="" class=""/>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </span>
-                            <img src="{{ asset('img/frontend/video/video1.jpg') }}" alt="" class="w-full">
-                        </div>
-                        <div class="swiper-slide relative">
+                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
                             <span class="w-16 absolute inset-0 mx-auto">
                                 <a href="#">
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
