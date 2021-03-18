@@ -129,10 +129,10 @@ $(function () {
     });
 
     var BannerSlider = new Swiper(".swiper-banner", {
-        // autoplay: {
-        //     delay: 3000,
-        //     disableOnInteraction: false
-        // },
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
         speed: 500,
         navigation: {
             nextEl: ".swiper-button-next",
