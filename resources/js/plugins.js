@@ -14,26 +14,10 @@ var animationArray = [
     "fade-right",
     "fade-up-right",
     "fade-up-left",
-    "fade-down-right",
-    "fade-down-left",
-    "flip-up",
-    "flip-down",
-    "flip-left",
-    "flip-right",
     "slide-up",
     "slide-down",
     "slide-left",
     "slide-right",
-    "zoom-in",
-    "zoom-in-up",
-    "zoom-in-down",
-    "zoom-in-left",
-    "zoom-in-right",
-    "zoom-out",
-    "zoom-out-up",
-    "zoom-out-down",
-    "zoom-out-left",
-    "zoom-out-right"
 ];
 
 function addAnimationToBannerWithText(element) {
@@ -66,7 +50,6 @@ function addDeleteForms() {
         .attr('onclick', '$(this).find("form").submit();');
 }
 
-AOS.init();
 /**
  * Place any jQuery/helper plugins in here.
  */
@@ -75,7 +58,6 @@ $(function () {
      * Add the data-method="delete" forms to all delete links
      */
     addDeleteForms();
-
     if ($("#counter-trigger-point").length) {
         const triggerCount = new Waypoint({
             element: document.getElementById("counter-trigger-point"),
@@ -147,10 +129,10 @@ $(function () {
     });
 
     var BannerSlider = new Swiper(".swiper-banner", {
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-        },
+        // autoplay: {
+        //     delay: 3000,
+        //     disableOnInteraction: false
+        // },
         speed: 500,
         navigation: {
             nextEl: ".swiper-button-next",
@@ -162,15 +144,31 @@ $(function () {
             clickable: true
         },
         on: {
-            slideChangeTransitionStart: function () {
-                if ($('#banner-description').length > 0) {
-                    $('.banner-text').hide(0);
-                    $('.banner-text').removeClass('aos-init').removeClass('aos-animate');
+            beforeInit: function() {
+                if ($("#banner-description").length > 0) {
+                    $(".banner-text").hide(0);
                 }
             },
-            slideChangeTransitionEnd: function (swiper) {
-                if ($('#banner-description').length > 0) {
-                    $('.banner-text').show(0);
+            afterInit: function () {
+                if ($("#banner-description").length > 0) {
+                    setTimeout(() => {
+                        $(".banner-text").show(400);
+                        addAnimationToBannerWithText($(".banner-text"));
+                        AOS.init();
+                    }, 500);
+                }
+            },
+            slideChangeTransitionStart: function() {
+                if ($("#banner-description").length > 0) {
+                    $(".banner-text").hide(0);
+                    $(".banner-text")
+                        .removeClass("aos-init")
+                        .removeClass("aos-animate");
+                }
+            },
+            slideChangeTransitionEnd: function() {
+                if ($("#banner-description").length > 0) {
+                    $(".banner-text").show(0);
                     addAnimationToBannerWithText($(".banner-text"));
                     AOS.init();
                 }
@@ -198,3 +196,5 @@ $(function () {
 
     $('[data-toggle="tooltip"]').tooltip();
 });
+
+AOS.init();
