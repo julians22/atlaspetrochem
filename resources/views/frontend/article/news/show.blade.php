@@ -2,7 +2,19 @@
 
 @section('title', app_name() . ' | News')
 
+@section('meta')
+    <meta property="og:url"           content="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}" />
+    <meta property="og:type"          content="Website" />
+    <meta property="og:title"         content="{{ $news->title }}" />
+    <meta property="og:description"   content="{!! $news->intro !!}" />
+    <meta property="og:image"         content="{{ $news->featured_image }}" />
+@endsection
+
 @section('content')
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v10.0&appId=1054570234952374&autoLogAppEvents=1" nonce="0wlVbUOS"></script>
+
+
     <section class="h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('img/frontend/banner/article_banner.jpg') }}');">
 
     </section>
@@ -31,6 +43,7 @@
         </div>
 
         <div class="flex mt-10 md:flex-row flex-col">
+            <div class="fb-share-button" data-href="{{ route('frontend.article.news.show', ['slug'=>$news->slug]) }}" data-layout="button_count" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Bagikan</a></div>
             <a href="" class="bg-blue-700 text-white text-center px-5 py-2 mr-2 w-32">
                 <i class="fab fa-facebook-f mr-2"></i>Share
             </a>
