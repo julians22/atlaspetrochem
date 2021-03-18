@@ -49,7 +49,7 @@
                 </li>
             </ul>
 
-            <div class="absolute top-0 right-0 z-20 mt-2 mr-6">
+            <div class="absolute top-0 right-0 z-20 mt-2 mr-6 hidden md:block">
                 <ul class="flex items-start justify-around">
                     <li class="mr-4">
                         <a href="" class="text-sm">

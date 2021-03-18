@@ -27,7 +27,7 @@ class ComposerServiceProvider extends ServiceProvider
 
         // Frontend
         View::composer(
-            'frontend.includes.banner',
+            ['frontend.includes.banner', 'frontend.includes.banner-company'],
             BannerComposer::class
         );
 

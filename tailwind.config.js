@@ -17,6 +17,11 @@ module.exports = {
                     redDarken: "#ad1419"
                 }
             },
+            height: {
+                '250px': '250px',
+                '470px': '470px',
+                '485px': '485px'
+            },
             letterSpacing: {
                 bannerParagraph: ".5em"
             }

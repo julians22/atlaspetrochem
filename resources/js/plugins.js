@@ -168,7 +168,7 @@ $(function () {
                     $('.banner-text').removeClass('aos-init').removeClass('aos-animate');
                 }
             },
-            slideChangeTransitionEnd: function () {
+            slideChangeTransitionEnd: function (swiper) {
                 if ($('#banner-description').length > 0) {
                     $('.banner-text').show(0);
                     addAnimationToBannerWithText($(".banner-text"));

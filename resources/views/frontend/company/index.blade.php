@@ -5,7 +5,7 @@
 @section('content')
     <section id="company" class="relative w-full">
         <div class="container w-2/3 mx-auto">
-            @include('frontend.includes.banner')
+            @include('frontend.includes.banner-company')
 
             <div class="grid grid-cols-2 mt-6">
                 <div class="text-center border-r border-white px-4" data-aos="fade-up" data-aos-duration="2000">
@@ -63,11 +63,11 @@
     <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="2000">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">DISTRIBUTION POINT</h2>
         <img src="{{ asset('img/frontend/distribution_point.png') }}" alt="distribution_point" class="w-full my-4">
-        <h5 class="text-2xl font-semibold text-center text-black mb-4 tracking-wider">Head Office</h5>
-        <p class="text-center px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorem voluptates sed dolore esse tenetur, quaerat alias ipsa sint maiores quas, modi error, saepe aliquid commodi deleniti ut illo! Aut enim nam totam quo.</p>
+        {{-- <h5 class="text-2xl font-semibold text-center text-black mb-4 tracking-wider">Head Office</h5>
+        <p class="text-center px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorem voluptates sed dolore esse tenetur, quaerat alias ipsa sint maiores quas, modi error, saepe aliquid commodi deleniti ut illo! Aut enim nam totam quo.</p> --}}
     </section>
 
-    <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="2000">
+    {{-- <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="2000">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">OUR CUSTOMERS</h2>
         <div class="grid grid-cols-2 w-full">
             <div class="flex flex-row flex-wrap">
@@ -85,5 +85,5 @@
                 @endfor
             </div>
         </div>
-    </section>
+    </section> --}}
 @endsection

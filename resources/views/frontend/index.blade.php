@@ -55,18 +55,18 @@
 
     <section class="py-12 container mx-auto" data-aos="fade-in" data-aos-duration="1500">
         <div class="w-3/4 mx-auto">
-            <h4 class="text-2xl font-bold text-center tracking-widest">SDM UNGGULAN</h4>
+            <h4 class="text-2xl font-bold text-center tracking-widest">OUR CUSTOMERS</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6" data-aos="fade-up" data-aos-duration="2000">
                 <div class="text-center border-0 md:border-r border-black">
                     <h3 class="text-6xl font-extrabold text-api-red">
-                        <span class="counter" data-value="2000" data-duration="50"></span>
+                        <span class="counter" data-value="9000" data-duration="50"></span>
                         <span>+</span>
                     </h3>
-                    <h5 class="font-light tracking-widest">EMPLOYES</h5>
+                    <h5 class="font-light tracking-widest">CUSTOMERS</h5>
                 </div>
                 <div class="text-center border-0 md:border-l border-black" data-aos="fade-up" data-aos-duration="2000">
                     <h3 class="text-6xl font-extrabold text-api-red">HIGH</h3>
-                    <h5 class="font-light tracking-widest">EDUCATION LEVEL</h5>
+                    <h5 class="font-light tracking-widest">QUALITY SERVICE</h5>
                 </div>
             </div>
         </div>
