@@ -1,6 +1,8 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | News')
+@section('title', app_name() . ' | '. $news->title)
+
+@section('meta_description', $news->intro)
 
 @section('meta')
     <meta property="og:url"           content="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}" />
