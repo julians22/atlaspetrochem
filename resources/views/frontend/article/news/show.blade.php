@@ -9,7 +9,13 @@
     <meta property="og:type"          content="Website" />
     <meta property="og:title"         content="{{ $news->title }}" />
     <meta property="og:description"   content="{!! $news->intro !!}" />
-    <meta property="og:image"         content="{{ $news->featured_image }}" />
+    <meta property="og:image"         content="{{ $news->featured_image ? $news->featured_image : asset('img/frontend/news_img_1.jpg') }}" />
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}">
+    <meta property="twitter:title" content="{{ $news->title }}">
+    <meta property="twitter:description" content="{!! $news->intro !!}">
+    <meta property="twitter:image" content="{{ $news->featured_image ? $news->featured_image : asset('img/frontend/news_img_1.jpg') }}">
 @endsection
 
 @section('content')
