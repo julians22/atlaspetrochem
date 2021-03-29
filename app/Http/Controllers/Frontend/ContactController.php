@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Contact\SendContactRequest;
 use App\Mail\Frontend\Contact\SendContact;
+use App\Models\Faq;
 use Illuminate\Support\Facades\Mail;
 
 /**
@@ -17,7 +18,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('frontend.contact');
+        return view('frontend.contact')->withFaqs(Faq::where('active', true)->get());
     }
 
     /**

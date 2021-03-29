@@ -37,4 +37,23 @@ class CareerServices extends BaseService
             throw new GeneralException('Something wrong when updating this career');
         });
     }
+
+    public function toggleActive(Career $career): Career
+    {
+        return DB::transaction(function () use($career) {
+            if ($career->isActive()) {
+                $career->update([
+                    'active' => false,
+                ]);
+                return $career;
+            }else{
+                $career->update([
+                    'active' => true,
+                ]);
+                return $career;
+            }
+
+            throw new GeneralException('Something wrong when updating this career');
+        });
+    }
 }

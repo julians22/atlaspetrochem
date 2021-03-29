@@ -18,25 +18,6 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/slider*'), 'open')
-            }}">
-                <a href="#" class="nav-link nav-dropdown-toggle">
-                    <i class="nav-icon fas fa-images"></i>
-                    Slider Management
-                </a>
-
-                <ul class="nav-dropdown-items">
-                    <li class="nav-item">
-                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
-                            active_class('admin/slider/banner*')
-                            }}">
-                            Banner
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="nav-item nav-dropdown {{
                 active_class(Route::is('admin/articles*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
@@ -73,6 +54,75 @@
                     </li>
                 </ul>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link {{
+                    active_class(Route::is('admin/faq'))
+                }}" href="{{ route('admin.faqs') }}">
+                    <i class="nav-icon far fa-question-circle"></i>
+                    Faq's Management
+                </a>
+            </li>
+
+            <li class="nav-item nav-dropdown {{
+                active_class(Route::is('admin/career*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-user-tie"></i>
+                    Products
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.product.index') }}" class="nav-link {{
+                            active_class('admin/product*')
+                            }}">
+                            All Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.product.category.index') }}" class="nav-link {{
+                            active_class('admin/product/category*')
+                            }}">
+                            All Categories
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item nav-dropdown {{
+                active_class(Route::is('admin/slider*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-images"></i>
+                    Slider Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
+                            active_class('admin/slider/banner*')
+                            }}">
+                            Home Banner
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
+                            active_class('admin/slider/banner*')
+                            }}">
+                            Company Banner
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
+                            active_class('admin/slider/banner*')
+                            }}">
+                            Teams Banner
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
 
             @if ($logged_in_user->isAdmin())
                 <li class="nav-title">

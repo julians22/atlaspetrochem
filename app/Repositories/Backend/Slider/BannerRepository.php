@@ -31,14 +31,16 @@ class BannerRepository extends BaseRepository
         return $this->model->orderBy($orderBy, $sort)->paginate($paged);
     }
 
-    public function create(array $data): Banner
+    public function create(array $data, $active = false, $linked = false): Banner
     {
-        return DB::transaction(function() use ($data){
+        return DB::transaction(function() use ($data, $active, $linked){
             $banner = $this->model::create([
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'image_location' => $data['image_location'],
-                'active' => true
+                'active' => $active,
+                'linked' => $linked,
+                'linked_location' => $linked ? $data['linked_location'] : NULL,
             ]);
 
             if ($banner) {
@@ -49,14 +51,18 @@ class BannerRepository extends BaseRepository
         });
     }
 
-    public function update(Banner $banner, array $data): Banner
+    public function update(Banner $banner, array $data, $active, $linked): Banner
     {
-        return DB::transaction(function () use ($banner, $data){
+        return DB::transaction(function () use ($banner, $data, $active, $linked){
             if ($banner->update([
                 'title' => $data['title'],
                 'description' => $data['description'],
                 'image_location' => $data['image_location'],
-                'updated_at' => Carbon::now()
+                'overlay_level' => $data['overlay_level'],
+                'active' => $active,
+                'linked' => $linked,
+                'linked_location' => $linked ? $data['linked_location'] : NULL,
+                // 'updated_at' => Carbon::now()
             ])) {
 
                 event(new BannerUpdated($banner));

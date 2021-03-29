@@ -18,6 +18,8 @@ use App\Http\Controllers\Frontend\User\ProfileController;
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/industrial', [ProductController::class, 'industrial'])->name('industrial');
+Route::get('/{division?}/{category}/products', [ProductController::class, 'list'])->name('product.list');
 
 Route::group(['prefix' => 'article', 'as' => 'article.'], function (){
     Route::get('news', [NewsController::class, 'index'])->name('news.index');

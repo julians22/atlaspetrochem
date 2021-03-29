@@ -23,6 +23,7 @@ return [
             'save' => 'Simpan',
             'update' => 'Perbarui',
         ],
+        'create_new' => 'Buat Baru',
         'hide' => 'Sembunyi',
         'inactive' => 'Non-aktif',
         'none' => 'Tidak ada',
@@ -41,6 +42,28 @@ return [
                     'total' => 'total berita|total berita'
                 ]
             ]
+        ],
+        'faqs' => [
+            'create' => 'Buat Faq',
+            'edit' => 'Ubah Faq',
+
+            'table' => [
+                'total' => 'total faq|total faq'
+            ]
+        ],
+        'products' => [
+            'create' => 'Buat Produk',
+            'edit' => 'Ubah Produk',
+            'table' => [
+                'total' => 'total produk | total produk'
+            ],
+
+        ],
+        'category' => [
+            'edit' => 'Ubah Kategori',
+            'table' => [
+                'total' => 'total kategori|total kategori'
+            ],
         ],
         'access' => [
             'roles' => [

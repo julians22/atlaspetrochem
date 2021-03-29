@@ -31,7 +31,8 @@
                         <tr>
                             <th>Image</th>
                             <th>Title</th>
-                            <th>Description</th>
+                            <th>Active</th>
+                            <th>Linked</th>
                             <th>Created At</th>
                             <th>Updated At</th>
                             <th>@lang('labels.general.actions')</th>
@@ -42,11 +43,12 @@
                             <tr>
                                 <td>
                                     <div style="width: 200px">
-                                        <img src="{{ $banner->getImageAttribute() }}" alt="{{ Str::slug($banner->title) }}" class="w-100"> 
+                                        <img src="{{ $banner->getImageAttribute() }}" alt="{{ Str::slug($banner->title) }}" class="w-100">
                                     </div>
                                 </td>
                                 <td>{{ $banner->title }}</td>
-                                <td>{{ $banner->description }}</td>
+                                <td>@include('backend.slider.banner.includes.active', ['banner' => $banner])</td>
+                                <td>@include('backend.slider.banner.includes.linked', ['banner' => $banner])</td>
                                 <td>{{ $banner->created_at->diffForHumans() }}</td>
                                 <td>{{ $banner->updated_at->diffForHumans() }}</td>
                                 <td>

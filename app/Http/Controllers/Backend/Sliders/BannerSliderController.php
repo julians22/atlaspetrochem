@@ -47,7 +47,7 @@ class BannerSliderController extends Controller
      */
     public function store(StoreBannerRequest $request)
     {
-        $this->bannerRepository->create($request->only('title', 'description', 'image_location'));
+        $this->bannerRepository->create($request->only('title', 'description', 'image_location', 'overlay_level', 'linked_to'), $request->active ?: 0, $request->linked ?: 0);
 
         return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Created');
     }
@@ -83,7 +83,7 @@ class BannerSliderController extends Controller
      */
     public function update(UpdateBannerRequest $request, Banner $banner)
     {
-        $this->bannerRepository->update($banner, $request->only('title', 'description', 'image_location'));
+        $this->bannerRepository->update($banner, $request->only('title', 'description', 'image_location', 'overlay_level', 'linked_location'), $request->active ?: 0, $request->linked ?: 0);
 
         return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Updated');
     }

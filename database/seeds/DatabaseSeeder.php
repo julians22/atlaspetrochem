@@ -2,6 +2,9 @@
 
 use App\Models\Articles\Galery;
 use App\Models\Articles\News;
+use App\Models\Category;
+use App\Models\Faq;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -24,11 +27,25 @@ class DatabaseSeeder extends Seeder
             'sessions',
             'news',
             'galeries',
-            'careers'
+            'careers',
+            'faqs',
+            'categories',
+            'products'
         ]);
 
         $news = factory(News::class, 5)->create();
         $galeries= factory(Galery::class, 6)->create();
+
+        $faqs = factory(Faq::class, 8)->create();
+
+        $categoryIndustrial = factory(Category::class, 4)
+                                ->create()
+                                ->each(function ($category)
+                                {
+                                    $category->products()->createMany(
+                                        factory(Product::class, 4)->make()->toArray()
+                                    );
+                                });
 
         $this->call(CareerTableSeeder::class);
 

@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 {{-- @section('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.create')) --}}
-@section('title', 'News Management | Edit Banner')
+@section('title', 'News Management | Edit News')
 
 @section('breadcrumb-links')
     @include('backend.articles.news.includes.breadcumb-links')

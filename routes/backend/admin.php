@@ -3,6 +3,9 @@
 use App\Http\Controllers\Backend\Articles\NewsController;
 use App\Http\Controllers\Backend\CareerController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\FaqController;
+use App\Http\Controllers\Backend\Products\CategoryController;
+use App\Http\Controllers\Backend\Products\ProductController;
 use App\Http\Controllers\Backend\Sliders\BannerSliderController;
 
 // All route names are prefixed with 'admin.'.
@@ -47,11 +50,42 @@ Route::group(['prefix' => 'career'], function () {
         Route::patch('/', [CareerController::class, 'update'])->name('career.update');
         Route::get('show', [CareerController::class, 'show'])->name('career.show');
         Route::delete('/', [CareerController::class, 'destroy'])->name('career.destroy');
-        Route::get('delete', [NewsController::class, 'delete'])->name('career.delete-permanently');
-        Route::get('restore', [NewsController::class, 'restore'])->name('career.restore');
+        Route::get('delete', [CareerController::class, 'delete'])->name('career.delete-permanently');
+        Route::get('restore', [CareerController::class, 'restore'])->name('career.restore');
+        Route::get('toggleActive', [CareerController::class, 'toggleActive'])->name('career.toggle-active');
     });
 });
 
+Route::group(['prefix' => 'faq'], function (){
+    Route::get('/', [FaqController::class, 'index'])->name('faqs');
+    Route::get('create', [FaqController::class, 'create'])->name('faq.create');
+    Route::post('store', [FaqController::class, 'store'])->name('faq.store');
+    Route::group(['prefix' => '{faq}'], function (){
+        Route::get('show', [FaqController::class, 'show'])->name('faq.show');
+        Route::get('edit', [FaqController::class, 'edit'])->name('faq.edit');
+        Route::patch('/', [FaqController::class, 'update'])->name('faq.update');
+        Route::delete('/', [FaqController::class, 'destroy'])->name('faq.destroy');
+    });
+});
+
+Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
+    Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::group(['prefix' => '{product}'], function(){
+        Route::get('/show', [ProductController::class, 'show'])->name('show');
+        Route::get('/edit', [ProductController::class, 'edit'])->name('edit');
+        Route::patch('/', [ProductController::class, 'update'])->name('update');
+        Route::delete('/', [ProductController::class, 'destroy'])->name('destroy');
+    });
+    Route::group(['prefix' => 'category', 'as' => 'category.'], function (){
+        Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::group(['prefix' => '{category}'], function (){
+            Route::get('/show', [CategoryController::class, 'show'])->name('show');
+            Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
+            Route::patch('/', [CategoryController::class, 'update'])->name('update');
+            Route::delete('/', [CategoryController::class, 'destroy'])->name('destroy');
+        });
+    });
+});
 
 
 Route::group(['prefix' => 'laravel-filemanager'], function () {

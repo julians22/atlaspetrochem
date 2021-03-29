@@ -8,10 +8,10 @@
 
 @section('content')
     <section class="py-6" data-aos="fade-up" data-aos-duration="2000">
-        <h4 class="text-2xl font-bold text-center tracking-widest">THE LEADING LUBRICANT</h4>
-        <h5 class="text-xl font-semibold text-gray-800 text-center tracking-widest">FROM JAPAN</h5>
+        <h4 class="md:text-2xl text-lg font-bold text-center tracking-widest">THE LEADING LUBRICANT</h4>
+        <h5 class="md:text-xl text-base font-semibold text-gray-800 text-center tracking-widest">FROM JAPAN</h5>
         <div class="w-full mx-auto relative mt-4">
-            <img src="{{ asset('img/frontend/oil_bottle.png') }}" class="w-3/4 mx-auto" alt="lubricant.png">
+            <img src="{{ asset('img/frontend/oil_bottle.png') }}" class="md:w-3/4 w-4/5 mx-auto" alt="lubricant.png">
 
             <div class="flex flex-row w-full absolute top-5 inset-x-0 bottom-0 overflow-hidden">
                 <div class="w-1/2 h-full group">
@@ -37,15 +37,26 @@
     </section>
 
     <section class="py-6 transform -skew-y-3 perusahaan-unggulan" id="counter-trigger-point">
-        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">PERUSAHAAN UNGGULAN</span>
-        <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
+        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-4 sm:ml-12">PERUSAHAAN UNGGULAN</span>
+        <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @for ($i = 1; $i <= 3; $i++)
-                <div class="bg-no-repeat bg-top bg-cover group" style="background-image: url('{{ asset('img/frontend/section_img_'.$i.'.jpg') }}')">
+                <div class="bg-no-repeat bg-top bg-cover group h-300px sm:h-auto" style="background-image: url('{{ asset('img/frontend/section_img_'.$i.'.jpg') }}')">
                     <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
-                        <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center">
-                            <blockquote class="text-base mt-4 opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, impedit.
-                            </blockquote>
+                        <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-items-center flex-wrap">
+                            <div class="opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400">
+                                <h4 class="text-xl font-bold uppercase mx-auto">
+                                @if ($i == 1)
+                                    Sejarah Perusahaan
+                                @elseif($i == 2)
+                                    Culture Perusahaan
+                                    @elseif($i == 3)
+                                    System Perusahaan
+                                @endif
+                                </h4>
+                                <blockquote class="text-base mt-4">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, impedit.
+                                </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -55,17 +66,17 @@
 
     <section class="py-12 container mx-auto" data-aos="fade-in" data-aos-duration="1500">
         <div class="w-3/4 mx-auto">
-            <h4 class="text-2xl font-bold text-center tracking-widest">OUR CUSTOMERS</h4>
+            <h4 class="sm:text-2xl text-lg font-bold text-center tracking-widest">OUR CUSTOMERS</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6" data-aos="fade-up" data-aos-duration="2000">
                 <div class="text-center border-0 md:border-r border-black">
-                    <h3 class="text-6xl font-extrabold text-api-red">
+                    <h3 class="sm:text-6xl text-4xl font-extrabold text-api-red">
                         <span class="counter" data-value="9000" data-duration="50"></span>
                         <span>+</span>
                     </h3>
                     <h5 class="font-light tracking-widest">CUSTOMERS</h5>
                 </div>
                 <div class="text-center border-0 md:border-l border-black" data-aos="fade-up" data-aos-duration="2000">
-                    <h3 class="text-6xl font-extrabold text-api-red">HIGH</h3>
+                    <h3 class="sm:text-6xl text-4xl font-extrabold text-api-red">HIGH</h3>
                     <h5 class="font-light tracking-widest">QUALITY SERVICE</h5>
                 </div>
             </div>
@@ -74,11 +85,11 @@
 
     <section class="py-6 transform skew-y-3" id="article-thumbnail">
         <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">NEWS & GALLERY</span>
-        <div class="grid grid-cols-3 border-t-8 border-api-red h-full">
+        <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($newses as $news)
-                <div class="bg-no-repeat bg-center bg-cover group" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
+                <div class="bg-no-repeat bg-center bg-cover group h-300px sm:h-auto" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
                     <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
-                        <div class="mt-auto absolute inset-x-0 bottom-0 block transform -skew-y-3 text-white px-8 text-center text-lg font-semibold pb-8">
+                        <div class="sm:mt-auto mb-auto absolute inset-x-0 top-0 sm:bottom-0 sm:top-auto block transform -skew-y-3 text-white px-8 text-center text-lg font-semibold pt-8 sm:pb-8">
                             <h4 class="text-xl font-bold text-yellow-400 uppercase">{{ $news->title }}</h4>
                             <span class="h-1 w-16 bg-yellow-400 mx-auto block"></span>
                             <blockquote class="text-sm mt-4">
@@ -93,7 +104,7 @@
     </section>
 
     <section class="py-12 container mx-auto">
-        <div class="w-3/4 mx-auto">
+        <div class="w-4/5 sm:w-3/4 mx-auto">
             <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="2000">VIDEO TITLE</span>
             <div id="video-frame" class="border-8 border-api-red w-full" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="swiper-container swiper-video">

@@ -24,9 +24,13 @@ class StoreBannerRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => ['required'],
+            'title' => ['sometimes'],
             'description' => ['sometimes'],
-            'image_location' => ['required']
+            'image_location' => ['required'],
+            'overlay_level' => ['sometimes'],
+            'linked' => ['sometimes'],
+            'linked_location' => ['required_if:linked,1'],
+            'active' => ['sometimes']
         ];
     }
 }

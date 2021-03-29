@@ -19,9 +19,10 @@ module.exports = {
                 }
             },
             height: {
-                '250px': '250px',
-                '470px': '470px',
-                '485px': '485px'
+                "250px": "250px",
+                "300px": "300px",
+                "470px": "470px",
+                "485px": "485px"
             },
             letterSpacing: {
                 bannerParagraph: ".5em"
@@ -36,10 +37,9 @@ module.exports = {
             backgroundSize: ["hover", "focus"],
             backgroundOpacity: ["hover", "focus"],
             translate: ["group-hover"],
-            inset: ["group-hover", "hover"]
+            inset: ["group-hover", "hover"],
+            textAlign: ["group-hover"]
         }
     },
-    plugins: [
-        require("@tailwindcss/typography"),
-    ]
+    plugins: [require("@tailwindcss/typography")]
 };

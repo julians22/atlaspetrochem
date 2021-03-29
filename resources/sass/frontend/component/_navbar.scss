@@ -1,5 +1,8 @@
 #nav-wrapper {
-    height: 100px;
+    height: 80px;
+    @media (min-width: 640px) {
+        height: 100px;
+    }
 
     &:after {
         height: 100%;
@@ -11,18 +14,26 @@
     }
 
     nav {
-        height: 100px;
+        height: 80px;
+
+        @media (min-width: 640px) {
+            height: 100px;
+        }
 
         &.scrollUp {
             transform: translateY(-100px)
         }
 
         ul#menu{
-             li {
+            li {
                 a::after{
                     content: ' ';
                 }
             }
         }
+
+    }
+    #menu-wrapper.show {
+        display: block !important;
     }
 }

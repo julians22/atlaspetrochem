@@ -96,4 +96,10 @@ class CareerController extends Controller
 
         return redirect()->route('admin.career')->with('success', 'News success deleted');
     }
+
+    public function toggleActive(Career $career)
+    {
+        $career = $this->careerServices->toggleActive($career);
+        return redirect()->route('admin.career')->with('success', 'Career '. $career->isActive() ? 'activated' : 'unactivated' );
+    }
 }

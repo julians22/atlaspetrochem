@@ -13,7 +13,12 @@ class Banner extends Model
     public $table = 'banner_slider';
 
     protected $fillable = [
-        'title', 'description', 'image_location', 'active'
+        'title', 'description', 'image_location', 'active', 'overlay_level', 'linked', 'linked_location'
+    ];
+
+    protected $casts = [
+        'linked' => 'boolean',
+        'active' => 'boolean'
     ];
 
     public function getImageAttribute()
@@ -24,5 +29,15 @@ class Banner extends Model
     public function scopeActive($query)
     {
         return $query->where('active', true);
+    }
+
+    public function isLinked()
+    {
+        return $this->linked;
+    }
+
+    public function isActive()
+    {
+        return $this->active;
     }
 }

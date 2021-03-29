@@ -46,6 +46,28 @@ return [
                 ]
             ]
         ],
+        'faqs' => [
+            'create' => 'Create Faq',
+            'edit' => 'Edit Faq',
+
+            'table' => [
+                'total' => 'faq total|faqs total'
+            ]
+        ],
+        'products' => [
+            'create' => 'Create Product',
+            'edit' => 'Edit Product',
+            'table' => [
+                'total' => 'product total|products total'
+            ],
+
+        ],
+        'category' => [
+            'edit' => 'Edit Category',
+            'table' => [
+                'total' => 'category total|categories total'
+            ],
+        ],
         'access' => [
             'roles' => [
                 'create' => 'Create Role',

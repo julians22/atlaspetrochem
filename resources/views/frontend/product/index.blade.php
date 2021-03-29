@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | Product')
+@section('title', app_name() . ' | Categories')
 
 @section('content')
     <section class="py-6" data-aos="fade-up" data-aos-duration="2000">
@@ -24,7 +24,7 @@
                         <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 mr-auto px-4 mb-4 relative">
                             <h4 class="text-xl font-bold tracking-widest text-white">DIVISI INDUSTRIAL</h4>
                             <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
-                            <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
+                            <a href="{{ route('frontend.industrial') }}" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
                         </div>
                     </div>
                 </div>

@@ -16,11 +16,15 @@
     }
 
     ul#menu li{
-        @apply flex justify-center items-center px-4 relative font-bold text-sm;
+        @apply flex justify-center items-center px-4 relative font-bold text-sm w-full sm:w-auto;
     }
 
     ul#menu li.dropdown ul li{
         @apply block px-4 font-bold text-sm relative py-1;
+    }
+
+    ul#menu li.dropdown.show ul{
+        @apply h-auto transition-transform duration-300 opacity-100;
     }
 
     ul#menu li span{
@@ -40,7 +44,7 @@
     }
 
     .swiper-pagination .swiper-pagination-bullet{
-        @apply w-8 h-8 bg-gray-300 opacity-50;
+        @apply w-4 h-4 sm:w-8 sm:h-8 bg-gray-300 opacity-50;
     }
 
     .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{

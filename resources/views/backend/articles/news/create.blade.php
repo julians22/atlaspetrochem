@@ -77,18 +77,18 @@
                 </div>
             </div>
 
-            <div class="card-footer clearfix">
-                <div class="row">
-                    <div class="col">
-                        {{ form_cancel(route('admin.articles.news'), __('buttons.general.cancel')) }}
-                    </div><!--col-->
-
-                    <div class="col text-right">
-                        {{ form_submit(__('buttons.general.crud.update')) }}
-                    </div><!--col-->
-                </div><!--row-->
-            </div><!--card-footer-->
         </div>
+        <div class="card-footer clearfix">
+            <div class="row">
+                <div class="col">
+                    {{ form_cancel(route('admin.articles.news'), __('buttons.general.cancel')) }}
+                </div><!--col-->
+
+                <div class="col text-right">
+                    {{ form_submit(__('buttons.general.crud.update')) }}
+                </div><!--col-->
+            </div><!--row-->
+        </div><!--card-footer-->
     {{ html()->form()->close() }}
 @endsection
 

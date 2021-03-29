@@ -4,10 +4,10 @@
 
 @section('content')
 	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.426598005804!2d106.8830731!3d-6.1499462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e27cdbb612dd04f!2sPT.%20ATLAS%20PETROCHEM%20INDO!5e0!3m2!1sid!2sid!4v1615344979517!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-    <section class="mx-auto py-10 w-2/3 container">
+    <section class="mx-auto py-10 w-5/6 sm:w-2/3 container">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">CONTACT US</h2>
 
-        <div class="grid grid-cols-2 gap-6 bg-white shadow-md p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 bg-white shadow-md p-4">
             <div class="form-wrapper">
                 <form action="" class="w-full flex flex-col">
                     <div class="form-group">
@@ -61,16 +61,16 @@
             <div class="faq-wrapper">
                 <h4 class="text-xl text-api-red font-bold tracking-widest mb-4">FAQs</h4>
                 <ul class="flex flex-col">
-                    @for ($i = 1; $i <= 7; $i++)
+                    @foreach ($faqs as $faq)
                         <li class="mb-4 border-b-2 border-black">
                             <div x-data="{ faqOpen : null}">
-                                <h4 class="text-lg text-black font-semibold tracking-widest cursor-pointer" @click="faqOpen !== {{ $i }} ? faqOpen = {{ $i }} : faqOpen = null"">Lorem Ipsum</h4>
-                                <div class="transition-all duration-700 max-h-0 overflow-hidden bg-white" x-ref="faq{{$i}}" x-bind:style="faqOpen == {{$i}} ? 'max-height: ' + $refs.faq{{$i}}.scrollHeight + 'px' : ''">
-                                    <p class="mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias, debitis voluptatem obcaecati a aliquam, delectus placeat libero necessitatibus pariatur laborum dolorum veniam!</p>
+                                <h4 class="text-lg text-black font-semibold tracking-widest cursor-pointer" @click="faqOpen !== {{ $loop->iteration }} ? faqOpen = {{ $loop->iteration }} : faqOpen = null"">{!! $faq->question_text !!}</h4>
+                                <div class="transition-all duration-700 max-h-0 overflow-hidden bg-white" x-ref="faq{{$loop->iteration}}" x-bind:style="faqOpen == {{$loop->iteration}} ? 'max-height: ' + $refs.faq{{$loop->iteration}}.scrollHeight + 'px' : ''">
+                                    <p class="mb-2">{!! $faq->answer_text !!}</p>
                                 </div>
                             </div>
                         </li>
-                    @endfor
+                    @endforeach
                 </ul>
 
             </div>

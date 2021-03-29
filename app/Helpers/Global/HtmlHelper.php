@@ -72,3 +72,29 @@ if (! function_exists('active_class')) {
         return $condition ? $activeClass : $inactiveClass;
     }
 }
+
+if (! function_exists('banner_overlay')) {
+    /**
+     * Get teh banner overlay level
+     *
+     * @param   int   $level
+     * @return  string
+     */
+    function banner_overlay($level)
+    {
+        switch ($level) {
+            case 0:
+                return 'none';
+                break;
+            case 1:
+                return 'medium';
+                break;
+            case 2:
+                return 'high';
+                break;
+            default:
+                return 'none';
+                break;
+        }
+    }
+}

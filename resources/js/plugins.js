@@ -133,7 +133,7 @@ $(function () {
             delay: 3000,
             disableOnInteraction: false
         },
-        speed: 500,
+        speed: 1500,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev"
@@ -182,7 +182,8 @@ $(function () {
             type: "bullets",
             clickable: true
         },
-        navigation: false
+        navigation: false,
+        autoHeight: true
     });
 
     var teamSwiper = new Swiper(".swiper-team", {
@@ -195,6 +196,17 @@ $(function () {
     });
 
     $('[data-toggle="tooltip"]').tooltip();
+
+    $("#menu-toggle").on("click", function() {
+        $("#menu-wrapper").toggleClass("show");
+    });
+
+    $("li.dropdown").on("click", function() {
+        var itemList = $(this).find("ul li");
+        if (itemList.length > 0) {
+            $(this).toggleClass("show");
+        }
+    });
 });
 
 AOS.init();
