@@ -7,6 +7,8 @@ use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\Products\CategoryController;
 use App\Http\Controllers\Backend\Products\ProductController;
 use App\Http\Controllers\Backend\Sliders\BannerSliderController;
+use App\Http\Controllers\Backend\Sliders\CompanySliderController;
+use App\Http\Controllers\Backend\Sliders\TeamSliderController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -21,6 +23,34 @@ Route::group(['prefix' => 'slider', 'as' => 'slider.'], function (){
                 Route::get('edit', [BannerSliderController::class, 'edit'])->name('banner.edit');
                 Route::patch('/', [BannerSliderController::class, 'update'])->name('banner.update');
             });
+    });
+
+    Route::group(['prefix' => 'company'], function() {
+        Route::get('/', [CompanySliderController::class, 'index'])->name('company');
+        Route::get('create', [CompanySliderController::class, 'create'])->name('company.create');
+        Route::post('/', [CompanySliderController::class, 'store'])->name('company.store');
+        Route::get('deleted', [CompanySliderController::class, 'get_deleted'])->name('company.deleted');
+        Route::group(['prefix' => '{company}'], function (){
+            Route::get('edit', [CompanySliderController::class, 'edit'])->name('company.edit');
+            Route::patch('/', [CompanySliderController::class, 'update'])->name('company.update');
+            Route::delete('/', [CompanySliderController::class, 'destroy'])->name('company.destroy');
+            Route::get('restore', [CompanySliderController::class, 'restore'])->name('company.restore');
+            Route::get('delete', [CompanySliderController::class, 'delete'])->name('company.delete-permanently');
+        });
+    });
+
+    Route::group(['prefix' => 'teams'], function() {
+        Route::get('/', [TeamSliderController::class, 'index'])->name('teams');
+        Route::get('create', [TeamSliderController::class, 'create'])->name('teams.create');
+        Route::post('/', [TeamSliderController::class, 'store'])->name('teams.store');
+        Route::get('deleted', [TeamSliderController::class, 'get_deleted'])->name('teams.deleted');
+        Route::group(['prefix' => '{teams}'], function (){
+            Route::get('edit', [TeamSliderController::class, 'edit'])->name('teams.edit');
+            Route::patch('/', [TeamSliderController::class, 'update'])->name('teams.update');
+            Route::delete('/', [TeamSliderController::class, 'destroy'])->name('teams.destroy');
+            Route::get('restore', [TeamSliderController::class, 'restore'])->name('teams.restore');
+            Route::get('delete', [TeamSliderController::class, 'delete'])->name('teams.delete-permanently');
+        });
     });
 });
 

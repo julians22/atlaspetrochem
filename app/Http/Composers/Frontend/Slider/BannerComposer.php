@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace App\Http\Composers\Frontend\Slider;
 
@@ -12,6 +12,7 @@ class BannerComposer
 {
     /** @var $bannerRepository */
     protected $bannerRepository;
+
 
     /**
      * BannerComposer Constructor

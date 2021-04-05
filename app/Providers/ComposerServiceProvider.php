@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Http\Composers\Backend\SidebarComposer;
 use App\Http\Composers\Frontend\Slider\BannerComposer;
+use App\Http\Composers\Frontend\Slider\CompanyComposer;
 use App\Http\Composers\GlobalComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -27,9 +28,11 @@ class ComposerServiceProvider extends ServiceProvider
 
         // Frontend
         View::composer(
-            ['frontend.includes.banner', 'frontend.includes.banner-company'],
+            'frontend.includes.banner',
             BannerComposer::class
         );
+
+        View::composer('frontend.includes.banner-company', CompanyComposer::class);
 
         // Backend
         View::composer(

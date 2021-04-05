@@ -65,7 +65,7 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/career*'), 'open')
+                active_class(Route::is('admin/product*') || Route::is('admin/product/category*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon fas fa-user-tie"></i>
@@ -75,14 +75,14 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.product.index') }}" class="nav-link {{
-                            active_class('admin/product*')
+                            active_class(Route::is('admin/product*'))
                             }}">
                             All Products
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.product.category.index') }}" class="nav-link {{
-                            active_class('admin/product/category*')
+                            active_class(Route::is('admin/product/category*'))
                             }}">
                             All Categories
                         </a>
@@ -101,23 +101,23 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
-                            active_class('admin/slider/banner*')
+                            active_class(Route::is('admin/slider/banner*'))
                             }}">
-                            Home Banner
+                            Home Slider
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
-                            active_class('admin/slider/banner*')
+                        <a href="{{ route('admin.slider.company') }}" class="nav-link {{
+                            active_class(Route::is('admin/slider/company*'))
                             }}">
-                            Company Banner
+                            Company Slider
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
-                            active_class('admin/slider/banner*')
+                        <a href="{{ route('admin.slider.teams') }}" class="nav-link {{
+                            active_class(Route::is('admin/slider/teams*'))
                             }}">
-                            Teams Banner
+                            Team Slider
                         </a>
                     </li>
                 </ul>
