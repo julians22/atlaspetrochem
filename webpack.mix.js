@@ -16,17 +16,17 @@ mix.setPublicPath('public')
     // .options({
     //     processCssUrls: false,
     // })
-    // .postCss("resources/css/app.css", "css/tailwind.css", [
-    //     require("tailwindcss"),
-    // ])
+    .postCss("resources/css/app.css", "css/tailwind.css", [
+        require("tailwindcss"),
+    ])
     .sass('resources/sass/frontend/app.scss', 'css/frontend.css')
-    // .sass('resources/sass/backend/app.scss', 'css/backend.css')
+    .sass('resources/sass/backend/app.scss', 'css/backend.css')
     .js('resources/js/frontend/app.js', 'js/frontend.js')
-    // .js([
-    //     'resources/js/backend/before.js',
-    //     'resources/js/backend/app.js',
-    //     'resources/js/backend/after.js'
-    // ], 'js/backend.js')
+    .js([
+        'resources/js/backend/before.js',
+        'resources/js/backend/app.js',
+        'resources/js/backend/after.js'
+    ], 'js/backend.js')
     .extract([
         // Extract packages from node_modules to vendor.js
         'jquery',
