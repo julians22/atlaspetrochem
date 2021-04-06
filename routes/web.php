@@ -18,6 +18,10 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     include_route_files(__DIR__.'/frontend/');
 });
 
+Route::get('php-info', function (){
+    phpinfo();
+});
+
 /*
  * Backend Routes
  * Namespaces indicate folder structure
