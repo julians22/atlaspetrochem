@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\Article\GaleryController;
 use App\Http\Controllers\Frontend\Article\NewsController;
 use App\Http\Controllers\Frontend\CareerController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Frontend\User\ProfileController;
  */
 Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/industrial', [ProductController::class, 'industrial'])->name('industrial');
 Route::get('/{division?}/{category}/products', [ProductController::class, 'list'])->name('product.list');

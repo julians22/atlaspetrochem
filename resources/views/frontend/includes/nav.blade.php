@@ -28,23 +28,32 @@
                         <span></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product'), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="{{ route('frontend.about') }}" class="{{ active_class(Route::is('frontend.about'), 'text-api-red', 'hover:text-api-red') }}">
+                            ABOUT
+                        </a>
+                        <span></span>
+                    </li>
+                    <li class="dropdown group">
+                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product'), 'text-api-red', 'hover:text-api-red') }} relative">
                             PRODUCTS
+
+                            <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-40 p-2 border border-api-redLighten text-xs">
+                                <a href="#" class="block w-full">DIVISI AUTOMOTIVE</a>
+                                <div class="block h-px w-full bg-api-redLighten my-2"></div>
+                                <a href="{{ route('frontend.industrial') }}" class="block w-full">DIVISI INDUSTRIAL</a>
+                            </div>
                         </a>
                         <span></span>
                     </li>
                     <li class="group dropdown flex items-center flex-col">
-                        <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }} relative">
                             NEWS & GALERY
+                            <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-40 p-2 border border-api-redLighten text-xs">
+                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full">NEWS</a>
+                                <div class="block h-px w-full bg-api-redLighten my-2"></div>
+                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full">GALERY</a>
+                            </div>
                         </a>
-                        <ul class="relative sm:absolute h-0 sm:h-auto group-hover:h-auto inset-0 mt-0 sm:mt-6 text-center sm:text-left opacity-0 group-hover:opacity-100 transition-transform duration-200 ease-in-out">
-                            <li class="border-b sm:border-t border-black block">
-                                <a href="{{ route('frontend.article.news.index') }}" class="{{ active_class(Route::is('frontend.article.news.index'), 'text-api-red', 'hover:text-api-red') }}">NEWS</a>
-                            </li>
-                            <li class="border-b sm:border-t border-black block">
-                                <a href="{{ route('frontend.article.galery.index') }}" class="{{ active_class(Route::is('frontend.article.galery.index'), 'text-api-red', 'hover:text-api-red') }}">GALERY</a>
-                            </li>
-                        </ul>
                         <span></span>
                     </li>
                     <li>
@@ -89,11 +98,3 @@
         </div>
     </nav>
 </div>
-
-
-@push('after-scripts')
-<script>
-
-
-</script>
-@endpush

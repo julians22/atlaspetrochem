@@ -9,18 +9,18 @@
 
             <div class="grid grid-cols-2 mt-6">
                 <div class="text-center border-r border-white px-4" data-aos="fade-up" data-aos-duration="1000">
-                    <h4 class="text-3xl text-api-red font-semibold tracking-widest mb-4">VISION</h4>
-                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, incidunt dolores laboriosam nostrum voluptates vel, iusto eveniet sequi modi hic autem, earum recusandae. Officia, quibusdam?</p>
+                    <h4 class="text-3xl text-api-red font-semibold tracking-widest mb-4 uppercase">VISION</h4>
+                    <p class="text-white">{!! $vision_content->value !!}</p>
                 </div>
                 <div class="text-center border-l border-white px-4" data-aos="fade-up" data-aos-duration="1000">
                     <h4 class="text-3xl text-api-red font-semibold tracking-widest mb-4">MISSION</h4>
-                    <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, incidunt dolores laboriosam nostrum voluptates vel, iusto eveniet sequi modi hic autem, earum recusandae. Officia, quibusdam?</p>
+                    <p class="text-white">{!! $mission_content->value !!}</p>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="text-center">
                     <h4 class="text-3xl text-api-red font-semibold tracking-widest mb-4">OUR BRAND</h4>
-                    <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum esse atque officiis dolor id ut perspiciatis earum hic, dolorum tenetur rerum sequi laudantium ipsum facilis, asperiores porro beatae consequuntur doloribus deleniti quaerat. Tempore quaerat unde nemo ab, optio rem nisi.</p>
+                    <p class="text-white">{!! $brand_content->value !!}</p>
                 </div>
             </div>
         </div>
@@ -43,15 +43,18 @@
 
             <h2 class="text-3xl font-extrabold text-black text-center mb-4">WHERE WE WORK</h2>
             <div class="grid grid-cols-3 mt-6">
-                <div class="border-r border-black pr-6">
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quam inventore illum illo quidem? Vero saepe distinctio quia? Harum, quisquam.</p>
-                </div>
-                <div class="border-r border-l border-black px-6">
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quam inventore illum illo quidem? Vero saepe distinctio quia? Harum, quisquam.</p>
-                </div>
-                <div class="border-l border-black pl-6">
-                    <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quam inventore illum illo quidem? Vero saepe distinctio quia? Harum, quisquam.</p>
-                </div>
+                @foreach (json_decode($workplace_content->value) as $workplace)
+                    <div class="border-black flex items-center justify-center
+                        @if ($loop->iteration == 1)md:border-r pr-6
+                        @elseif($loop->iteration == 2)md:border-l md:border-r px-6
+                        @elseif($loop->iteration == 3)md:border-l pl-6
+                        @endif
+                    ">
+                        <div class="leading-6">
+                            {!! workplace_format($workplace) !!}
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

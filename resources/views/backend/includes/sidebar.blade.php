@@ -47,9 +47,35 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.career') }}" class="nav-link {{
-                            active_class('admin/career*')
+                            active_class(Route::is('admin/career*'))
                             }}">
                             All Careers
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item nav-dropdown {{
+                active_class(Route::is('admin/content*'), 'open')
+            }}">
+                <a href="#" class="nav-link nav-dropdown-toggle">
+                    <i class="nav-icon fas fa-columns"></i>
+                    Content Management
+                </a>
+
+                <ul class="nav-dropdown-items">
+                    <li class="nav-item">
+                        <a href="{{ route('admin.content.about.index') }}" class="nav-link {{
+                            active_class(Route::is('admin/content/about*'))
+                            }}">
+                            About Content
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.content.company.index') }}" class="nav-link {{
+                            active_class(Route::is('admin/content/company*'))
+                            }}">
+                            Company Content
                         </a>
                     </li>
                 </ul>

@@ -98,3 +98,10 @@ if (! function_exists('banner_overlay')) {
         }
     }
 }
+
+if (! function_exists('workplace_format')) {
+    function workplace_format($text)
+    {
+        return nl2br($text);
+    }
+}

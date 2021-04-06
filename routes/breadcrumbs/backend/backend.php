@@ -71,6 +71,28 @@ Breadcrumbs::for('admin.product.edit', function ($trail, $product) {
 });
 
 
+// company content
+Breadcrumbs::for('admin.content.company.index', function ($trail) {
+    $trail->push( 'Company Content Management', route('admin.content.company.index'));
+});
+
+// about content
+Breadcrumbs::for('admin.content.about.index', function ($trail) {
+    $trail->push( 'About Content Management', route('admin.content.about.index'));
+});
+
+Breadcrumbs::for('admin.content.about.edit', function ($trail, $content) {
+    $trail->parent('admin.content.about.index');
+    $trail->push( 'Edit About Content', route('admin.content.about.edit', $content));
+});
+
+Breadcrumbs::for('admin.content.about.show', function ($trail, $content) {
+    $trail->parent('admin.content.about.index');
+    $trail->push( 'Show About Content', route('admin.content.about.show', $content));
+});
+
+
+
 require __DIR__.'/slider.php';
 require __DIR__.'/article.php';
 require __DIR__.'/auth.php';

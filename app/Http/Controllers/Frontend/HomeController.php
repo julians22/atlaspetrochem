@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About\AboutContent;
 use App\Services\Frontend\Articles\NewsServices;
 
 /**
@@ -23,7 +24,8 @@ class HomeController extends Controller
     public function index()
     {
         return view('frontend.index', [
-            'newses' => $this->newsServices->getActiveThumbnail()
+            'newses' => $this->newsServices->getActiveThumbnail(),
+            'abouts' => AboutContent::orderBy('key', 'asc')->get()
         ]);
     }
 }

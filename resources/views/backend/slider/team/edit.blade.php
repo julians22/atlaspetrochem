@@ -55,7 +55,7 @@
             <div class="card-footer clearfix">
                 <div class="row">
                     <div class="col">
-                        {{ form_cancel(route('admin.slider.company'), __('buttons.general.cancel')) }}
+                        {{ form_cancel(route('admin.slider.teams'), __('buttons.general.cancel')) }}
                     </div><!--col-->
 
                     <div class="col text-right">

@@ -75,12 +75,13 @@ class TeamSliderController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Sliders\TeamBanner  $teamBanner
+     * @param  \App\Models\Sliders\TeamBanner  $teams
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeamBanner $teamBanner)
+    public function destroy(TeamBanner $teams)
     {
-        //
+        $teams->delete();
+        return redirect()->route('admin.slider.teams')->withFlashSuccess('Slider team successfully deleted');
     }
 
     public function get_deleted()
@@ -88,18 +89,18 @@ class TeamSliderController extends Controller
         return view('backend.slider.team.deleted', ['sliders' => TeamBanner::onlyTrashed()->paginate(10)]);
     }
 
-    public function restore($company)
+    public function restore($teams)
     {
-        $company = TeamBanner::withTrashed()->find($company);
-        $company->restore();
+        $teams = TeamBanner::withTrashed()->find($teams);
+        $teams->restore();
 
-        return redirect()->route('admin.slider.company')->withFlashSuccess('Slider company successfully restored');
+        return redirect()->route('admin.slider.teams')->withFlashSuccess('Slider team successfully restored');
     }
 
-    public function delete($company)
+    public function delete($teams)
     {
-        $company = CompanyBanner::withTrashed()->find($company);
-        $company->forceDelete();
-        return redirect()->route('admin.slider.company')->withFlashSuccess('Slider company successfully deleted');
+        $teams = TeamBanner::withTrashed()->find($teams);
+        $teams->forceDelete();
+        return redirect()->route('admin.slider.teams')->withFlashSuccess('Slider team successfully deleted');
     }
 }

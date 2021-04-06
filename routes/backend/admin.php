@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backend\About\ContentController as AboutContentController;
 use App\Http\Controllers\Backend\Articles\NewsController;
 use App\Http\Controllers\Backend\CareerController;
+use App\Http\Controllers\Backend\Company\ContentController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\Products\CategoryController;
@@ -113,6 +115,23 @@ Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
             Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
             Route::patch('/', [CategoryController::class, 'update'])->name('update');
             Route::delete('/', [CategoryController::class, 'destroy'])->name('destroy');
+        });
+    });
+});
+
+Route::group(['prefix' => 'content', 'as' => 'content.'], function (){
+    Route::group(['prefix' =>'company', 'as' => 'company.'], function(){
+        Route::get('/', [ContentController::class, 'index'])->name('index');
+        Route::patch('/', [ContentController::class, 'update_bulk'])->name('update-bulk');
+    });
+
+    Route::group(['prefix' =>'about', 'as' => 'about.'], function(){
+        Route::get('/', [AboutContentController::class, 'index'])->name('index');
+        Route::group(['prefix' => '{content}'], function ()
+        {
+            Route::get('show', [AboutContentController::class, 'show'])->name('show');
+            Route::get('edit', [AboutContentController::class, 'edit'])->name('edit');
+            Route::patch('/', [AboutContentController::class, 'update'])->name('update');
         });
     });
 });

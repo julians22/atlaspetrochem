@@ -25,29 +25,33 @@ class DatabaseSeeder extends Seeder
             'ledgers',
             'jobs',
             'sessions',
-            'news',
-            'galeries',
-            'careers',
+            // 'news',
+            // 'galeries',
+            // 'careers',
             'faqs',
-            'categories',
-            'products'
+            // 'categories',
+            // 'products',
+            'about_contents',
+            'company_contents'
         ]);
 
-        $news = factory(News::class, 5)->create();
-        $galeries= factory(Galery::class, 6)->create();
+        // $news = factory(News::class, 5)->create();
+        // $galeries= factory(Galery::class, 6)->create();
 
-        $faqs = factory(Faq::class, 8)->create();
+        // $faqs = factory(Faq::class, 8)->create();
 
-        $categoryIndustrial = factory(Category::class, 4)
-                                ->create()
-                                ->each(function ($category)
-                                {
-                                    $category->products()->createMany(
-                                        factory(Product::class, 4)->make()->toArray()
-                                    );
-                                });
+        // $categoryIndustrial = factory(Category::class, 4)
+        //                         ->create()
+        //                         ->each(function ($category)
+        //                         {
+        //                             $category->products()->createMany(
+        //                                 factory(Product::class, 4)->make()->toArray()
+        //                             );
+        //                         });
 
-        $this->call(CareerTableSeeder::class);
+        // $this->call(CareerTableSeeder::class);
+        $this->call(AboutContentSeeder::class);
+        $this->call(CompanyContentSeeder::class);
 
         // $this->call(AuthTableSeeder::class);
 
