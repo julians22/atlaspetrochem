@@ -2,6 +2,7 @@
 
 namespace App\Http\Composers;
 
+use App\Models\WebSetting;
 use Illuminate\View\View;
 
 /**
@@ -17,5 +18,6 @@ class GlobalComposer
     public function compose(View $view)
     {
         $view->with('logged_in_user', auth()->user());
+        $view->with('setting', new WebSetting());
     }
 }

@@ -91,6 +91,10 @@ Breadcrumbs::for('admin.content.about.show', function ($trail, $content) {
     $trail->push( 'Show About Content', route('admin.content.about.show', $content));
 });
 
+// Website Setting
+Breadcrumbs::for('admin.setting.index', function ($trail) {
+    $trail->push( 'Website Setting', route('admin.setting.index'));
+});
 
 
 require __DIR__.'/slider.php';

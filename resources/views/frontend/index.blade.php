@@ -128,40 +128,13 @@
                 <div class="swiper-container swiper-video">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            {{-- <span class="w-16 absolute inset-0 mx-auto">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
-                                        <g>
-                                            <path xmlns="http://www.w3.org/2000/svg" d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176  c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57  S349.156,266.641,344.48,269.57z" fill="#ffffff" data-original="#000000" style="" class=""/>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </span> --}}
                             <iframe src="https://www.youtube.com/embed/zJ7hUvU-d2Q" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
                         </div>
                         <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            <span class="w-16 absolute inset-0 mx-auto">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
-                                        <g>
-                                            <path xmlns="http://www.w3.org/2000/svg" d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176  c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57  S349.156,266.641,344.48,269.57z" fill="#ffffff" data-original="#000000" style="" class=""/>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </span>
-                            <img src="{{ asset('img/frontend/video/video1.jpg') }}" alt="" class="w-full">
+                            <iframe src="https://www.youtube.com/embed/x2uRvn6SLQ4" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
                         </div>
                         <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            <span class="w-16 absolute inset-0 mx-auto">
-                                <a href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" width="512" height="512" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-full opacity-70">
-                                        <g>
-                                            <path xmlns="http://www.w3.org/2000/svg" d="M256,0C114.617,0,0,114.615,0,256s114.617,256,256,256s256-114.615,256-256S397.383,0,256,0z M344.48,269.57l-128,80  c-2.59,1.617-5.535,2.43-8.48,2.43c-2.668,0-5.34-0.664-7.758-2.008C195.156,347.172,192,341.82,192,336V176  c0-5.82,3.156-11.172,8.242-13.992c5.086-2.836,11.305-2.664,16.238,0.422l128,80c4.676,2.93,7.52,8.055,7.52,13.57  S349.156,266.641,344.48,269.57z" fill="#ffffff" data-original="#000000" style="" class=""/>
-                                        </g>
-                                    </svg>
-                                </a>
-                            </span>
-                            <img src="{{ asset('img/frontend/video/video1.jpg') }}" alt="" class="w-full">
+                            <iframe src="https://www.youtube.com/embed/x2uRvn6SLQ4" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -177,3 +150,41 @@
         </div>
     </section>
 @endsection
+
+@push('after-script')
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+        <script>
+            var player;
+            function onYouTubeIframeAPIReady() {
+                player = new YT.Player('player', {
+                height: '800',
+                width: '400',
+                videoId: 'M7lc1UVf-VE',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+                });
+            }
+
+            // 4. The API will call this function when the video player is ready.
+            function onPlayerReady(event) {
+                event.target.playVideo();
+            }
+
+            // 5. The API calls this function when the player's state changes.
+            //    The function indicates that when playing a video (state=1),
+            //    the player should play for six seconds and then stop.
+            var done = false;
+            function onPlayerStateChange(event) {
+                if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+                }
+            }
+            function stopVideo() {
+                player.stopVideo();
+            }
+        </script>
+@endpush

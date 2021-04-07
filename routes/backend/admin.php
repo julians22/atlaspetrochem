@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\Products\ProductController;
 use App\Http\Controllers\Backend\Sliders\BannerSliderController;
 use App\Http\Controllers\Backend\Sliders\CompanySliderController;
 use App\Http\Controllers\Backend\Sliders\TeamSliderController;
+use App\Http\Controllers\Backend\WebSettingController;
 
 // All route names are prefixed with 'admin.'.
 Route::redirect('/', '/admin/dashboard', 301);
@@ -134,6 +135,11 @@ Route::group(['prefix' => 'content', 'as' => 'content.'], function (){
             Route::patch('/', [AboutContentController::class, 'update'])->name('update');
         });
     });
+});
+
+Route::group(['prefix' => 'setting', 'as' => 'setting.'], function(){
+    Route::get('/', [WebSettingController::class, 'index'])->name('index');
+    Route::patch('/', [WebSettingController::class, 'update_bulk'])->name('update-bulk');
 });
 
 

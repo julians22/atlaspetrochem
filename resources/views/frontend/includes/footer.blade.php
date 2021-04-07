@@ -5,9 +5,9 @@
                 <h4 class="company-name text-base font-semibold md:mb-4">PT ATLAS PETROCHEM INDO</h4>
                 <div class="address mb-4 text-sm font-medium">
                     <h4 class="font-italic">Head Office:</h4>
-                    <p>Jl. Danau Indah Raya No.5 RT.12/RW.13, Sunter Jaya, Tj. Priok, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14360</p>
+                    <p>{!! workplace_format($setting->config('head office')->first()->value) !!}</p>
                 </div>
-                <p class="phone text-sm font-medium mb-4">Phone. <a href="tel:+6221-220-650-68" class="no-underline">+6221 220 650 68</a></p>
+                <p class="phone text-sm font-medium mb-4">Phone. <a href="tel:{{ $setting->config('mobile phone')->first()->value }}" class="no-underline">{{ $setting->config('mobile phone')->first()->value }}</a></p>
                 <p class="website text-sm font-medium"><a href="#" class="no-underline">www.atlaspetrochem.co.id</a></p>
             </div>
 
@@ -21,13 +21,13 @@
 
             <div class="box-3 flex flex-col justify-between w-full md:w-2/5 md:pr-10 md:mt-0 mt-4">
                 <h4 class="text-lg">NEED ASSISTANCE?</h4>
-                <a href="" class="border-2 border-white py-1 px-2 inline-flex items-center font-semibold text-xl">
+                <a href="tel:{{ $setting->config('phone')->first()->value }}" class="border-2 border-white py-1 px-2 inline-flex items-center font-semibold text-xl">
                     <span class="w-8 mr-4">
                         <img src="{{ asset('img/frontend/icons/phone_icons.png') }}" alt="" class="w-full">
                     </span>
-                    <span>0812 XXX XXX XX</span>
+                    <span>{{ $setting->config('phone')->first()->value }}</span>
                 </a>
-                <a href="" class="border-2 border-white py-1 px-2 inline-flex items-center font-semibold text-xl">
+                <a href="mailto:{{ $setting->config('helpdesk email')->first()->value }}" class="border-2 border-white py-1 px-2 inline-flex items-center font-semibold text-xl">
                     <span class="w-8 mr-4">
                         <img src="{{ asset('img/frontend/icons/email_icons.png') }}" alt="" class="w-full">
                     </span>
@@ -38,10 +38,10 @@
                         <span class="block">Online store:</span>
                     </li>
                     <li class="mr-2">
-                        <a href="#"><span class="w-12 block"><img src="{{ asset('img/blibli.jpg') }}" alt="" class="w-full"></span></a>
+                        <a href="//{{ $setting->config('marketplace blibli')->first()->value }}" target="_blank"><span class="w-12 block"><img src="{{ asset('img/blibli.jpg') }}" alt="" class="w-full"></span></a>
                     </li>
                     <li>
-                        <a href="#"><span class="w-12 block"><img src="{{ asset('img/lazada.jpg') }}" alt="" class="w-full"></span></a>
+                        <a href="//{{ $setting->config('marketplace lazada')->first()->value }}" target="_blank"><span class="w-12 block"><img src="{{ asset('img/lazada.jpg') }}" alt="" class="w-full"></span></a>
                     </li>
                 </ul>
             </div>

@@ -18,10 +18,6 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function () {
     include_route_files(__DIR__.'/frontend/');
 });
 
-Route::get('php-info', function (){
-    phpinfo();
-});
-
 /*
  * Backend Routes
  * Namespaces indicate folder structure
@@ -35,5 +31,9 @@ Route::group(['namespace' => 'Backend', 'prefix' => 'admin', 'as' => 'admin.', '
      * Note: Administrator has all permissions so you do not have to specify the administrator role everywhere.
      * These routes can not be hit if the password is expired
      */
+    Route::get('php-info', function () {
+        phpinfo();
+    });
+    
     include_route_files(__DIR__.'/backend/');
 });

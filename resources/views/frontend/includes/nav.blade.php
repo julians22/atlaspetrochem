@@ -75,10 +75,10 @@
                             <span>(Online Store)</span>
                         </a>
                         <span class="absolute inset-x-0 w-24 px-2 py-1 top-full rounded-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-wrap bg-white shadow-2xl">
-                            <a href="#">
+                            <a href="//{{ $setting->config('marketplace blibli')->first()->value }}" target="_blank">
                                 <img src="{{ asset('img/blibli.jpg') }}" alt="" class="w-full">
                             </a>
-                            <a href="#">
+                            <a href="//{{ $setting->config('marketplace lazada')->first()->value }}" target="_blank">
                                 <img src="{{ asset('img/lazada.jpg') }}" alt="" class="w-full">
                             </a>
                         </span>

@@ -15,7 +15,7 @@
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,800;1,400;1,500;1,600;1,800&display=swap" rel="stylesheet">
-
+        <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
         {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
         @stack('before-styles')
 
@@ -41,8 +41,8 @@
             @include('frontend.includes.footer')
         </div><!-- #app -->
 
-        <a href="#" class="w-14 transition duration-700 transform hover:-translate-y-1 hover:scale-110 ease-in-out fixed bottom-6 right-6 z-50">
-            <img src="{{ asset('img/frontend/icons/whatsapp_icons.png') }}" alt="" class="w-full">
+        <a href="#" class="p-2 w-14 h-14 rounded-lg transition duration-700 transform hover:-translate-y-1 hover:scale-110 ease-in-out fixed bottom-6 right-6 z-50 bg-green-500 text-white flex items-center justify-center">
+            <i class="fab fa-whatsapp fa-3x"></i>
         </a>
 
         <!-- Scripts -->
@@ -50,6 +50,7 @@
         {!! script(mix('js/manifest.js')) !!}
         {!! script(mix('js/vendor.js')) !!}
         {!! script(mix('js/frontend.js')) !!}
+        
         @livewireScripts
         @stack('after-scripts')
 
