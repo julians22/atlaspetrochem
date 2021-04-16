@@ -13,12 +13,13 @@ class Banner extends Model
     public $table = 'banner_slider';
 
     protected $fillable = [
-        'title', 'description', 'image_location', 'active', 'overlay_level', 'linked', 'linked_location'
+        'title', 'description', 'image_location', 'active', 'overlay_level', 'linked', 'linked_location', 'sort'
     ];
 
     protected $casts = [
         'linked' => 'boolean',
-        'active' => 'boolean'
+        'active' => 'boolean',
+        'sort' => 'integer'
     ];
 
     public function getImageAttribute()

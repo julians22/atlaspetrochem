@@ -15,7 +15,7 @@
 
     {{-- See https://laravel.com/docs/5.5/blade#stacks for usage --}}
     @stack('before-styles')
-
+    @livewireStyles
     <!-- Check if the language is set to RTL, so apply the RTL layouts -->
     <!-- Otherwise apply the normal LTR layouts -->
     {{ style(mix('css/backend.css')) }}
@@ -81,6 +81,8 @@
     {!! script(mix('js/backend.js')) !!}
 
     @include('sweetalert::alert')
+
+    @livewireScripts
     @stack('after-scripts')
 </body>
 </html>

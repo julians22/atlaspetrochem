@@ -16,6 +16,9 @@
                         Products Management <small class="text-muted">All Products</small>
                     </h4>
                 </div>
+                <div class="col-sm-7">
+                    @include('backend.products.includes.header-buttons')
+                </div><!--col-->
             </div><!-- row -->
 
             <div class="row mt-4">
@@ -25,9 +28,7 @@
                             <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Description</th>
                                 <th>Category</th>
-                                <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>@lang('labels.general.actions')</th>
                             </tr>
@@ -36,9 +37,9 @@
                                 @foreach ($products as $product)
                                     <tr>
                                         <td>{!! $product->name !!}</td>
-                                        <td>{!! $product->description !!}</td>
-                                        <td>{{ $product->category->name }} || {{ $product->category->division }}</td>
-                                        <td>{{ $product->created_at->diffForHumans() }}</td>
+                                        <td>
+                                            <span class="badge badge-success text-wrap">{{ $product->category->name }} || {{ $product->category->main_category->name }}</span>
+                                        </td>
                                         <td>{{ $product->updated_at->diffForHumans() }}</td>
                                         <td class="btn-td">
                                             @include('backend.products.includes.actions', ['product' => $product])

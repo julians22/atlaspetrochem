@@ -14,7 +14,7 @@ class Product extends Model
     use HasSlug, SoftDeletes;
 
     protected $fillable = [
-        'name', 'category_id', 'description'
+        'name', 'category_id', 'description', 'link'
     ];
 
     /**

@@ -36,8 +36,7 @@
                         <div class="form-group row">
                             {{ html()->label('Job Description')->class('col-md-2 form-control-label')->for('job_desk') }}
                                 <div class="col-md-10">
-                                    {{ html()->textarea('job_desk')->class('form-control pb-1')->attributes(['maxlength' =>  250, 'rows' => 4])->placeholder('Job Description') }}
-                                    <small class="float-right text-muted text-sm"><span id="total_text"></span> / 500 text</small>
+                                    {{ html()->textarea('job_desk')->class('form-control')->placeholder('Job Description') }}
                                 </div>
                         </div>
 
@@ -73,22 +72,19 @@
 
             $(document).ready(function () {
 
-                const countTarget = $('textarea#job_desk');
-                const maxSize = 500;
-
-                $('#total_text').html(countTarget.val().length);
-
-                $(countTarget).on('keyup', function () {
-                    $('#total_text').html(countTarget.val().length);
-
-                    if (countTarget.val().length >= maxSize) {
-                        $('#total_text').addClass('text-danger').removeClass('text-muted');
-                    }else{
-                        $('#total_text').addClass('text-muted').removeClass('text-danger');
-                    }
-                });
-
                 $('textarea#requirements').summernote({
+                    height: 300,
+                    maxHeight: null,
+                    toolbar: [
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['font', ['strikethrough', 'superscript', 'subscript']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']]
+                    ]
+                });
+                $('textarea#job_desk').summernote({
                     height: 300,
                     maxHeight: null,
                     toolbar: [

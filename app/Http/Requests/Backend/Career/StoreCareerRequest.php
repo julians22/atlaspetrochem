@@ -25,7 +25,7 @@ class StoreCareerRequest extends FormRequest
     {
         return [
             'position' => 'required',
-            'job_desk' => ['required', 'max:500'],
+            'job_desk' => ['required'],
             'requirements' => ['required']
         ];
     }

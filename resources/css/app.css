@@ -27,11 +27,11 @@
         @apply h-auto transition-transform duration-300 opacity-100;
     }
 
-    ul#menu li span{
+    ul#menu li span.spacer{
         @apply absolute right-0 my-auto h-3 border border-black opacity-75 md:block hidden;
     }
 
-    ul#menu li a::after{
+    ul#menu li a.nav-link::after{
         @apply bg-transparent w-full h-1 mx-auto transition ease-in-out duration-500 block;
     }
 
@@ -41,6 +41,22 @@
 
     ul#menu li.dropdown ul li a::after{
         @apply hidden;
+    }
+
+    .dropdown-item{
+        @apply relative py-2;
+    }
+
+    .dropdown-item span{
+        @apply w-full mx-auto opacity-0 block bg-api-redLighten h-1 absolute bottom-0 inset-x-0 transition-all duration-500
+    }
+
+    .dropdown-item:hover a{
+        @apply text-api-red;
+    }
+
+    .dropdown-item:hover span{
+        @apply opacity-100;
     }
 
     .swiper-pagination .swiper-pagination-bullet{

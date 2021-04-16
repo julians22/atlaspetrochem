@@ -16,54 +16,61 @@
             <div class="hidden sm:block bg-white absolute inset-x-0 top-full sm:relative py-4 sm:py-0" id="menu-wrapper">
                 <ul class="flex flex-col sm:flex-row items-start sm:items-end justify-start font-semibold" id="menu">
                     <li>
-                        <a href="{{ route('frontend.index') }}" class="{{ active_class(Route::is('frontend.index'), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="{{ route('frontend.index') }}" class="{{ active_class(Route::is('frontend.index'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             HOME
                         </a>
-                        <span></span>
+                        <span class="spacer"></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             COMPANY
                         </a>
-                        <span></span>
+                        <span class="spacer"></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.about') }}" class="{{ active_class(Route::is('frontend.about'), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="{{ route('frontend.about') }}" class="{{ active_class(Route::is('frontend.about'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             ABOUT
                         </a>
-                        <span></span>
+                        <span class="spacer"></span>
                     </li>
-                    <li class="dropdown group">
-                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product'), 'text-api-red', 'hover:text-api-red') }} relative">
+                    <li class="dropdown group relative">
+                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             PRODUCTS
-
-                            <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-40 p-2 border border-api-redLighten text-xs">
-                                <a href="#" class="block w-full">DIVISI AUTOMOTIVE</a>
-                                <div class="block h-px w-full bg-api-redLighten my-2"></div>
-                                <a href="{{ route('frontend.industrial') }}" class="block w-full">DIVISI INDUSTRIAL</a>
-                            </div>
                         </a>
-                        <span></span>
+                        <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-48 p-1 border border-api-redLighten text-xs">
+                            @foreach ($main_categories as $main_category)
+                            <div class="dropdown-item">
+                                <a href="{{ route('frontend.show-categories', ['main_categories' => $main_category->slug]) }}" class="block w-full uppercase">{{ $main_category->name }}</a>
+                                <span></span>
+                            </div>
+                            @endforeach
+                        </div>
+                        <span class="spacer"></span>
                     </li>
-                    <li class="group dropdown flex items-center flex-col">
-                        <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }} relative">
+                    <li class="group dropdown relative">
+                        <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             NEWS & GALERY
-                            <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-40 p-2 border border-api-redLighten text-xs">
-                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full">NEWS</a>
-                                <div class="block h-px w-full bg-api-redLighten my-2"></div>
-                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full">GALERY</a>
-                            </div>
                         </a>
-                        <span></span>
+                        <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-32 p-2 border border-api-redLighten text-xs">
+                            <div class="dropdown-item">
+                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase">NEWS</a>
+                                <span></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full uppercase">GALERY</a>
+                                <span></span>
+                            </div>
+                        </div>
+                        <span class="spacer"></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.career') }}" class="{{ active_class((Route::is('frontend.career') || Route::is('frontend.career.show')), 'text-api-red', 'hover:text-api-red') }}">
+                        <a href="{{ route('frontend.career') }}" class="{{ active_class((Route::is('frontend.career') || Route::is('frontend.career.show')), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             CAREERS
                         </a>
-                        <span></span>
+                        <span class="spacer"></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.contact') }}" class="{{ active_class(Route::is('frontend.contact'), 'text-api-red', 'hover:text-api-red') }}">CONTACT US</a>
+                        <a href="{{ route('frontend.contact') }}" class="{{ active_class(Route::is('frontend.contact'), 'text-api-red', 'hover:text-api-red') }} nav-link">CONTACT US</a>
                     </li>
                 </ul>
             </div>

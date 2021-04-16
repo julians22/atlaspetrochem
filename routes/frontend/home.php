@@ -20,8 +20,12 @@ Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
-Route::get('/industrial', [ProductController::class, 'industrial'])->name('industrial');
-Route::get('/{division?}/{category}/products', [ProductController::class, 'list'])->name('product.list');
+
+Route::group(['prefix' => 'products'], function (){
+    Route::get('/{main_categories}', [ProductController::class, 'showCategories'])->name('show-categories');
+
+    Route::get('/{main_categories}/{category}/view', [ProductController::class, 'list'])->name('product.list');
+});
 
 Route::group(['prefix' => 'article', 'as' => 'article.'], function (){
     Route::get('news', [NewsController::class, 'index'])->name('news.index');

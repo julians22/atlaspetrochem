@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 class Category extends Model
 {
     use HasSlug;
+
+    protected $fillable = [
+        'name', 'img_thumb', 'main_category_id', 'description', 'slug'
+    ];
 
     /**
      * Get the options for generating the slug.
@@ -20,10 +25,6 @@ class Category extends Model
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug');
     }
-
-    protected $fillable = [
-        'name', 'img_thumb', 'description', 'slug'
-    ];
 
     public function scopeIndustrial($query, $industrial = 'industrial')
     {
@@ -43,5 +44,15 @@ class Category extends Model
     public function products(): HasMany
     {
         return $this->hasMany(Product::class);
+    }
+
+    /**
+     * Get the mian_category associated with the Category
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function main_category(): HasOne
+    {
+        return $this->hasOne(MainCategory::class, 'id', 'main_category_id');
     }
 }

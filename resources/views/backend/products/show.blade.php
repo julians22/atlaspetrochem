@@ -25,7 +25,7 @@
                     </tr>
                     <tr>
                         <th>Category</th>
-                        <td class="text-uppercase">{{ $product->category->name }} || {{ $product->category->division }}</td>
+                        <td class="text-uppercase">{{ $product->category->name }} || {{ $product->category->main_category->name }}</td>
                     </tr>
                     <tr>
                         <th>Description</th>

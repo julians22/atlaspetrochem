@@ -14,24 +14,35 @@
             <img src="{{ asset('img/frontend/oil_bottle.png') }}" class="md:w-3/4 w-4/5 mx-auto" alt="lubricant.png">
 
             <div class="flex flex-row w-full absolute top-5 inset-x-0 bottom-0 overflow-hidden">
-                <div class="w-1/2 h-full group">
-                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full -left-full group-hover:left-0 relative animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
-                        <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 ml-auto px-4 mb-4 relative">
-                            <h4 class="text-xl font-bold tracking-widest text-white">DIVISI AUTOMOTIVE</h4>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
-                            <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
+                @foreach ($main_categories as $main_category)
+                    @if ($loop->first)
+                        <div class="w-1/2 h-full group">
+                            <div class="bg-api-redDarken flex bg-opacity-50 w-full h-full -left-full group-hover:left-0 relative animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
+                                <div class="py-10 w-1/2 relative text-center">
+                                    <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                </div>
+                                <div class="w-1/2 p-10">
+                                    <img src="{{ $main_category->image_location ?: asset('img/frontend/automotive_products.png') }}" alt="" class="w-full">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="w-1/2 h-full group">
-                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full -right-full group-hover:right-0 relative animate__animated animate__slideInRight transition-all duration-1000 ease-in-out">
-                        <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 mr-auto px-4 mb-4 relative">
-                            <h4 class="text-xl font-bold tracking-widest text-white">DIVISI INDUSTRIAL</h4>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
-                            <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
+                    @endif
+
+                    @if ($loop->last)
+                        <div class="w-1/2 h-full group">
+                            <div class="bg-api-redDarken flex bg-opacity-50 w-full h-full -right-full group-hover:right-0 relative animate__animated animate__slideInRight transition-all duration-1000 ease-in-out">
+                                <div class="w-1/2 p-10">
+                                    <img src="{{ $main_category->image_location ?: asset('img/frontend/industrial_products.png') }}" alt="" class="w-full">
+                                </div>
+                                <div class="py-10 w-1/2 relative text-center">
+                                    <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
@@ -42,43 +53,22 @@
             @foreach ($abouts as $about)
                 <a href="{{ route('frontend.about') }}#about-{{$loop->iteration}}" class="block h-300px sm:h-auto">
                     <div class="bg-no-repeat bg-top bg-cover group h-full" style="background-image: url('{{ $about->thumb_location ?: asset('img/frontend/section_img_'.$loop->iteration.'.jpg') }}')">
-                        <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
-                            <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-items-center flex-wrap">
-                                <div class="opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400">
+                        <div class="h-full w-full relative bg-black bg-opacity-50 group-hover:bg-opacity-80 transition-colors duration-500">
+                            <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-items-center flex-wrap overflow-hidden">
+                                <div class="opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400 relative p-4">
                                     <h4 class="text-xl font-bold uppercase mx-auto">
                                     {{ $about->title }}
                                     </h4>
                                     <blockquote class="text-base mt-4">
                                         {!! $about->thumb_text !!}
                                     </blockquote>
+                                    <div class="inset-0 border-2 border-white bg-transparent swirl-in-bck group-hover:block hidden absolute h-full w-full"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
             @endforeach
-            {{-- @for ($i = 1; $i <= 3; $i++)
-                <div class="bg-no-repeat bg-top bg-cover group h-300px sm:h-auto" style="background-image: url('{{ asset('img/frontend/section_img_'.$i.'.jpg') }}')">
-                    <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
-                        <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-items-center flex-wrap">
-                            <div class="opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400">
-                                <h4 class="text-xl font-bold uppercase mx-auto">
-                                @if ($i == 1)
-                                    Sejarah Perusahaan
-                                @elseif($i == 2)
-                                    Culture Perusahaan
-                                    @elseif($i == 3)
-                                    System Perusahaan
-                                @endif
-                                </h4>
-                                <blockquote class="text-base mt-4">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, impedit.
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endfor --}}
         </div>
     </section>
 
@@ -106,7 +96,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($newses as $news)
                 <div class="bg-no-repeat bg-center bg-cover group h-300px sm:h-auto" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
-                    <div class="h-full w-full relative bg-black bg-opacity-70 group-hover:bg-opacity-80 transition-colors duration-500">
+                    <div class="h-full w-full relative bg-black bg-opacity-50 group-hover:bg-opacity-80 transition-colors duration-500">
                         <div class="sm:mt-auto mb-auto absolute inset-x-0 top-0 sm:bottom-0 sm:top-auto block transform -skew-y-3 text-white px-8 text-center text-lg font-semibold pt-8 sm:pb-8">
                             <h4 class="text-xl font-bold text-yellow-400 uppercase">{{ $news->title }}</h4>
                             <span class="h-1 w-16 bg-yellow-400 mx-auto block"></span>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Composers;
 
+use App\Models\MainCategory;
 use App\Models\WebSetting;
 use Illuminate\View\View;
 
@@ -19,5 +20,6 @@ class GlobalComposer
     {
         $view->with('logged_in_user', auth()->user());
         $view->with('setting', new WebSetting());
+        $view->with('main_categories', MainCategory::all());
     }
 }

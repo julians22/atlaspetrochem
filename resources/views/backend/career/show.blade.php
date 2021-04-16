@@ -30,7 +30,7 @@
                     </tr>
                     <tr>
                         <th>Job Desk</th>
-                        <td>{{ $career->job_desk }}</td>
+                        <td>{!! $career->job_desk !!}</td>
                     </tr>
                     <tr>
                         <th>Requirements</th>

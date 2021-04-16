@@ -23,7 +23,7 @@
 
                     <div class="w-full">
                         <h4 class="text-2xl font-semibold leading-none mb-2">{{ $career->position }}</h4>
-                        <div class="mb-2">{{ $career->job_desk }}</div>
+                        <div class="mb-2 prose max-w-full">{!! $career->job_desk !!}</div>
                         <a href="{{ route('frontend.career.show', ['career_id'=> $career->uuid]) }}" class="px-4 py-1 rounded-md shadow-3xl bg-api-red hover:bg-api-redDarken transition-colors duration-300 text-white font-semibold">Apply Now>></a>
                     </div>
                 </div>

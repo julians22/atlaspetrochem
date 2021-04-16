@@ -26,7 +26,7 @@ class BannerSliderController extends Controller
      */
     public function index(ManageUserRequest $request)
     {
-        return view('backend.slider.banner.index')->withBanners($this->bannerRepository->getActivePaginated());
+        return view('backend.slider.banner.index')->withBanners($this->bannerRepository->orderBy('updated_at', 'desc')->getActivePaginated(5, 'sort', 'asc'));
     }
 
     /**
@@ -94,8 +94,11 @@ class BannerSliderController extends Controller
      * @param  \App\Models\Sliders\Banner  $Banner
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Banner $Banner)
+    public function destroy(Banner $banner)
     {
-        //
+        $banner->sort = 0;
+        $banner->save();
+        $banner->delete();
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Deleted');
     }
 }

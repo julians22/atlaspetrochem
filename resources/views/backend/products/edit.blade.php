@@ -34,7 +34,7 @@
                                 <div class="col-md-10">
                                     <select name="category_id" id="category" class="form-control">
                                         @foreach ($categories as $category)
-                                            <option {{ $product->category_id == $category->id ? '' : 'selected'  }} value="{{ $category->id }}">{{ $category->name }} || {{ $category->division }}</option>
+                                            <option {{ $product->category_id == $category->id ? 'selected' : ''  }} value="{{ $category->id }}">{{ $category->name }} || {{ $category->main_category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div><!--col-->
@@ -46,6 +46,16 @@
                                     {{ html()->textarea('description')->class('form-control pb-1')->attributes(['maxlength' =>  250, 'rows' => 4])->placeholder('Description') }}
                                 </div>
                         </div>
+
+                        <div class="form-group row">
+                            {{ html()->label('Product Url')->class('col-md-2 form-control-label')->for('link') }}
+                                <div class="col-md-10">
+                                    {{ html()->text('link')
+                                        ->class('form-control')
+                                        ->placeholder('Product Url')
+                                        ->attribute('maxlength', 191) }}
+                                </div><!--col-->
+                        </div><!-- form-group row-->
 
                     </div>
                 </div>

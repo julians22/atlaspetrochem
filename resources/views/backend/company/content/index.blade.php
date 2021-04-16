@@ -34,7 +34,7 @@
                                                     @foreach (json_decode($content->value) as $contentValue)
                                                     <div class="form-group">
                                                         <label for="{{ $content->key.'-'.$loop->iteration }}">{{ $content->key.' '.$loop->iteration }} :</label>
-                                                        <textarea name="workplace[]" id="{{ $content->key.'-'.$loop->iteration }}" class="form-control"> {{ $contentValue }} </textarea>
+                                                        <textarea name="workplace[]" id="{{ $content->key.'-'.$loop->iteration }}" class="editor-sumnote"> {{ $contentValue }} </textarea>
                                                     </div>
                                                     @endforeach
                                                 @break

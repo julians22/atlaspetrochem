@@ -1,7 +1,7 @@
 @extends('backend.layouts.app')
 
 {{-- @section('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.create')) --}}
-@section('title', 'Category Management | View Category')
+@section('title', 'Sub Category Management | View Sub Category')
 
 @section('content')
 
@@ -10,8 +10,8 @@
         <div class="row">
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
-                    Category Management
-                    <small class="text-muted">View Category</small>
+                    Sub Category Management
+                    <small class="text-muted">View Sub Category</small>
                 </h4>
             </div>
         </div>

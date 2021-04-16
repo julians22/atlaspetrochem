@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.products.create')->with('categories', Category::all());;
     }
 
     /**
@@ -38,7 +38,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'category_id' => $request->category_id,
+            'link' => $request->link
+        ]);
+        return redirect()->route('admin.product.index')->withFlashSuccess('Product Successdully Created');
     }
 
     /**
@@ -75,7 +81,8 @@ class ProductController extends Controller
         $product->update([
             'name' => $request->name,
             'description' => $request->description,
-            'category_id' => $request->category_id
+            'category_id' => $request->category_id,
+            'link' => $request->link
         ]);
 
         return redirect()->route('admin.product.index')->withSuccess('Product success update');

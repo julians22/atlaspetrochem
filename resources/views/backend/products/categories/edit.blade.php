@@ -10,8 +10,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            Category Management
-                            <small class="text-muted">Edit Category</small>
+                            Sub Category Management
+                            <small class="text-muted">Edit Sub Category</small>
                         </h4>
                     </div><!--col-->
                 </div><!-- row -->
@@ -35,6 +35,17 @@
                                     {{ html()->textarea('description')->class('form-control pb-1')->attributes(['maxlength' =>  250, 'rows' => 4])->placeholder('Description') }}
                                     <small class="float-right text-muted text-sm"><span id="total_text"></span> / 60 text</small>
                                 </div>
+                        </div>
+
+                        <div class="form-group row">
+                            {{ html()->label('Main Category')->class('col-md-2 form-control-label')->for('main_category') }}
+                            <div class="col-md-10">
+                                <select name="main_category" id="main_category" class="form-control">
+                                    @foreach ($main_categories as $main_cat)
+                                        {{ html()->option($main_cat->name, $main_cat->id, $category->main_category->id === $main_cat->id) }}
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group row">

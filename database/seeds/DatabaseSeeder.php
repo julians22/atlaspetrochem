@@ -31,9 +31,9 @@ class DatabaseSeeder extends Seeder
             'faqs',
             // 'categories',
             // 'products',
-            'about_contents',
-            'company_contents',
-            'web_settings'
+            // 'about_contents',
+            // 'company_contents',
+            // 'web_settings'
         ]);
 
         // $news = factory(News::class, 5)->create();
@@ -51,11 +51,13 @@ class DatabaseSeeder extends Seeder
         //                         });
 
         // $this->call(CareerTableSeeder::class);
-        $this->call(AboutContentSeeder::class);
-        $this->call(CompanyContentSeeder::class);
-        $this->call(WebSettingSeeder::class);
+        // $this->call(AboutContentSeeder::class);
+        // $this->call(CompanyContentSeeder::class);
+        // $this->call(WebSettingSeeder::class);
 
         // $this->call(AuthTableSeeder::class);
+
+        $this->call(MainCategorySeeder::class);
 
         Model::reguard();
     }

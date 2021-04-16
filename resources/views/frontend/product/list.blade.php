@@ -16,7 +16,9 @@
             <div class="grid grid-cols-1">
                 @foreach ($category->products as $product)
                     <div class="w-full mb-2">
-                        <h4 class="text-api-red text-2xl font-bold underline">{{ $loop->iteration }}. {{ $product->name }}</h4>
+                        <a href="{{ $product->link ?: '#' }}">
+                            <h4 class="text-api-red text-2xl font-bold underline">{{ $loop->iteration }}. {{ $product->name }}</h4>
+                        </a>
                         <div class="prose">
                             {!! $product->description !!}
                         </div>

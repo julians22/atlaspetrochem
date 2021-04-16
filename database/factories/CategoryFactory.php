@@ -9,6 +9,6 @@ $factory->define(Category::class, function (Faker $faker) {
     return [
         'name' => $faker->catchPhrase,
         'description' => $faker->sentence(),
-        'division' => 'industrial'
+        'main_category_id' => 1
     ];
 });

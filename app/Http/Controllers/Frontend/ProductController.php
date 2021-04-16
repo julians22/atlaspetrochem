@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\MainCategory;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,9 +14,10 @@ class ProductController extends Controller
         return view('frontend.product.index');
     }
 
-    public function industrial()
+    public function showCategories($slug)
     {
-        return view('frontend.product.categories')->withCategoriesIndustrial(Category::industrial()->get());
+        $main_categories = MainCategory::where('slug', $slug)->first();
+        return view('frontend.product.categories')->withMainCategories($main_categories);
     }
 
     public function list($division = null, $category)

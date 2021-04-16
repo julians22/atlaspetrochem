@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\Faq\StoreFaqRequest;
-use App\Models\Faq;
+use App\Models\FAQ as Faq;
 use App\Services\Backend\FaqServices;
 use Illuminate\Http\Request;
 

@@ -7,6 +7,7 @@ use App\Http\Controllers\Backend\Company\ContentController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\FaqController;
 use App\Http\Controllers\Backend\Products\CategoryController;
+use App\Http\Controllers\Backend\Products\MainCategoryController;
 use App\Http\Controllers\Backend\Products\ProductController;
 use App\Http\Controllers\Backend\Sliders\BannerSliderController;
 use App\Http\Controllers\Backend\Sliders\CompanySliderController;
@@ -25,6 +26,7 @@ Route::group(['prefix' => 'slider', 'as' => 'slider.'], function (){
             Route::group(['prefix' => '{banner}'], function (){
                 Route::get('edit', [BannerSliderController::class, 'edit'])->name('banner.edit');
                 Route::patch('/', [BannerSliderController::class, 'update'])->name('banner.update');
+                Route::delete('/', [BannerSliderController::class, 'destroy'])->name('banner.destroy');
             });
     });
 
@@ -103,6 +105,8 @@ Route::group(['prefix' => 'faq'], function (){
 
 Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
     Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/create', [ProductController::class, 'create'])->name('create');
+    Route::post('/', [ProductController::class, 'store'])->name('store');
     Route::group(['prefix' => '{product}'], function(){
         Route::get('/show', [ProductController::class, 'show'])->name('show');
         Route::get('/edit', [ProductController::class, 'edit'])->name('edit');
@@ -111,11 +115,23 @@ Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
     });
     Route::group(['prefix' => 'category', 'as' => 'category.'], function (){
         Route::get('/', [CategoryController::class, 'index'])->name('index');
+        Route::get('/create', [CategoryController::class, 'create'])->name('create');
+        Route::post('/', [CategoryController::class, 'store'])->name('store');
         Route::group(['prefix' => '{category}'], function (){
             Route::get('/show', [CategoryController::class, 'show'])->name('show');
             Route::get('/edit', [CategoryController::class, 'edit'])->name('edit');
             Route::patch('/', [CategoryController::class, 'update'])->name('update');
             Route::delete('/', [CategoryController::class, 'destroy'])->name('destroy');
+        });
+    });
+
+    Route::group(['prefix' => 'main-category', 'as' => 'main-category.'], function (){
+        Route::get('/', [MainCategoryController::class, 'index'])->name('index');
+        Route::group(['prefix' => '{category}'], function (){
+            Route::get('/show', [MainCategoryController::class, 'show'])->name('show');
+            Route::get('/edit', [MainCategoryController::class, 'edit'])->name('edit');
+            Route::patch('/', [MainCategoryController::class, 'update'])->name('update');
+            // Route::delete('/', [CategoryController::class, 'destroy'])->name('destroy');
         });
     });
 });

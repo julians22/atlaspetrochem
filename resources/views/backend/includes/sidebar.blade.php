@@ -110,7 +110,14 @@
                         <a href="{{ route('admin.product.category.index') }}" class="nav-link {{
                             active_class(Route::is('admin/product/category*'))
                             }}">
-                            All Categories
+                            All Sub Categories
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.product.main-category.index') }}" class="nav-link {{
+                            active_class(Route::is('admin/product/main-category*'))
+                            }}">
+                            All Main Categories
                         </a>
                     </li>
                 </ul>

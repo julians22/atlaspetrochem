@@ -9,25 +9,36 @@
         <div class="w-full mx-auto relative mt-4">
             <img src="{{ asset('img/frontend/oil_bottle.png') }}" class="w-3/4 mx-auto" alt="lubricant.png">
 
-            <div class="flex flex-row w-full absolute top-0 inset-x-0 bottom-0 overflow-hidden">
-                <div class="w-1/2 h-full group">
-                    <div class="pr-24 bg-black bg-opacity-50 w-full h-full -left-full group-hover:left-0 animate__animated animate__slideInLeft relative transition-all duration-1000 ease-in-out">
-                        <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 ml-auto px-4 mb-4 relative">
-                            <h4 class="text-xl font-bold tracking-widest text-white">DIVISI AUTOMOTIVE</h4>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
-                            <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
+            <div class="flex flex-row w-full absolute top-5 inset-x-0 bottom-0 overflow-hidden">
+                @foreach ($main_categories as $main_category)
+                    @if ($loop->first)
+                        <div class="w-1/2 h-full group">
+                            <div class="bg-api-redDarken flex bg-opacity-50 w-full h-full -left-full group-hover:left-0 relative animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
+                                <div class="py-10 w-1/2 relative text-center">
+                                    <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                </div>
+                                <div class="w-1/2 p-10">
+                                    <img src="{{ $main_category->image_location ?: asset('img/frontend/automotive_products.png') }}" alt="" class="w-full">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="w-1/2 h-full group">
-                    <div class="pl-24 bg-black bg-opacity-50 w-full h-full -right-full group-hover:right-0 animate__animated animate__slideInRight relative transition-all duration-1000 ease-in-out">
-                        <div class="bg-api-redLighten bg-opacity-50 pt-20 pb-4 w-3/5 mr-auto px-4 mb-4 relative">
-                            <h4 class="text-xl font-bold tracking-widest text-white">DIVISI INDUSTRIAL</h4>
-                            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus temporibus doloremque voluptate officia, ratione quia ipsum blanditiis molestias architecto?</p>
-                            <a href="{{ route('frontend.industrial') }}" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm absolute -bottom-10">View Galery >></a>
+                    @endif
+
+                    @if ($loop->last)
+                        <div class="w-1/2 h-full group">
+                            <div class="bg-api-redDarken flex bg-opacity-50 w-full h-full -right-full group-hover:right-0 relative animate__animated animate__slideInRight transition-all duration-1000 ease-in-out">
+                                <div class="w-1/2 p-10">
+                                    <img src="{{ $main_category->image_location ?: asset('img/frontend/industrial_products.png') }}" alt="" class="w-full">
+                                </div>
+                                <div class="py-10 w-1/2 relative text-center">
+                                    <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
             </div>
         </div>
     </section>
