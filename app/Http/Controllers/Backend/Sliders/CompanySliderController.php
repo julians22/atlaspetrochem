@@ -37,7 +37,10 @@ class CompanySliderController extends Controller
      */
     public function store(StoreCompanyRequest $request)
     {
-        CompanyBanner::create($request->only('image_location', 'active'));
+        CompanyBanner::create([
+            'image_location' => $request->image_location,
+            'active' => $request->has('active') ?: false
+        ]);
         return redirect()->route('admin.slider.company')->withFlashSuccess('Slider company successfully created');
     }
 

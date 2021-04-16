@@ -14,8 +14,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            Slider Company Management
-                            <small class="text-muted">Create Slider Company</small>
+                            Slider Team Management
+                            <small class="text-muted">Create Slider Team</small>
                         </h4>
                     </div><!--col-->
                 </div><!-- row -->
