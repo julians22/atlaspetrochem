@@ -61,7 +61,7 @@
                             {{ html()->label('Featured Image Location')->class('col-md-2 form-control-label')->for('featured_image_location') }}
                             <div class="col-md-10">
                                 <div class="input-group">
-                                    {{ html()->text('featured_image_location')->id('featuredImageLocation')->class('form-control')->placeholder('Thumbnail Location')->readonly() }}
+                                    {{ html()->text('featured_image_location')->id('featuredImageLocation')->class('form-control')->placeholder('Image Location')->readonly() }}
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button" id="lfm-2" data-input="featuredImageLocation">Select Image</button>
                                     </div>
