@@ -51,7 +51,7 @@
                         <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             NEWS & GALERY
                         </a>
-                        <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-32 p-2 border border-api-redLighten text-xs">
+                        <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-32 p-1 border border-api-redLighten text-xs">
                             <div class="dropdown-item">
                                 <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase">NEWS</a>
                                 <span></span>
