@@ -10,6 +10,6 @@ class AboutController extends Controller
 {
     public function index()
     {
-        return view('frontend.about.index', ['abouts' => AboutContent::all()]);
+        return view('frontend.about.index', ['abouts' => AboutContent::orderBy('key', 'asc')->get()]);
     }
 }
