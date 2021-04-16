@@ -66,7 +66,7 @@
                                         <button class="btn btn-primary" type="button" id="lfm-2" data-input="featuredImageLocation">Select Image</button>
                                     </div>
                                 </div>
-                                <small class="text-muted">Recommended size 450 x 500 pixels, max file size 5mb</small>
+                                <small class="text-muted">Recommended size 900 x 500 pixels, max file size 5mb</small>
                             </div>
                         </div>
 
@@ -93,7 +93,7 @@
         <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 
         <script>
-            
+
             $(document).ready(function () {
                 $('#lfm').filemanager('image');
                 $('#lfm-2').filemanager('image');
