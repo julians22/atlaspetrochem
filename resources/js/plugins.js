@@ -192,7 +192,18 @@ $(function () {
             type: "bullets",
             clickable: true
         },
+        autoHeight: true,
         navigation: false
+    });
+
+    var companySwiper = new Swiper(".swiper-company", {
+        pagination: {
+            el: ".swiper-pagination",
+            type: "bullets",
+            clickable: true,
+        },
+        autoHeight: true,
+        navigation: false,
     });
 
     $('[data-toggle="tooltip"]').tooltip();
