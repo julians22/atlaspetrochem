@@ -77,15 +77,15 @@
 
             <div class="absolute top-0 right-0 z-20 mt-2 mr-6 hidden md:block">
                 <ul class="flex items-start justify-around">
-                    <li class="mr-4 group">
-                        <a href="#" class="text-sm relative block">
+                    <li class="mr-4" x-data="{open : false}">
+                        <a href="#" class="text-sm relative block link-stores" @click="open = true" :class="{ 'text-api-red': open === true }">
                             <span>(Online Store)</span>
                         </a>
-                        <span class="absolute inset-x-0 w-24 px-2 py-1 top-full rounded-md opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-wrap bg-white shadow-2xl">
-                            <a href="//{{ $setting->config('marketplace blibli')->first()->value }}" target="_blank">
+                        <span class="absolute inset-x-0 w-24 px-2 py-1 top-full rounded-md  transition-all duration-500 flex flex-wrap bg-white shadow-2xl" id="stores-items" x-show="open" @click.away="open = false">
+                            <a href="{{ $setting->config('marketplace blibli')->first()->value }}" target="_blank">
                                 <img src="{{ asset('img/blibli.jpg') }}" alt="" class="w-full">
                             </a>
-                            <a href="//{{ $setting->config('marketplace lazada')->first()->value }}" target="_blank">
+                            <a href="{{ $setting->config('marketplace lazada')->first()->value }}" target="_blank">
                                 <img src="{{ asset('img/lazada.jpg') }}" alt="" class="w-full">
                             </a>
                         </span>

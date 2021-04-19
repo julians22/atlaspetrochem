@@ -27,9 +27,10 @@
                             </div>
                         </div>
                         <div class="w-full sm:w-1/2 px-0 sm:px-4">
-                            <div class="w-full max-h-72 h-screen bg-no-repeat bg-cover bg-top" style="background-image: url('{{ $about->featured_image_location ?: '/img/frontend/background/company_bg.png'}}')">
+                            {{-- <div class="w-full max-h-72 h-screen bg-no-repeat bg-cover bg-top" style="background-image: url('{{ $about->featured_image_location ?: '/img/frontend/background/company_bg.png'}}')">
 
-                            </div>
+                            </div> --}}
+                            <img src="{{ $about->featured_image_location ?: '/img/frontend/background/company_bg.png'}}" alt="" class="w-full">
                         </div>
                     </div>
                 </div>

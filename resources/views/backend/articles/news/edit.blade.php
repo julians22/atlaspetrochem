@@ -36,8 +36,8 @@
                         <div class="form-group row">
                             {{ html()->label('Intro')->class('col-md-2 form-control-label')->for('intro') }}
                                 <div class="col-md-10">
-                                    {{ html()->textarea('intro')->class('form-control pb-1')->attributes(['maxlength' =>  250, 'rows' => 4])->placeholder('Intro') }}
-                                    <small class="float-right text-muted text-sm"><span id="total_text"></span> / 250 text</small>
+                                    {{ html()->textarea('intro')->class('form-control pb-1')->attributes(['maxlength' =>  300, 'rows' => 4])->placeholder('Intro') }}
+                                    <small class="float-right text-muted text-sm"><span id="total_text"></span> / 300 text</small>
                                 </div>
                         </div>
 
@@ -102,7 +102,7 @@
                 $('#lfmfeaturedImageField').filemanager('image');
 
                 const countTarget = $('textarea#intro');
-                const maxSize = 250;
+                const maxSize = 300;
 
                 $('#total_text').html(countTarget.val().length);
 
@@ -125,7 +125,8 @@
                         ['fontsize', ['fontsize']],
                         ['color', ['color']],
                         ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
+                        ['height', ['height']],
+                        ['codeview']
                     ]
                 });
 
