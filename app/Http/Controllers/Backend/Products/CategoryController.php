@@ -35,9 +35,10 @@ class CategoryController extends Controller
         Category::create([
             'name' => $request->name,
             'description' => $request->description,
-            'main_category_id' => $request->main_category,
+            'main_category_id' => $request->main_category_id,
             'img_thumb' => $request->img_thumb
         ]);
+        return redirect()->route('admin.product.category.index')->withFlashSuccess('Sub Category Success Created');
     }
 
 
@@ -75,7 +76,7 @@ class CategoryController extends Controller
         $category->update([
             'name' => $request->name,
             'description' => $request->description,
-            'main_category_id' => $request->main_category,
+            'main_category_id' => $request->main_category_id,
             'img_thumb' => $request->img_thumb,
         ]);
 

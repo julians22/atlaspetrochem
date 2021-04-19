@@ -40,7 +40,7 @@
                         <div class="form-group row">
                             {{ html()->label('Main Category')->class('col-md-2 form-control-label')->for('main_category') }}
                             <div class="col-md-10">
-                                <select name="main_category" id="main_category" class="form-control">
+                                <select name="main_category_id" id="main_category_id" class="form-control">
                                     @foreach ($main_categories as $main_cat)
                                         {{ html()->option($main_cat->name, $main_cat->id, $category->main_category->id === $main_cat->id) }}
                                     @endforeach
