@@ -1,4 +1,4 @@
-<footer class="w-full pt-4 md:pt-6 text-white bg-gradient-to-b from-api-red to-api-redDarken">
+<footer class="w-full pt-4 md:pt-6 text-white bg-gradient-to-b from-api-red to-api-redDarken nonprintable">
     <div class="container mx-auto w-3/4 ">
         <div class="flex flex-col md:flex-row w-full">
             <div class="box-1 flex flex-col justify-between w-full md:w-2/5 pr-0 md:pr-10">

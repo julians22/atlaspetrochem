@@ -1,4 +1,4 @@
-<div class="relative" id="nav-wrapper">
+<div class="relative nonprintable" id="nav-wrapper">
     <nav class="fixed top-0 w-full bg-white z-10 animate__animated animate__faster" id="nav">
         <div class="container mx-auto flex flex-row-reverse sm:flex-row justify-between items-center py-4 px-4 sm:px-2 relative">
             <a class="block" href="{{ route('frontend.index') }}">

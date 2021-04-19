@@ -11,3 +11,9 @@
   margin: 0 !important;
   border-radius: 0 !important;
 }
+
+@media print {
+    .nonprintable{
+        display: none;
+    }
+}
