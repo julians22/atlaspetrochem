@@ -1,7 +1,11 @@
 @extends('backend.layouts.app')
 
 {{-- @section('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.create')) --}}
-@section('title', 'Slider Banner Management | Edit Slider Banner')
+@section('title', 'Slider Home Management | Edit Slider Home')
+
+@section('breadcrumb-links')
+    @include('backend.slider.banner.includes.breadcrumb-links')
+@endsection
 
 @section('content')
     {{ html()->modelForm( $banner, 'PATCH', route('admin.slider.banner.update', $banner->id))->class('form-horizontal')->open() }}
@@ -10,8 +14,8 @@
                 <div class="row">
                     <div class="col-sm-5">
                         <h4 class="card-title mb-0">
-                            Slider Banner Management
-                            <small class="text-muted">Edit Slider Banner</small>
+                            Slider Home Management
+                            <small class="text-muted">Edit Slider Home</small>
                         </h4>
                     </div><!--col-->
                 </div><!-- row -->

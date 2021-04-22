@@ -180,21 +180,40 @@ $(function () {
         pagination: {
             el: ".swiper-pagination",
             type: "bullets",
-            clickable: true
+            clickable: true,
         },
         navigation: false,
-        autoHeight: true
+        autoHeight: true,
+        init: false
     });
 
-    var teamSwiper = new Swiper(".swiper-team", {
-        pagination: {
-            el: ".swiper-pagination",
-            type: "bullets",
-            clickable: true
-        },
-        autoHeight: true,
-        navigation: false
+    videoSlide.on("init", function () {
+        var currentSlides = videoSlide.slides[videoSlide.realIndex];
+        setVideoTitle($(currentSlides).data("title"));  
     });
+
+    videoSlide.on('transitionEnd', function () {
+        var currentSlides = videoSlide.slides[videoSlide.realIndex];
+        setVideoTitle($(currentSlides).data("title"));
+    });
+
+    videoSlide.init();
+    
+    function setVideoTitle(text) {
+        $('#video-title').text(text);
+    }
+
+    if ($(".swiper-team").length > 0) {
+        var teamSwiper = new Swiper(".swiper-team", {
+            pagination: {
+                el: ".swiper-pagination",
+                type: "bullets",
+                clickable: true
+            },
+            autoHeight: true,
+            navigation: false
+        });
+    }
 
     var companySwiper = new Swiper(".swiper-company", {
         pagination: {

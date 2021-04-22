@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Backend\About\ContentController as AboutContentController;
+use App\Http\Controllers\Backend\Articles\GaleryController;
 use App\Http\Controllers\Backend\Articles\NewsController;
 use App\Http\Controllers\Backend\CareerController;
 use App\Http\Controllers\Backend\Company\ContentController;
@@ -23,10 +24,13 @@ Route::group(['prefix' => 'slider', 'as' => 'slider.'], function (){
         Route::get('/', [BannerSliderController::class, 'index'])->name('banner');
         Route::get('create', [BannerSliderController::class, 'create'])->name('banner.create');
         Route::post('/', [BannerSliderController::class, 'store'])->name('banner.store');
+        Route::get('deleted', [BannerSliderController::class, 'get_deleted'])->name('banner.deleted');
             Route::group(['prefix' => '{banner}'], function (){
                 Route::get('edit', [BannerSliderController::class, 'edit'])->name('banner.edit');
                 Route::patch('/', [BannerSliderController::class, 'update'])->name('banner.update');
                 Route::delete('/', [BannerSliderController::class, 'destroy'])->name('banner.destroy');
+                Route::get('restore', [BannerSliderController::class, 'restore'])->name('banner.restore');
+                Route::get('delete', [BannerSliderController::class, 'delete'])->name('banner.delete-permanently');
             });
     });
 
@@ -74,7 +78,23 @@ Route::group(['prefix' => 'articles', 'as' => 'articles.'], function (){
             Route::get('restore', [NewsController::class, 'restore'])->name('news.restore');
         });
     });
+
+    Route::prefix('galeries')->group(function () {
+        Route::get('/', [GaleryController::class, 'index'])->name('galery');
+        Route::get('/deleted', [GaleryController::class, 'getDeleted'])->name('galery.deleted');
+        Route::get('/create', [GaleryController::class, 'create'])->name('galery.create');
+        Route::post('/', [GaleryController::class, 'store'])->name('galery.store');
+        Route::group(['prefix' => '{galery}'], function () {
+            Route::get('edit', [GaleryController::class, 'edit'])->name('galery.edit');
+            Route::patch('/', [GaleryController::class, 'update'])->name('galery.update');
+            Route::get('show', [GaleryController::class, 'show'])->name('galery.show');
+            Route::delete('/', [GaleryController::class, 'destroy'])->name('galery.destroy');
+            Route::get('delete', [GaleryController::class, 'delete'])->name('galery.delete-permanently');
+            Route::get('restore', [GaleryController::class, 'restore'])->name('galery.restore');
+        });
+    });
 });
+
 
 Route::group(['prefix' => 'career'], function () {
     Route::get('/', [CareerController::class, 'index'])->name('career');

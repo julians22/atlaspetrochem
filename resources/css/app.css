@@ -78,4 +78,12 @@
     .form-group label .mandatory{
         @apply text-api-red;
     }
+
+    #video-galery .video-js:hover .vjs-big-play-button, .video-js .vjs-big-play-button:focus{
+        @apply bg-opacity-100;
+    }
+
+    #video-galery .video-js .vjs-big-play-button{
+        @apply inset-x-0 inset-y-1/2 mx-auto text-white text-xl bg-api-redLighten bg-opacity-20;
+    }
 }

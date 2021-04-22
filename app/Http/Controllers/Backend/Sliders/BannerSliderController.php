@@ -49,18 +49,7 @@ class BannerSliderController extends Controller
     {
         $this->bannerRepository->create($request->only('title', 'description', 'image_location', 'overlay_level', 'linked_to'), $request->active ?: 0, $request->linked ?: 0);
 
-        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Created');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Sliders\Banner  $Banner
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Banner $Banner)
-    {
-        //
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Home Success Created');
     }
 
     /**
@@ -85,7 +74,7 @@ class BannerSliderController extends Controller
     {
         $this->bannerRepository->update($banner, $request->only('title', 'description', 'image_location', 'overlay_level', 'linked_location'), $request->active ?: 0, $request->linked ?: 0);
 
-        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Updated');
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Home Success Updated');
     }
 
     /**
@@ -99,6 +88,26 @@ class BannerSliderController extends Controller
         $banner->sort = 0;
         $banner->save();
         $banner->delete();
-        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Banner Success Deleted');
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Home Success Deleted');
+    }
+
+    public function get_deleted()
+    {
+        return view('backend.slider.banner.deleted', ['banners' => Banner::onlyTrashed()->paginate(10)]);
+    }
+
+    public function restore($banner)
+    {
+        $banner = Banner::withTrashed()->find($banner);
+        $banner->restore();
+
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Home successfully restored');
+    }
+
+    public function delete($banner)
+    {
+        $banner = Banner::withTrashed()->find($banner);
+        $banner->forceDelete();
+        return redirect()->route('admin.slider.banner')->withFlashSuccess('Slider Home successfully deleted');
     }
 }

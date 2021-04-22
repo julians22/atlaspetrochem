@@ -60,6 +60,8 @@ return [
                 'image/svg+xml',
                 'application/pdf',
                 'text/plain',
+                'video/mp4',
+                'video/mpeg'
             ],
         ],
         'image' => [
@@ -96,7 +98,7 @@ return [
 
     'rename_file'              => false,
 
-    'rename_duplicates'        => false,
+    'rename_duplicates'        => true,
 
     'alphanumeric_filename'    => false,
 

@@ -10,6 +10,8 @@ class GaleryController extends Controller
 {
     public function index()
     {
-        return view('frontend.article.galery.index')->withGaleries(Galery::all());
+        return view('frontend.article.galery.index')
+            ->withPictures(Galery::type('picture')->get())
+            ->withVideos(Galery::type('video')->get());
     }
 }

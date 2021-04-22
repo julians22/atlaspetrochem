@@ -3,6 +3,10 @@
 {{-- @section('title', __('labels.backend.access.users.management') . ' | ' . __('labels.backend.access.users.create')) --}}
 @section('title', 'Slider Banner Management | Create Slider Banner')
 
+@section('breadcrumb-links')
+    @include('backend.slider.banner.includes.breadcrumb-links')
+@endsection
+
 @section('content')
     {{ html()->form('POST', route('admin.slider.banner.store'))->class('form-horizontal')->open() }}
         <div class="card">

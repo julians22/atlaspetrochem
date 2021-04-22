@@ -14,7 +14,7 @@ class Galery extends Model
     public $table = 'galeries';
 
     protected $fillable = [
-        'title', 'thumbnail_location', 'image_location', 'video_url'
+        'title', 'thumbnail_location', 'image_location', 'video_url', 'type', 'youtube'
     ];
 
     public function getSlugOptions(): SlugOptions
@@ -22,5 +22,10 @@ class Galery extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
+    }
+
+    public function scopeType($query, $type = 'picture')
+    {
+        return $query->where('type', $type);
     }
 }

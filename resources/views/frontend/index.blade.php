@@ -2,9 +2,21 @@
 
 @section('title', app_name() . ' | ' . __('navs.general.home'))
 
+@push('after-styles')
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet"/>
+@endpush
+@push('before-scripts')
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+
+    <script>
+            videojs(document.querySelector('.video-js'))
+    </script>
+@endpush
+
 @section('banner')
     @include('frontend.includes.banner')
 @endsection
+
 
 @section('content')
     <section class="py-6" data-aos="fade-up" data-aos-duration="2000">
@@ -96,7 +108,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($newses as $news)
                 <div class="bg-no-repeat bg-center bg-cover group h-300px sm:h-auto" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
-                    <div class="h-full w-full relative bg-black bg-opacity-50 group-hover:bg-opacity-80 transition-colors duration-500">
+                    <div class="h-full w-full relative bg-black bg-opacity-20 group-hover:bg-opacity-80 transition-colors duration-500">
                         <div class="sm:mt-auto mb-auto absolute inset-x-0 top-0 sm:bottom-0 sm:top-auto block transform -skew-y-3 text-white px-8 text-center text-lg font-semibold pt-8 sm:pb-8">
                             <h4 class="text-xl font-bold text-yellow-400 uppercase">{{ $news->title }}</h4>
                             <span class="h-1 w-16 bg-yellow-400 mx-auto block"></span>
@@ -113,68 +125,36 @@
 
     <section class="py-12 container mx-auto">
         <div class="w-4/5 sm:w-3/4 mx-auto">
-            <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="2000">VIDEO TITLE</span>
+            <span id="video-title" class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="2000">VIDEO TITLE</span>
             <div id="video-frame" class="border-8 border-api-red w-full" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
                 <div class="swiper-container swiper-video">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            <iframe src="https://www.youtube.com/embed/zJ7hUvU-d2Q" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
-                        </div>
-                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            <iframe src="https://www.youtube.com/embed/x2uRvn6SLQ4" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
-                        </div>
-                        <div class="swiper-slide relative" style="width: 800px; height: 400px">
-                            <iframe src="https://www.youtube.com/embed/x2uRvn6SLQ4" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
-                        </div>
+                        @foreach ($videos as $video)
+                            @if ($video->youtube)
+                                <div class="swiper-slide relative" data-title="{{$video->title}}">
+                                    <iframe src="//www.youtube.com/embed/{{$video->video_url}}" style="width: 100%; height: 400px" frameborder="0" allowfullscreen  controls></iframe>
+                                </div>
+                            @else
+                                <div class="swiper-slide relative" data-title="{{$video->title}}">
+                                    <video id="{{ $video->slug }}"
+                                            class="video-js"
+                                            controls
+                                            style="width: 100%; height: 400px"
+                                            preload="auto"
+                                            poster="{{ $video->thumbnail_location ? $video->thumbnail_location : asset('img/frontend/news_img_1.jpg') }}">
+                                        <source src="{{ $video->video_url }}"  type="video/mp4">
+                                    </video>
+                                </div>
+                            @endif
+                        @endforeach
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>
 
             <div class="text-box md:px-14 md:py-10 text-center" data-aos="fade-up" data-aos-duration="1500">
-                <p class="text-center text-black text-sm font-medium mb-6">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga, alias illo. Illum dolorum harum quidem ratione rerum nemo quasi voluptatum nisi ipsa quod? Deleniti ab a blanditiis provident in molestias dolor ut iste! Sapiente nemo quibusdam officia doloremque, error, ab iste distinctio impedit accusantium labore nobis sint similique iusto, quis voluptates quo a architecto assumenda delectus? Cumque quidem itaque aspernatur!
-                </p>
                 <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm">View Galery >></a>
             </div>
         </div>
     </section>
 @endsection
-
-@push('after-script')
-    <script src="https://www.youtube.com/iframe_api"></script>
-
-        <script>
-            var player;
-            function onYouTubeIframeAPIReady() {
-                player = new YT.Player('player', {
-                height: '800',
-                width: '400',
-                videoId: 'M7lc1UVf-VE',
-                events: {
-                    'onReady': onPlayerReady,
-                    'onStateChange': onPlayerStateChange
-                }
-                });
-            }
-
-            // 4. The API will call this function when the video player is ready.
-            function onPlayerReady(event) {
-                event.target.playVideo();
-            }
-
-            // 5. The API calls this function when the player's state changes.
-            //    The function indicates that when playing a video (state=1),
-            //    the player should play for six seconds and then stop.
-            var done = false;
-            function onPlayerStateChange(event) {
-                if (event.data == YT.PlayerState.PLAYING && !done) {
-                setTimeout(stopVideo, 6000);
-                done = true;
-                }
-            }
-            function stopVideo() {
-                player.stopVideo();
-            }
-        </script>
-@endpush

@@ -28,9 +28,16 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.articles.news') }}" class="nav-link {{
-                            active_class('admin/articles/news*')
+                            active_class(Route::is('admin.articles.news'))
                             }}">
                             News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('admin.articles.galery') }}" class="nav-link {{
+                            active_class(Route::is('admin.articles.galery'))
+                            }}">
+                            Galeries
                         </a>
                     </li>
                 </ul>

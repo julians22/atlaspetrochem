@@ -61,7 +61,7 @@
 
     <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">DISTRIBUTION POINT</h2>
-        <img src="{{ asset('img/frontend/distribution_point.png') }}" alt="distribution_point" class="w-full my-4">
+        <img src="{{ asset('img/frontend/dispoint.jpg') }}" alt="distribution_point" class="w-full my-4">
         {{-- <h5 class="text-2xl font-semibold text-center text-black mb-4 tracking-wider">Head Office</h5>
         <p class="text-center px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorem voluptates sed dolore esse tenetur, quaerat alias ipsa sint maiores quas, modi error, saepe aliquid commodi deleniti ut illo! Aut enim nam totam quo.</p> --}}
     </section>

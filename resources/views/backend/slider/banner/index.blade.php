@@ -1,11 +1,11 @@
 @extends('backend.layouts.app')
 
 {{-- @section('title', app_name() . ' | ' . __('labels.backend.access.users.management')) --}}
-@section('title', app_name() . ' | Slider Banner')
+@section('title', app_name() . ' | Slider Home')
 
-{{-- @section('breadcrumb-links')
-    @include('backend.auth.user.includes.breadcrumb-links')
-@endsection --}}
+@section('breadcrumb-links')
+    @include('backend.slider.banner.includes.breadcrumb-links')
+@endsection
 
 @section('content')
 <div class="card">
@@ -14,7 +14,7 @@
             <div class="col-sm-5">
                 <h4 class="card-title mb-0">
                     {{-- {{ __('labels.backend.access.users.management') }} <small class="text-muted">{{ __('labels.backend.access.users.active') }}</small> --}}
-                    Slider Banner Management <small class="text-muted">Active Banner</small>
+                    Slider Home Management <small class="text-muted">Active Slider</small>
                 </h4>
             </div><!--col-->
 
