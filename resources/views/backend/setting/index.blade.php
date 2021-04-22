@@ -1,6 +1,6 @@
 @extends('backend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('Company Content Management'))
+@section('title', app_name() . ' | ' . __('Website Setting'))
 
 @section('content')
 {{ html()->form('PATCH', route('admin.setting.update-bulk'))->open() }}

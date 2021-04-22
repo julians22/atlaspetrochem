@@ -120,6 +120,16 @@ Breadcrumbs::for('admin.setting.index', function ($trail) {
     $trail->push( 'Website Setting', route('admin.setting.index'));
 });
 
+// Banner Per Pages
+Breadcrumbs::for('admin.banner.index', function ($trail){
+    $trail->push('Banner Per Page Management', route('admin.banner.index'));
+});
+
+Breadcrumbs::for('admin.banner.edit', function ($trail, $bannerPerPage){
+    $trail->parent('admin.banner.index');
+    $trail->push('Edit Banner Per Page', route('admin.banner.edit', $bannerPerPage));
+});
+
 
 require __DIR__.'/slider.php';
 require __DIR__.'/article.php';

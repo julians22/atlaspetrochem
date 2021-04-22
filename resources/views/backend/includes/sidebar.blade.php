@@ -18,9 +18,9 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/articles*'), 'open')
+                active_class(Route::is('admin.articles*'), 'open')
             }}">
-                <a href="#" class="nav-link nav-dropdown-toggle">
+                <a href="#" class="nav-link nav-dropdown-toggle {{ active_class(Route::is('admin.articles.*'))}}">
                     <i class="nav-icon fas fa-newspaper"></i>
                     Articles Management
                 </a>
@@ -28,14 +28,14 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.articles.news') }}" class="nav-link {{
-                            active_class(Route::is('admin.articles.news'))
+                            active_class(Route::is('admin.articles.news*'))
                             }}">
                             News
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.articles.galery') }}" class="nav-link {{
-                            active_class(Route::is('admin.articles.galery'))
+                            active_class(Route::is('admin.articles.galery*'))
                             }}">
                             Galeries
                         </a>
@@ -89,8 +89,17 @@
             </li>
 
             <li class="nav-item">
+                <a href="{{ route('admin.banner.index') }}" class="nav-link {{
+                    active_class(Route::is('admin.banner*'))
+                }}">
+                    <i class="nav-icon fas fa-image"></i>
+                    Banner Per Pages
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link {{
-                    active_class(Route::is('admin/faq'))
+                    active_class(Route::is('admin.faqs*'))
                 }}" href="{{ route('admin.faqs') }}">
                     <i class="nav-icon far fa-question-circle"></i>
                     Faq's Management

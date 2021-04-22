@@ -34,13 +34,15 @@
                         <span class="spacer"></span>
                     </li>
                     <li class="dropdown group relative">
-                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product'), 'text-api-red', 'hover:text-api-red') }} nav-link">
+                        <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product') || Route::is('frontend.product.list') || Route::is('frontend.show-categories'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             PRODUCTS
                         </a>
                         <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-48 p-1 border border-api-redLighten text-xs">
                             @foreach ($main_categories as $main_category)
                             <div class="dropdown-item">
-                                <a href="{{ route('frontend.show-categories', ['main_categories' => $main_category->slug]) }}" class="block w-full uppercase">{{ $main_category->name }}</a>
+                                <a href="{{ route('frontend.show-categories', ['main_categories' => $main_category->slug]) }}" class="block w-full uppercase
+                                    {{ active_class(Request::segment(2) === $main_category->slug, 'text-api-red', 'hover:text-api-red') }}
+                                    ">{{ $main_category->name }}</a>
                                 <span></span>
                             </div>
                             @endforeach
@@ -48,16 +50,16 @@
                         <span class="spacer"></span>
                     </li>
                     <li class="group dropdown relative">
-                        <a href="#" class="{{ active_class((Route::is('frontend.article.news.index') || (Route::is('frontend.article.galery.index'))), 'text-api-red', 'hover:text-api-red') }} nav-link">
+                        <a href="#" class="{{ active_class(Route::is('frontend.article.news.index') || Route::is('frontend.article.galery.index') || Route::is('frontend.article.news.show'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             NEWS & GALERY
                         </a>
                         <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-32 p-1 border border-api-redLighten text-xs">
                             <div class="dropdown-item">
-                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase">NEWS</a>
+                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.news.index') || Route::is('frontend.article.news.show'), 'text-api-red', 'hover:text-api-red') }}">NEWS</a>
                                 <span></span>
                             </div>
                             <div class="dropdown-item">
-                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full uppercase">GALERY</a>
+                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.galery.index'), 'text-api-red', 'hover:text-api-red') }}">GALERY</a>
                                 <span></span>
                             </div>
                         </div>

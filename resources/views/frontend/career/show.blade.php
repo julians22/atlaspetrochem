@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | Career')
 
 @section('content')
-    <section class="h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('img/frontend/banner/career_banner.jpg') }}');">
+    <section class="h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?: asset('img/frontend/banner/career_banner.jpg') }}');">
 
     </section>
 
@@ -22,7 +22,7 @@
 
                     <div class="w-full">
                         <h4 class="text-2xl font-semibold leading-none mb-2">JOB DESK</h4>
-                        <div class="mb-2">{{ $career->job_desk }}</div>
+                        <div class="mb-2">{!! $career->job_desk !!}</div>
                     </div>
                 </div>
 

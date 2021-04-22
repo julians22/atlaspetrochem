@@ -25,10 +25,11 @@ class DatabaseSeeder extends Seeder
             'ledgers',
             'jobs',
             'sessions',
+            'banner_per_pages',
             // 'news',
             // 'galeries',
             // 'careers',
-            'faqs',
+            // 'faqs',
             // 'categories',
             // 'products',
             // 'about_contents',
@@ -57,7 +58,9 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(AuthTableSeeder::class);
 
-        $this->call(MainCategorySeeder::class);
+        // $this->call(MainCategorySeeder::class);
+
+        $this->call(BannerPerPageSeeder::class);
 
         Model::reguard();
     }

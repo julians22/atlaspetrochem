@@ -3,6 +3,7 @@
 use App\Http\Controllers\Backend\About\ContentController as AboutContentController;
 use App\Http\Controllers\Backend\Articles\GaleryController;
 use App\Http\Controllers\Backend\Articles\NewsController;
+use App\Http\Controllers\Backend\BannerPagesController;
 use App\Http\Controllers\Backend\CareerController;
 use App\Http\Controllers\Backend\Company\ContentController;
 use App\Http\Controllers\Backend\DashboardController;
@@ -60,6 +61,14 @@ Route::group(['prefix' => 'slider', 'as' => 'slider.'], function (){
             Route::get('restore', [TeamSliderController::class, 'restore'])->name('teams.restore');
             Route::get('delete', [TeamSliderController::class, 'delete'])->name('teams.delete-permanently');
         });
+    });
+});
+
+Route::group(['prefix' => 'banner', 'as' => 'banner.'], function (){
+    Route::get('/', [BannerPagesController::class, 'index'])->name('index');
+    Route::group(['prefix' => '{bannerPerPage}'], function (){
+        Route::get('edit', [BannerPagesController::class, 'edit'])->name('edit');
+        Route::patch('/', [BannerPagesController::class, 'update'])->name('update');
     });
 });
 
