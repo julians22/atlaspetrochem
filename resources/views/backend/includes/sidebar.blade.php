@@ -44,7 +44,7 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/career*'), 'open')
+                active_class(Route::is('admin.career*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon fas fa-user-tie"></i>
@@ -54,7 +54,7 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.career') }}" class="nav-link {{
-                            active_class(Route::is('admin/career*'))
+                            active_class(Route::is('admin.career*'))
                             }}">
                             All Careers
                         </a>
@@ -63,7 +63,7 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/content*'), 'open')
+                active_class(Route::is('admin.content*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon fas fa-columns"></i>
@@ -73,14 +73,14 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.content.about.index') }}" class="nav-link {{
-                            active_class(Route::is('admin/content/about*'))
+                            active_class(Route::is('admin.content.about*'))
                             }}">
                             About Content
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.content.company.index') }}" class="nav-link {{
-                            active_class(Route::is('admin/content/company*'))
+                            active_class(Route::is('admin.content.company*'))
                             }}">
                             Company Content
                         </a>
@@ -99,7 +99,7 @@
 
             <li class="nav-item">
                 <a class="nav-link {{
-                    active_class(Route::is('admin.faqs*'))
+                    active_class(Route::is('admin.faq*'))
                 }}" href="{{ route('admin.faqs') }}">
                     <i class="nav-icon far fa-question-circle"></i>
                     Faq's Management
@@ -107,7 +107,7 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/product*') || Route::is('admin/product/category*'), 'open')
+                active_class(Route::is('admin.product*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon fas fa-user-tie"></i>
@@ -117,21 +117,21 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.product.index') }}" class="nav-link {{
-                            active_class(Route::is('admin/product*'))
+                            active_class(Route::is('admin.product.index') || Route::is('admin.product.edit') || Route::is('admin.product.create'))
                             }}">
                             All Products
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.product.category.index') }}" class="nav-link {{
-                            active_class(Route::is('admin/product/category*'))
+                            active_class(Route::is('admin.product.category*'))
                             }}">
                             All Sub Categories
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.product.main-category.index') }}" class="nav-link {{
-                            active_class(Route::is('admin/product/main-category*'))
+                            active_class(Route::is('admin.product.main-category*'))
                             }}">
                             All Main Categories
                         </a>
@@ -140,7 +140,7 @@
             </li>
 
             <li class="nav-item nav-dropdown {{
-                active_class(Route::is('admin/slider*'), 'open')
+                active_class(Route::is('admin.slider*'), 'open')
             }}">
                 <a href="#" class="nav-link nav-dropdown-toggle">
                     <i class="nav-icon fas fa-images"></i>
@@ -150,21 +150,21 @@
                 <ul class="nav-dropdown-items">
                     <li class="nav-item">
                         <a href="{{ route('admin.slider.banner') }}" class="nav-link {{
-                            active_class(Route::is('admin/slider/banner*'))
+                            active_class(Route::is('admin.slider.banner*'))
                             }}">
                             Home Slider
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.slider.company') }}" class="nav-link {{
-                            active_class(Route::is('admin/slider/company*'))
+                            active_class(Route::is('admin.slider.company*'))
                             }}">
                             Company Slider
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('admin.slider.teams') }}" class="nav-link {{
-                            active_class(Route::is('admin/slider/teams*'))
+                            active_class(Route::is('adminslider.teams*'))
                             }}">
                             Team Slider
                         </a>

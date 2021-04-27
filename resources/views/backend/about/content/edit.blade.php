@@ -115,19 +115,7 @@
                     }
                 });
 
-                $('textarea#content').summernote({
-                    height: 300,
-                    maxHeight: null,
-                    toolbar: [
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
-                    ]
-                });
-
             })
         </script>
+    @include('backend.includes.partials.scripts.tiny-editor', ['editors' => [['id' => '#content']]])
 @endpush

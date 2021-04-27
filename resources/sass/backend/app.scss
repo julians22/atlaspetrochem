@@ -6,8 +6,6 @@
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 
-@import "~summernote/dist/summernote-bs4.css";
-
 // Fix inaccessible dropdown in .table-responsive dropdown buttons
 .table-responsive {
     overflow-x: inherit;

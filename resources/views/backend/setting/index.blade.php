@@ -77,27 +77,3 @@
 
 @endsection
 
-@push('after-scripts')
-    <script>
-        $('textarea.editor-sumnote').summernote({
-            toolbar: [
-                ['style', ['bold', 'italic', 'underline', 'clear']],
-                ['font', ['strikethrough', 'superscript', 'subscript']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']]
-            ],
-            callbacks: {
-                onPaste: function(e) {
-                    var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                    e.preventDefault();
-                    setTimeout(function(){
-                        document.execCommand( 'insertText', false, bufferText );
-                    }, 10);
-                }
-            }
-        });
-    </script>
-@endpush
-

@@ -67,55 +67,5 @@
 @endsection
 
 @push('after-scripts')
-        <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
-
-        <script>
-
-            $(document).ready(function () {
-
-                $('textarea#requirements').summernote({
-                    height: 300,
-                    maxHeight: null,
-                    toolbar: [
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
-                    ],
-                    callbacks: {
-                        onPaste: function(e) {
-                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                            e.preventDefault();
-                            setTimeout(function(){
-                                document.execCommand( 'insertText', false, bufferText );
-                            }, 10);
-                        }
-                    }
-                });
-                $('textarea#job_desk').summernote({
-                    height: 300,
-                    maxHeight: null,
-                    toolbar: [
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['font', ['strikethrough', 'superscript', 'subscript']],
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']]
-                    ],
-                    callbacks: {
-                        onPaste: function(e) {
-                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                            e.preventDefault();
-                            setTimeout(function(){
-                                document.execCommand( 'insertText', false, bufferText );
-                            }, 10);
-                        }
-                    }
-                });
-
-            })
-        </script>
+    @include('backend.includes.partials.scripts.tiny-editor', ['editors' => [['id' => '#requirements'], ['id' => '#job_desk']]])
 @endpush
