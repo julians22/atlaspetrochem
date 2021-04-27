@@ -35,6 +35,14 @@
                             </div>
                         </td>
                     </tr>
+                    <tr>
+                        <th>Banner Image</th>
+                        <td>
+                            <div style="width: 450px">
+                                <img src="{{ $category->banner_image_location_desktop }}" alt="{{ $category->banner_image_location_desktop }}" class="w-100">
+                            </div>
+                        </td>
+                    </tr>
                 </table>
             </div>
         </div>

@@ -12,23 +12,27 @@ class BannerPerPageSeeder extends Seeder
      */
     public function run()
     {
+        // BannerPerPage::create([
+        //     'key' => 'about-banner',
+        // ]);
+        // BannerPerPage::create([
+        //     'key' => 'news-banner',
+        // ]);
+        // BannerPerPage::create([
+        //     'key' => 'news-show-banner',
+        // ]);
+        // BannerPerPage::create([
+        //     'key' => 'galery-banner',
+        // ]);
+        // BannerPerPage::create([
+        //     'key' => 'careers-banner',
+        // ]);
+        // BannerPerPage::create([
+        //     'key' => 'careers-show-banner',
+        // ]);
+
         BannerPerPage::create([
-            'key' => 'about-banner',
-        ]);
-        BannerPerPage::create([
-            'key' => 'news-banner',
-        ]);
-        BannerPerPage::create([
-            'key' => 'news-show-banner',
-        ]);
-        BannerPerPage::create([
-            'key' => 'galery-banner',
-        ]);
-        BannerPerPage::create([
-            'key' => 'careers-banner',
-        ]);
-        BannerPerPage::create([
-            'key' => 'careers-show-banner',
+            'key' => 'category-product-banner',
         ]);
     }
 }

@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | ' . __('About'))
 
 @section('content')
-    <section class="h-250px sm:h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?:asset('img/frontend/banner/article_banner.jpg') }}');">
+    <section class="h-250px md:h-485px w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?:asset('img/frontend/banner/article_banner.jpg') }}');">
 
     </section>
 
@@ -22,7 +22,7 @@
                     ">
                         <div class="w-full sm:w-1/2 px-0 sm:px-4 relative">
                             <h4 class="font-bold text-api-red mb-2 text-3xl">{{ $about->title }}</h4>
-                            <div class="prose">
+                            <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
                                 {!! $about->content !!}
                             </div>
                         </div>

@@ -80,7 +80,12 @@ class FaqController extends Controller
      */
     public function update(Request $request, Faq $faq)
     {
-        //
+        $faq->update([
+            'question_text' => $request->question_text,
+            'answer_text' => $request->answer_text,
+            'active' => $request->active ?: false
+        ]);
+        return redirect()->route('admin.faqs')->withSuccess('Faq Success Updated');
     }
 
     /**

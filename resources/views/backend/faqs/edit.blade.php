@@ -54,7 +54,7 @@
                 </div><!--col-->
 
                 <div class="col text-right">
-                    {{ form_submit(__('buttons.general.crud.create')) }}
+                    {{ form_submit(__('buttons.general.crud.update')) }}
                 </div><!--col-->
             </div><!--row-->
         </div><!--card-footer-->
@@ -78,7 +78,16 @@
                         ['color', ['color']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['height', ['height']]
-                    ]
+                    ],
+                    callbacks: {
+                        onPaste: function(e) {
+                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                            e.preventDefault();
+                            setTimeout(function(){
+                                document.execCommand( 'insertText', false, bufferText );
+                            }, 10);
+                        }
+                    }
                 });
 
             })

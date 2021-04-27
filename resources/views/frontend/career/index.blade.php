@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | Career')
 
 @section('content')
-    <section class="h-250px sm:h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?:asset('img/frontend/banner/article_banner.jpg') }}');">
+    <section class="w-full h-250px md:h-485px bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?:asset('img/frontend/banner/article_banner.jpg') }}');">
 
     </section>
 
@@ -23,7 +23,7 @@
 
                     <div class="w-full">
                         <h4 class="text-2xl font-semibold leading-none mb-2">{{ $career->position }}</h4>
-                        <div class="mb-2 prose max-w-full">{!! $career->job_desk !!}</div>
+                        <div class="mb-2 prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-full">{!! $career->job_desk !!}</div>
                         <a href="{{ route('frontend.career.show', ['career_id'=> $career->uuid]) }}" class="px-4 py-1 rounded-md shadow-3xl bg-api-red hover:bg-api-redDarken transition-colors duration-300 text-white font-semibold">Apply Now>></a>
                     </div>
                 </div>

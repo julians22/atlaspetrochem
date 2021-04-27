@@ -40,7 +40,7 @@
             @include('frontend.includes.footer')
         </div><!-- #app -->
 
-        <a href="#" class="p-2 w-14 h-14 rounded-lg transition duration-700 transform hover:-translate-y-1 hover:scale-110 ease-in-out fixed bottom-6 right-6 z-50 bg-green-500 text-white flex items-center justify-center">
+        <a href="//{{ $setting->whatsapp()->first()->value }}" class="p-2 w-14 h-14 rounded-lg transition duration-700 transform hover:-translate-y-1 hover:scale-110 ease-in-out fixed bottom-6 right-6 z-50 bg-green-500 text-white flex items-center justify-center" target="_blank">
             <i class="fab fa-whatsapp fa-3x"></i>
         </a>
 

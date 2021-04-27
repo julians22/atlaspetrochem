@@ -32,7 +32,8 @@ class MainCategoryController extends Controller
         $category->update([
             'name' => $request->name,
             'description' => $request->description,
-            'image_location' => $request->image_location
+            'image_location' => $request->image_location,
+            'banner_image_location_desktop' => $request->banner_image_location,
         ]);
 
         $category->save();

@@ -21,11 +21,11 @@
                 <table class="table table-borderless">
                     <tr>
                         <th>Question</th>
-                        <td>{{ $faq->question_text }}</td>
+                        <td>{!! $faq->question_text !!}</td>
                     </tr>
                     <tr>
                         <th>Answer</th>
-                        <td>{{ $faq->answer_text }}</td>
+                        <td>{!! $faq->answer_text !!}</td>
                     </tr>
                 </table>
             </div>

@@ -19,7 +19,7 @@
                         <a href="{{ $product->link ?: '#' }}">
                             <h4 class="text-api-red text-2xl font-bold underline">{{ $loop->iteration }}. {{ $product->name }}</h4>
                         </a>
-                        <div class="prose">
+                        <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
                             {!! $product->description !!}
                         </div>
                     </div>

@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | ' . __('labels.frontend.contact.box_title'))
 
 @section('content')
-	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.426598005804!2d106.8830731!3d-6.1499462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e27cdbb612dd04f!2sPT.%20ATLAS%20PETROCHEM%20INDO!5e0!3m2!1sid!2sid!4v1615344979517!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15867.426598005804!2d106.8830731!3d-6.1499462!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e27cdbb612dd04f!2sPT.%20ATLAS%20PETROCHEM%20INDO!5e0!3m2!1sid!2sid!4v1615344979517!5m2!1sid!2sid" class="h-250px md:h-485px w-full border-0" allowfullscreen="" loading="lazy"></iframe>
     <section class="mx-auto py-10 w-5/6 sm:w-2/3 container">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">CONTACT US</h2>
 

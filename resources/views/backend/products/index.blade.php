@@ -21,7 +21,9 @@
                 </div><!--col-->
             </div><!-- row -->
 
-            <div class="row mt-4">
+            @livewire('backend.products.product-table-component')
+
+            {{-- <div class="row mt-4">
                 <div class="col">
                     <div class="table-responsive">
                         <table class="table">
@@ -64,7 +66,7 @@
                     {!! $products->render() !!}
                 </div>
             </div><!--col-->
-        </div><!--row-->
+        </div><!--row--> --}}
         </div>
     </div>
 @endsection

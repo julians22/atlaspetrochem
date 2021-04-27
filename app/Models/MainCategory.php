@@ -12,7 +12,7 @@ class MainCategory extends Model
     use HasSlug;
 
     protected $fillable = [
-        'name', 'slug', 'image_location', 'description'
+        'name', 'slug', 'image_location', 'description', 'banner_image_location_desktop', 'banner_image_location_mobile'
     ];
 
     public function getSlugOptions(): SlugOptions

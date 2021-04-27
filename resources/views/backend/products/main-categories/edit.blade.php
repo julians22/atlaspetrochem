@@ -50,6 +50,19 @@
                                 </div>
                         </div>
 
+                        <div class="form-group row">
+                            {{ html()->label('Banner Image')->class('col-md-2 form-control-label')->for('bannerImageField') }}
+                                <div class="col-md-10">
+                                    <div class="input-group">
+                                        {{ html()->text('banner_image_location')->id('bannerImageField')->class('form-control')->placeholder('Banner Image')->readonly() }}
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button" id="lfmbannerImageField" data-input="bannerImageField">Select Image</button>
+                                        </div>
+                                    </div>
+                                    <small class="text-muted">Recommended size 1920 x 748 pixels, max file size 5mb, png file type with no background</small>
+                                </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -76,7 +89,7 @@
 
             $(document).ready(function () {
                 $('#lfmthumbnailImageField').filemanager('image');
-                $('#lfmfeaturedImageField').filemanager('image');
+                $('#lfmbannerImageField').filemanager('image');
 
                 const countTarget = $('textarea#description');
                 const maxSize = 60;
@@ -103,7 +116,16 @@
                         ['color', ['color']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['height', ['height']]
-                    ]
+                    ],
+                    callbacks: {
+                        onPaste: function(e) {
+                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                            e.preventDefault();
+                            setTimeout(function(){
+                                document.execCommand( 'insertText', false, bufferText );
+                            }, 10);
+                        }
+                    }
                 });
 
             })

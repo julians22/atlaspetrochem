@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
             'ledgers',
             'jobs',
             'sessions',
-            'banner_per_pages',
+            // 'banner_per_pages',
             // 'news',
             // 'galeries',
             // 'careers',

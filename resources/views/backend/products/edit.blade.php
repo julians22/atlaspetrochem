@@ -82,25 +82,8 @@
         <script>
 
             $(document).ready(function () {
-            //     $('#lfmthumbnailImageField').filemanager('image');
-            //     $('#lfmfeaturedImageField').filemanager('image');
 
-                // const countTarget = $('textarea#description');
-                // const maxSize = 60;
-
-                // $('#total_text').html(countTarget.val().length);
-
-                // $(countTarget).on('keyup', function () {
-                //     $('#total_text').html(countTarget.val().length);
-
-                //     if (countTarget.val().length >= maxSize) {
-                //         $('#total_text').addClass('text-danger').removeClass('text-muted');
-                //     }else{
-                //         $('#total_text').addClass('text-muted').removeClass('text-danger');
-                //     }
-                // });
-
-                $('textarea#description').summernote({
+                var editor = $('textarea#description').summernote({
                     height: 300,
                     maxHeight: null,
                     toolbar: [
@@ -110,7 +93,17 @@
                         ['color', ['color']],
                         ['para', ['ul', 'ol', 'paragraph']],
                         ['height', ['height']]
-                    ]
+                    ],
+
+                    callbacks: {
+                        onPaste: function(e) {
+                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                            e.preventDefault();
+                            setTimeout(function(){
+                                document.execCommand( 'insertText', false, bufferText );
+                            }, 10);
+                        }
+                    }
                 });
 
             })

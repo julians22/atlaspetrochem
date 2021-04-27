@@ -13,4 +13,9 @@ class Faq extends Model
     ];
 
     protected $fillable = ['answer_text', 'question_text', 'active'];
+
+    public function isActive()
+    {
+        return $this->active;
+    }
 }

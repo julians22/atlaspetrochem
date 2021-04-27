@@ -38,7 +38,9 @@
                                 @foreach ($faqs as $faq)
                                     <tr>
                                         <td>{!! $faq->question_text !!}</td>
-                                        <td>{{ $faq->active }}</td>
+                                        <td>
+                                            <span class="badge {{ $faq->isActive() ? 'badge-success' : 'badge-danger' }}">{{ $faq->isActive() ? 'Yes' : 'No' }}</span>
+                                        </td>
                                         <td>{{ $faq->created_at->diffForHumans() }}</td>
                                         <td>{{ $faq->updated_at->diffForHumans() }}</td>
                                         <td class="btn-td">

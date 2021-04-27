@@ -10,7 +10,7 @@ class WebSetting extends Model
         'value'
     ];
 
-    public function scopeWhatsapp($query, $config = 'whatsapp')
+    public function scopeWhatsapp($query, $config = 'whatsapp url')
     {
         return $query->where('config', $config);
     }

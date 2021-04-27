@@ -94,7 +94,7 @@ class CareerController extends Controller
     {
         $this->careerServices->deleteById($career->id);
 
-        return redirect()->route('admin.career')->with('success', 'News success deleted');
+        return redirect()->route('admin.career')->with('success', 'Career success deleted');
     }
 
     public function toggleActive(Career $career)

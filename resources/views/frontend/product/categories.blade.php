@@ -3,7 +3,7 @@
 @section('title', app_name() . ' | Product')
 
 @section('content')
-<section class="h-250px sm:h-96 w-full bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('img/frontend/banner/career_banner.jpg') }}');">
+<section class="w-full h-250px md:h-485px bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $mainCategories->image_location?:asset('img/frontend/banner/career_banner.jpg') }}');">
 
     </section>
     <section class="container mx-auto py-10 w-3/4" data-aos="fade-up" data-aos-duration="2000">
