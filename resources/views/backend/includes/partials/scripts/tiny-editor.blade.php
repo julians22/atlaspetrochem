@@ -6,9 +6,10 @@
             @for ($i = 0; $i < count($editors); $i++)
                 tinymce.init({
                     selector: '{{$editors[$i]['id']}}',
-                    plugins: 'lists, paste',
-                    toolbar: 'undo redo | formatselect | ' +
-                        'bold italic backcolor | alignleft aligncenter ' +
+                    menubar: 'file | edit | view | format | insert',
+                    plugins: 'lists, paste, link, table, advlist',
+                    toolbar: 'undo redo | formatselect| ' +
+                        'bold italic backcolor| alignleft aligncenter ' +
                         'alignright alignjustify | bullist numlist outdent indent | ' +
                         'removeformat | help',
                 });
