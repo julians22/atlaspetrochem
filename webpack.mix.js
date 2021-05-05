@@ -42,7 +42,8 @@ if (mix.inProduction()) {
     mix.version();
 } else {
     // Uses inline source-maps on development
-    mix.webpackConfig({
+    mix.version()
+    .webpackConfig({
         devtool: 'inline-source-map'
     });
 }

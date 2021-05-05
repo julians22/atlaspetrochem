@@ -7,7 +7,7 @@
                     <div class="swiper-slide">
                         <div class="banner-frame">
                             <div class="background h-full w-full bg-center bg-cover bg-no-repeat absolute inset-0" style="background-image: url('{{ $banner->getImageAttribute() }}')"></div>
-                            <div id="banner-description" class="absolute w-full h-full flex items-center
+                            <div class="banner-description
                                 {{ banner_overlay($banner->overlay_level) }}
                             ">
                                 <div class="container w-4/5 sm:w-3/4 px-2 sm:px-0 mx-auto banner-text"
@@ -29,7 +29,7 @@
                 @for ($i = 0; $i < 3; $i++)
                     <div class="swiper-slide">
                         <div class="w-full relative m-0">
-                            <div id="banner-description" class="absolute w-full h-full flex items-center">
+                            <div  class="banner-description">
                                 <div class="container w-3/4 mx-auto banner-text"
                                     data-aos-mirror="true"
                                     data-aos-easing="ease-in-out"

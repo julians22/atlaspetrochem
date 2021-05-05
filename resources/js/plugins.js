@@ -145,12 +145,12 @@ $(function () {
         },
         on: {
             beforeInit: function() {
-                if ($("#banner-description").length > 0) {
+                if ($(".banner-description").length > 0) {
                     $(".banner-text").hide(0);
                 }
             },
             afterInit: function () {
-                if ($("#banner-description").length > 0) {
+                if ($(".banner-description").length > 0) {
                     setTimeout(() => {
                         $(".banner-text").show(400);
                         addAnimationToBannerWithText($(".banner-text"));
@@ -159,7 +159,7 @@ $(function () {
                 }
             },
             slideChangeTransitionStart: function() {
-                if ($("#banner-description").length > 0) {
+                if ($(".banner-description").length > 0) {
                     $(".banner-text").hide(0);
                     $(".banner-text")
                         .removeClass("aos-init")
@@ -167,7 +167,7 @@ $(function () {
                 }
             },
             slideChangeTransitionEnd: function() {
-                if ($("#banner-description").length > 0) {
+                if ($(".banner-description").length > 0) {
                     $(".banner-text").show(0);
                     addAnimationToBannerWithText($(".banner-text"));
                     AOS.init();

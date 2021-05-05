@@ -86,4 +86,8 @@
     #video-galery .video-js .vjs-big-play-button{
         @apply inset-x-0 inset-y-1/2 mx-auto text-white text-xl bg-api-redLighten bg-opacity-20;
     }
+
+    .banner-description{
+        @apply absolute w-full h-full flex items-center inset-0;
+    }
 }
