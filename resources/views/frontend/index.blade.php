@@ -20,8 +20,12 @@
 
 @section('content')
     <section class="py-6" data-aos="fade-up" data-aos-duration="2000">
-        <h4 class="md:text-2xl text-lg font-bold text-center tracking-widest">THE LEADING LUBRICANT</h4>
-        <h5 class="md:text-xl text-base font-semibold text-gray-800 text-center tracking-widest">FROM JAPAN</h5>
+        <h4 class="md:text-2xl text-lg font-bold text-center tracking-widest">
+            @lang('labels.frontend.leading-lubs.title')
+        </h4>
+        <h5 class="md:text-xl text-base font-semibold text-gray-800 text-center tracking-widest">
+            @lang('labels.frontend.leading-lubs.sub-title')
+        </h5>
         <div class="w-full mx-auto relative mt-4">
             <img src="{{ asset('img/frontend/oil_bottle.png') }}" class="md:w-3/4 w-4/5 mx-auto" alt="lubricant.png">
 
@@ -32,7 +36,7 @@
                             <div class="bg-api-redDarken flex bg-opacity-50 w-full h-full -left-full group-hover:left-0 relative animate__animated animate__slideInLeft transition-all duration-1000 ease-in-out">
                                 <div class="py-10 w-1/2 relative text-center">
                                     <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
-                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">@lang('buttons.frontend.see-detail') >></a>
                                 </div>
                                 <div class="w-1/2 p-10">
                                     <img src="{{ $main_category->image_location ?: asset('img/frontend/automotive_products.png') }}" alt="" class="w-full">
@@ -49,7 +53,7 @@
                                 </div>
                                 <div class="py-10 w-1/2 relative text-center">
                                     <h4 class="text-4xl font-bold tracking-widest text-black text-center">{!! $main_category->name !!}</h4>
-                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">See Details >></a>
+                                    <a href="{{ route('frontend.show-categories', ['main_categories'=> $main_category->slug]) }}" class="mt-10 inline-block rounded-tr-md rounded-bl-md bg-black font-semibold px-4 py-1 text-white text-sm">@lang('buttons.frontend.see-detail') >></a>
                                 </div>
                             </div>
                         </div>
@@ -60,7 +64,9 @@
     </section>
 
     <section class="py-6 transform -skew-y-3 perusahaan-unggulan" id="counter-trigger-point">
-        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-4 sm:ml-12">OUR VALUE</span>
+        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-4 sm:ml-12">
+            @lang('labels.frontend.our-value.title')
+        </span>
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($abouts as $about)
                 <a href="{{ route('frontend.about') }}#about-{{$loop->iteration}}" class="block h-300px sm:h-auto">
@@ -86,25 +92,25 @@
 
     <section class="py-12 container mx-auto" data-aos="fade-in" data-aos-duration="1500">
         <div class="w-3/4 mx-auto">
-            <h4 class="sm:text-2xl text-lg font-bold text-center tracking-widest">OUR CUSTOMERS</h4>
+            <h4 class="sm:text-2xl text-lg font-bold text-center tracking-widest">@lang('labels.frontend.our-customers.title')</h4>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-0 w-full py-6" data-aos="fade-up" data-aos-duration="2000">
                 <div class="text-center border-0 md:border-r border-black">
                     <h3 class="sm:text-6xl text-4xl font-extrabold text-api-red">
                         <span class="counter" data-value="9000" data-duration="50"></span>
                         <span>+</span>
                     </h3>
-                    <h5 class="font-light tracking-widest">CUSTOMERS</h5>
+                    <h5 class="font-light tracking-widest">@lang('labels.frontend.our-customers.subs.cust')</h5>
                 </div>
                 <div class="text-center border-0 md:border-l border-black" data-aos="fade-up" data-aos-duration="2000">
-                    <h3 class="sm:text-6xl text-4xl font-extrabold text-api-red">HIGH</h3>
-                    <h5 class="font-light tracking-widest">QUALITY SERVICE</h5>
+                    <h3 class="sm:text-6xl text-4xl font-extrabold text-api-red">@lang('labels.frontend.our-customers.subs.high')</h3>
+                    <h5 class="font-light tracking-widest">@lang('labels.frontend.our-customers.subs.quality')</h5>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-6 transform skew-y-3" id="article-thumbnail">
-        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">NEWS & GALLERY</span>
+        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-12">@lang('labels.frontend.news-galery.title')</span>
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($newses as $news)
                 <div class="bg-no-repeat bg-center bg-cover group h-300px sm:h-auto" style="background-image: url('{{ $news->thumb_location ? $news->thumb_location : asset('img/frontend/news_img_'.$loop->iteration.'.jpg') }}')">
@@ -115,7 +121,7 @@
                             <blockquote class="text-sm mt-4">
                                 {{ $news->intro }}
                             </blockquote>
-                            <a href="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}" class="w-40 bg-api-red hover:bg-api-redDarken transition-colors duration-300 mx-auto block text-sm mt-4 rounded-full">Read More >></a>
+                            <a href="{{ route('frontend.article.news.show', ['slug' => $news->slug]) }}" class="p-1 inline-block bg-api-red hover:bg-api-redDarken transition-colors duration-300 mx-auto text-sm mt-4 rounded-full">@lang('buttons.frontend.read-more') >></a>
                         </div>
                     </div>
                 </div>
@@ -153,7 +159,7 @@
             </div>
 
             <div class="text-box md:px-14 md:py-10 text-center" data-aos="fade-up" data-aos-duration="1500">
-                <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm">View Galery >></a>
+                <a href="#" class="rounded-md bg-api-red font-semibold px-4 py-1 text-white text-sm">@lang('buttons.frontend.view-galery') >></a>
             </div>
         </div>
     </section>

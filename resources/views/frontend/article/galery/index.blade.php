@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | Galery')
+@section('title', app_name() . ' | ' . __('navs.frontend.galery'))
 
 @push('after-styles')
     <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet"/>
@@ -16,7 +16,7 @@
 
     <section class="container mx-auto py-10 w-3/4">
         <div class="flex justify-between w-full">
-            <h4 class="text-4xl font-bold">GALERY</h4>
+            <h4 class="text-4xl font-bold">@lang('navs.frontend.galery')</h4>
         </div>
 
         <div class="mt-4">

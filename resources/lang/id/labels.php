@@ -147,8 +147,78 @@ return [
         ],
 
         'contact' => [
-            'box_title' => 'Contact Us',
-            'button' => 'Send Information',
+            'title' => 'Hubungi Kami',
+            'box_title' => 'HUBUNGI KAMI',
+            'faq' => 'FAQ',
+            'button' => 'Kirim',
+            'form' => [
+                'full_name' => 'Name Lengkap',
+                'comp' => 'Perusahaan/Organisasi',
+                'country' => 'Negara',
+                'select_country' => 'Pilih Negara',
+                'contact_reason' => 'Alasan Menghubungi',
+                'choose_contact_reason' => 'Pilih Alasan Menghubungi',
+                'subject' => 'Subyek',
+                'question_comment' => 'Pertanyaan atau Komentar',
+                'placeholder' => [
+                    'full_name' => 'Nama Lengkap Anda',
+                    'comp' => 'Perusahaan/Organisasi Anda',
+                    'phone' => 'Nomor Telepon Anda',
+                    'email' => 'Email Anda',
+                    'subject' => 'Subyek Anda',
+                    'question_comment' => 'Pertanyaan atau komentar Anda Minimal 20 karakter, Maksimum 1000 karakter',
+                ]
+            ],
+        ],
+
+        'leading-lubs' => [
+            'title' => 'PELUMAS TERKEMUKA',
+            'sub-title' => 'DARI JEPANG',
+        ],
+
+        'our-value' => [
+            'title' => 'NILAI KAMI'
+        ],
+
+        'our-customers' => [
+            'title' => 'PELANGGAN KAMI',
+            'subs' => [
+                'cust' => 'PELANGGAN',
+                'quality' => 'KUALITAS LAYANAN',
+                'high' => 'TINGGI',
+            ],
+        ],
+
+        'news-galery' => [
+            'title' => 'BERITA & GALERI',
+        ],
+
+        'online-store' => [
+            'title' => 'Toko Online'
+        ],
+
+        'company' => [
+            'vision' => 'VISI',
+            'mission' => 'MISI',
+            'our-brand' => 'MEREK KAMI',
+            'our-team' => 'TIM KAMI',
+            'where-we-work' => 'DIMANA KAMI BEKERJA',
+            'distribution-point' => 'TITIK DISTRIBUSI'
+        ],
+
+        'career' => [
+            'box_title' => 'KESEMPATAN BERKARIR',
+            'job_desk' => 'DESKRIPSI PEKERJAAN',
+            'reqs' => 'PERSYARATAN',
+            'form' => [
+                'name' => 'Name',
+                'gender' => 'Jenis Kelamin',
+                'email' => 'Email',
+                'phone' => 'Telepon',
+                'upload-cv' => 'Unggah CV anda disini',
+                'message' => 'Pesan',
+                'terms' => 'Saya telah membaca dan menyetujui Syarat dan Ketentuan'
+            ]
         ],
 
         'passwords' => [

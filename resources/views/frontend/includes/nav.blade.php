@@ -17,13 +17,13 @@
                 <ul class="flex flex-col sm:flex-row items-start sm:items-end justify-start font-semibold" id="menu">
                     <li>
                         <a href="{{ route('frontend.index') }}" class="{{ active_class(Route::is('frontend.index'), 'text-api-red', 'hover:text-api-red') }} nav-link">
-                            HOME
+                            @lang('navs.frontend.home')
                         </a>
                         <span class="spacer"></span>
                     </li>
                     <li>
                         <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }} nav-link">
-                            COMPANY
+                            @lang('navs.frontend.company')
                         </a>
                         <span class="spacer"></span>
                     </li>
@@ -35,7 +35,7 @@
                     </li> --}}
                     <li class="dropdown group relative">
                         <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product') || Route::is('frontend.product.list') || Route::is('frontend.show-categories'), 'text-api-red', 'hover:text-api-red') }} nav-link">
-                            PRODUCTS
+                            @lang('navs.frontend.products')
                         </a>
                         <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-48 p-1 border border-api-redLighten text-xs">
                             @foreach ($main_categories as $main_category)
@@ -51,15 +51,15 @@
                     </li>
                     <li class="group dropdown relative">
                         <a href="#" class="{{ active_class(Route::is('frontend.article.news.index') || Route::is('frontend.article.galery.index') || Route::is('frontend.article.news.show'), 'text-api-red', 'hover:text-api-red') }} nav-link">
-                            NEWS & GALERY
+                            @lang('navs.frontend.news-galery')
                         </a>
                         <div class="absolute opacity-0 group-hover:opacity-100 bg-white rounded inset-x-0 top-full flex-col flex shadow items-center w-32 p-1 border border-api-redLighten text-xs">
                             <div class="dropdown-item">
-                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.news.index') || Route::is('frontend.article.news.show'), 'text-api-red', 'hover:text-api-red') }}">NEWS</a>
+                                <a href="{{ route('frontend.article.news.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.news.index') || Route::is('frontend.article.news.show'), 'text-api-red', 'hover:text-api-red') }}">@lang('navs.frontend.news')</a>
                                 <span></span>
                             </div>
                             <div class="dropdown-item">
-                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.galery.index'), 'text-api-red', 'hover:text-api-red') }}">GALERY</a>
+                                <a href="{{ route('frontend.article.galery.index') }}" class="block w-full uppercase {{ active_class(Route::is('frontend.article.galery.index'), 'text-api-red', 'hover:text-api-red') }}">@lang('navs.frontend.galery')</a>
                                 <span></span>
                             </div>
                         </div>
@@ -67,12 +67,12 @@
                     </li>
                     <li>
                         <a href="{{ route('frontend.career') }}" class="{{ active_class((Route::is('frontend.career') || Route::is('frontend.career.show')), 'text-api-red', 'hover:text-api-red') }} nav-link">
-                            CAREERS
+                            @lang('navs.frontend.careers')
                         </a>
                         <span class="spacer"></span>
                     </li>
                     <li>
-                        <a href="{{ route('frontend.contact') }}" class="{{ active_class(Route::is('frontend.contact'), 'text-api-red', 'hover:text-api-red') }} nav-link">CONTACT US</a>
+                        <a href="{{ route('frontend.contact') }}" class="{{ active_class(Route::is('frontend.contact'), 'text-api-red', 'hover:text-api-red') }} nav-link">@lang('navs.frontend.contact')</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +81,7 @@
                 <ul class="flex items-start justify-around">
                     <li class="mr-4" x-data="{open : false}">
                         <a href="#" class="text-sm relative block link-stores" @click="open = true" :class="{ 'text-api-red': open === true }">
-                            <span>(Online Store)</span>
+                            <span>(@lang('labels.frontend.online-store.title'))</span>
                         </a>
                         <span class="absolute inset-x-0 w-24 px-2 py-1 top-full rounded-md  transition-all duration-500 flex flex-wrap bg-white shadow-2xl" id="stores-items" x-show="open" @click.away="open = false">
                             <a href="{{ $setting->config('marketplace blibli')->first()->value }}" target="_blank">

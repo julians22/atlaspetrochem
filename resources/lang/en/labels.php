@@ -158,8 +158,78 @@ return [
         ],
 
         'contact' => [
-            'box_title' => 'Contact Us',
-            'button' => 'Send Information',
+            'title' => 'Contact Us',
+            'box_title' => 'CONTACT US',
+            'faq' => 'FAQs',
+            'button' => 'Submit',
+            'form' => [
+                'full_name' => 'Full Name',
+                'comp' => 'Company/Organitation',
+                'country' => 'Country',
+                'select_country' => 'Select Country',
+                'contact_reason' => 'Contact Reason',
+                'choose_contact_reason' => 'Choose Contact Reason',
+                'subject' => 'Subject',
+                'question_comment' => 'Question or Comments',
+                'placeholder' => [
+                    'full_name' => 'Your Full Name',
+                    'comp' => 'Your Company/Organitation',
+                    'phone' => 'Your Phone Number',
+                    'email' => 'Your Active Email',
+                    'subject' => 'Your Subject',
+                    'question_comment' => 'Your questions or comments Minimum 20 characters, Maximum 1000 characters',
+                ]
+            ],
+        ],
+
+        'leading-lubs' => [
+            'title' => 'THE LEADING LUBRICANT',
+            'sub-title' => 'FROM JAPAN',
+        ],
+
+        'our-value' => [
+            'title' => 'OUR VALUE'
+        ],
+
+        'our-customers' => [
+            'title' => 'OUR CUSTOMERS',
+            'subs' => [
+                'cust' => 'CUSTOMERS',
+                'quality' => 'QUALITY SERVICE',
+                'high' => 'HIGH',
+            ],
+        ],
+
+        'news-galery' => [
+            'title' => 'NEWS & GALERY',
+        ],
+
+        'online-store' => [
+            'title' => 'Online Store'
+        ],
+
+        'company' => [
+            'vision' => 'VISION',
+            'mission' => 'MISSION',
+            'our-brand' => 'OUR BRAND',
+            'our-team' => 'OUR TEAM',
+            'where-we-work' => 'WHERE WE WORK',
+            'distribution-point' => 'DISTRIBUTION POINT'
+        ],
+
+        'career' => [
+            'box_title' => 'CAREER OPPORTUNITIES',
+            'job_desk' => 'JOB DESC',
+            'reqs' => 'REQUIREMENTS',
+            'form' => [
+                'name' => 'Name',
+                'gender' => 'Gender',
+                'email' => 'Email',
+                'phone' => 'Phone',
+                'upload-cv' => 'Upload your CV here',
+                'message' => 'Message',
+                'terms' => 'I have read and agree to the Terms and Conditions'
+            ]
         ],
 
         'passwords' => [

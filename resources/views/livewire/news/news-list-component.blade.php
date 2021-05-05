@@ -2,7 +2,7 @@
     {{-- Care about people's approval and you will be their prisoner. --}}
 
     <div class="flex flex-col sm:flex-row justify-between w-full">
-        <h4 class="text-2xl sm:text-4xl font-bold">NEWS</h4>
+        <h4 class="text-2xl sm:text-4xl font-bold">@lang('navs.frontend.news')</h4>
 
         <div class="w-52 relative">
             <input type="text" class="w-full border border-gray-200 p-2 focus:outline-none" wire:model="search" placeholder="Search">

@@ -30,6 +30,15 @@ return [
         ],
     ],
 
+    'frontend' => [
+        'see-detail' => 'See details',
+        'read-more' => 'Read more',
+        'view-galery' => 'View galery',
+        'career' => [
+            'apply-now' => 'Apply now'
+        ]
+    ],
+
     'emails' => [
         'auth' => [
             'confirm_account' => 'Confirm Account',

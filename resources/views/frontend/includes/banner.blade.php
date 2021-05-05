@@ -18,7 +18,7 @@
                                     <h4 class="lg:text-5xl text-base md:text-lg md:font-extrabold font-bold uppercase text-white">{{ $banner->title }}</h4>
                                     <h6 class="md:text-lg text-sm font-thin uppercase tracking-bannerParagraph text-white mb-6">{{ $banner->description }}</h6>
                                     @if ($banner->isLinked())
-                                        <a href="{{ $banner->linked_location }}" class="rounded-md bg-api-red font-semibold px-2 sm:px-4 py-1 text-white text-sm" target="_blank">Learn More >></a>
+                                        <a href="{{ $banner->linked_location }}" class="rounded-md bg-api-red font-semibold px-2 sm:px-4 py-1 text-white text-sm" target="_blank">@lang('buttons.frontend.read-more') >></a>
                                     @endif
                                 </div>
                             </div>

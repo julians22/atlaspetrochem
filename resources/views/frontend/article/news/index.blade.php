@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | News')
+@section('title', app_name() . ' | ' . __('navs.frontend.news'))
 
 @section('content')
     <section class="w-full h-250px md:h-485px bg-cover bg-center bg-no-repeat" style="background-image: url('{{ $bannerPage->image_location_desktop ?:asset('img/frontend/banner/article_banner.jpg') }}');">

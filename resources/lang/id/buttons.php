@@ -30,6 +30,15 @@ return [
         ],
     ],
 
+    'frontend' => [
+        'see-detail' => 'Lihat detail',
+        'read-more' => 'Baca selengkapnya',
+        'view-galery' => 'Lihat galery',
+        'career' => [
+            'apply-now' => 'Lamar sekarang'
+        ]
+    ],
+
     'emails' => [
         'auth' => [
             'confirm_account' => 'Konfirmasi Akun',

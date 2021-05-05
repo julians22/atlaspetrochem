@@ -18,7 +18,14 @@ return [
     ],
 
     'frontend' => [
-        'contact' => 'Contact',
+        'home' => 'BERANDA',
+        'company' => 'PERUSAHAAN',
+        'products' => 'PRODUK',
+        'news-galery' => 'BERITA & GALERI',
+        'news' => 'BERITA',
+        'galery' => 'GALERI',
+        'careers' => 'KARIR',
+        'contact' => 'HUBUNGI KAMI',
         'dashboard' => 'Dasbor',
         'login' => 'Masuk',
         'macros' => 'Makro',

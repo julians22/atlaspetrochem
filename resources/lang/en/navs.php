@@ -18,7 +18,14 @@ return [
     ],
 
     'frontend' => [
-        'contact' => 'Contact',
+        'home' => 'HOME',
+        'company' => 'COMPANY',
+        'products' => 'PRODUCTS',
+        'news-galery' => 'NEWS & GALERY',
+        'news' => 'NEWS',
+        'galery' => 'GALERY',
+        'careers' => 'CAREERS',
+        'contact' => 'CONTACT US',
         'dashboard' => 'Dashboard',
         'login' => 'Login',
         'macros' => 'Macros',

@@ -1,6 +1,6 @@
 @extends('frontend.layouts.app')
 
-@section('title', app_name() . ' | ' . __('Company'))
+@section('title', app_name() . ' | ' . __('navs.frontend.company'))
 
 @push('after-scripts')
     <style>
@@ -20,17 +20,17 @@
 
             <div class="grid grid-cols-2 mt-6">
                 <div class="border-r border-white px-4" data-aos="fade-up" data-aos-duration="1000">
-                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4 uppercase">VISION</h4>
+                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4 uppercase">@lang('labels.frontend.company.vision')</h4>
                     <div class="prose text-white">{!! $vision_content->value !!}</div>
                 </div>
                 <div class="border-l border-white px-4" data-aos="fade-up" data-aos-duration="1000">
-                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">MISSION</h4>
+                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">@lang('labels.frontend.company.mission')</h4>
                     <div class="prose text-white">{!! $mission_content->value !!}</div>
                 </div>
             </div>
             <div class="grid grid-cols-1 mt-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="w-full">
-                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">OUR BRAND</h4>
+                    <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">@lang('labels.frontend.company.our-brand')</h4>
                     <div class="text-white prose max-w-full">{!! $brand_content->value !!}</div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
     </section>
 
     <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-3xl font-extrabold text-white text-center mb-4">OUR TEAM</h2>
+        <h2 class="text-3xl font-extrabold text-white text-center mb-4">@lang('labels.frontend.company.our-team')</h2>
         <div class="swiper-container swiper-team border-b-2 border-gray-100  shadow-lg">
             <div class="swiper-wrapper">
                 @foreach ($teamBanner as $banner)
@@ -52,7 +52,7 @@
         </div>
 
         <div class="py-10">
-            <h2 class="text-3xl font-extrabold text-black text-center mb-4">OUR VALUE</h2>
+            <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.our-value.title')</h2>
 
             @foreach ($abouts as $about)
                 <div class="w-full mb-10" id="about-{{ $loop->iteration }}" data-aos="fade-up" data-aos-duration="1000">
@@ -75,7 +75,7 @@
 
         <div class="py-10 w-full">
 
-            <h2 class="text-3xl font-extrabold text-black text-center mb-4">WHERE WE WORK</h2>
+            <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.company.where-we-work')</h2>
             {{-- <div class="grid grid-cols-3 mt-6">
                 @foreach (json_decode($workplace_content->value) as $workplace)
                     <div class="border-black flex items-center justify-center
@@ -104,7 +104,7 @@
     </section>
 
     <section class="container mx-auto w-2/3 pb-5" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-3xl font-extrabold text-black text-center mb-4">DISTRIBUTION POINT</h2>
+        <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.company.distribution-point')</h2>
         <img src="{{ asset('img/frontend/dispoint.jpg') }}" alt="distribution_point" class="w-full my-4">
         {{-- <h5 class="text-2xl font-semibold text-center text-black mb-4 tracking-wider">Head Office</h5>
         <p class="text-center px-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolorem voluptates sed dolore esse tenetur, quaerat alias ipsa sint maiores quas, modi error, saepe aliquid commodi deleniti ut illo! Aut enim nam totam quo.</p> --}}
