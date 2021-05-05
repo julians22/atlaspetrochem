@@ -5,7 +5,7 @@
             @if ($active_banner->count() > 0)
                 @foreach ($active_banner as $banner)
                     <div class="swiper-slide">
-                        <div class="w-full h-250px md:h-485px relative m-0">
+                        <div class="banner-frame">
                             <div class="background h-full w-full bg-center bg-cover bg-no-repeat absolute inset-0" style="background-image: url('{{ $banner->getImageAttribute() }}')"></div>
                             <div id="banner-description" class="absolute w-full h-full flex items-center
                                 {{ banner_overlay($banner->overlay_level) }}

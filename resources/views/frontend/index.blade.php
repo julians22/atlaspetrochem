@@ -60,13 +60,13 @@
     </section>
 
     <section class="py-6 transform -skew-y-3 perusahaan-unggulan" id="counter-trigger-point">
-        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-4 sm:ml-12">PERUSAHAAN UNGGULAN</span>
+        <span class="bg-api-red px-4 py-1 rounded-t-md font-semibold text-white ml-4 sm:ml-12">OUR VALUE</span>
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($abouts as $about)
                 <a href="{{ route('frontend.about') }}#about-{{$loop->iteration}}" class="block h-300px sm:h-auto">
                     <div class="bg-no-repeat bg-top bg-cover group h-full" style="background-image: url('{{ $about->thumb_location ?: asset('img/frontend/section_img_'.$loop->iteration.'.jpg') }}')">
                         <div class="h-full w-full relative bg-api-redDarken bg-opacity-0 group-hover:bg-opacity-70 transition-colors duration-500">
-                            <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-items-center flex-wrap overflow-hidden">
+                            <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-center flex-wrap overflow-hidden">
                                 <div class="opacity-30 text-white group-hover:opacity-100 group-hover:text-yellow-400 transition duration-400 relative p-4">
                                     <h4 class="text-xl font-bold uppercase mx-auto">
                                     {{ $about->title }}

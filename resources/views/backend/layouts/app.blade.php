@@ -76,13 +76,17 @@
 
     <!-- Scripts -->
     @stack('before-scripts')
+    @livewireScripts
     {!! script(mix('js/manifest.js')) !!}
     {!! script(mix('js/vendor.js')) !!}
     {!! script(mix('js/backend.js')) !!}
 
+    <script>
+    
+    </script>
+
     @include('sweetalert::alert')
 
-    @livewireScripts
     @stack('after-scripts')
 </body>
 </html>

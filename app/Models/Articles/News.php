@@ -2,9 +2,11 @@
 
 namespace App\Models\Articles;
 
+use App\Models\Thumbnails\NewsThumbnail;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
@@ -22,5 +24,15 @@ class News extends Model
         return SlugOptions::create()
             ->generateSlugsFrom('title')
             ->saveSlugsTo('slug');
+    }
+
+    /**
+     * Get the newsThumb associated with the News
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function newsThumb(): HasOne
+    {
+        return $this->hasOne(NewsThumbnail::class, 'news_id', 'id');
     }
 }

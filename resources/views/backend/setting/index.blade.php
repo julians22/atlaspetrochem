@@ -34,6 +34,15 @@
                                                 <textarea required name="{{ $setting->id }}" id="{{ Str::slug($setting->config) }}" class="form-control">{{ $setting->value }}</textarea>
                                                 <small class="text-muted">Insert company address</small>
                                                 @break
+                                            @case('image')
+                                                <div class="input-group">
+                                                    <input type="text" name="{{$setting->id}}" id="{{ $setting->config }}Field" class="form-control" value="{{$setting->value}}">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-primary" type="button" id="lfm{{$setting->config}}Field" data-input="{{$setting->config}}Field">Select Image</button>
+                                                    </div>
+                                                </div>
+                                                <small class="text-muted">Recommended size 144 x 16 pixels, max file size 1mb</small>
+                                                @break
                                             @case('phone'||'email'||'url')
                                                 <input required type="text" name="{{ $setting->id }}" id="{{ Str::slug($setting->config) }}" class="form-control" value="{{ $setting->value }}">
                                                 @if ($setting->type == 'phone')
@@ -51,7 +60,6 @@
                                             @default
                                                 {{ $setting->value }}
                                         @endswitch
-                                        
                                     </td>
                                 </tr>
                             @endforeach
@@ -77,3 +85,13 @@
 
 @endsection
 
+@push('after-scripts')
+        <script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
+
+        <script>
+
+            $(document).ready(function () {
+                $('#lfmlogoField').filemanager('image');
+            });
+        </script>
+@endpush

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\About\AboutContent;
 use App\Models\BannerPerPage;
-use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {

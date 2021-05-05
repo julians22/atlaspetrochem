@@ -4,6 +4,19 @@
   max-height:90px;
 }
 
+.swiper-slide{
+    .banner-frame{
+        position: relative;
+        width: 100%;
+        margin: 0;
+        padding-top: 100%;
+
+        @media (min-width: 1024px) {
+            padding-top: 45%;
+        }
+    }
+}
+
 .swiper-video.swiper-container-horizontal>.swiper-pagination-bullets {
     bottom: 30px;
     left: 0;

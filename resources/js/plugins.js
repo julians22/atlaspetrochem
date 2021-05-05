@@ -130,7 +130,7 @@ $(function () {
 
     var BannerSlider = new Swiper(".swiper-banner", {
         autoplay: {
-            delay: 3000,
+            delay: 5500,
             disableOnInteraction: false
         },
         speed: 1500,

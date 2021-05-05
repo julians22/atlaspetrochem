@@ -2,7 +2,7 @@
     <nav class="fixed top-0 w-full bg-white z-10 animate__animated animate__faster" id="nav">
         <div class="container mx-auto flex flex-row-reverse sm:flex-row justify-between items-center py-4 px-4 sm:px-2 relative">
             <a class="block" href="{{ route('frontend.index') }}">
-                <img src="{{ asset('img/frontend/brand/logo.png') }}" class="w-24 sm:w-36"/>
+                <img src="{{ $setting->config('logo')->first()->value ?: asset('img/frontend/brand/logo.png') }}" class="w-24 sm:w-36"/>
             </a>
 
             <a href="#" class="block sm:hidden w-6 h-6 left-0 inset-y-0 text-gray-700 p-1 rounded border border-gray-700 hover:border-gray-800 hover:text-gray-800 outline-none" id="menu-toggle">
@@ -27,12 +27,12 @@
                         </a>
                         <span class="spacer"></span>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('frontend.about') }}" class="{{ active_class(Route::is('frontend.about'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             ABOUT
                         </a>
                         <span class="spacer"></span>
-                    </li>
+                    </li> --}}
                     <li class="dropdown group relative">
                         <a href="{{ route('frontend.product') }}" class="{{ active_class(Route::is('frontend.product') || Route::is('frontend.product.list') || Route::is('frontend.show-categories'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             PRODUCTS

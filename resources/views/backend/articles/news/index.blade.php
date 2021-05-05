@@ -65,6 +65,8 @@
                 </div>
             </div><!--col-->
         </div><!--row-->
+
+        @livewire('backend.articles.news.news-thumbnail-component')
     </div><!--card-body-->
 </div><!--card-->
 @endsection

@@ -26,7 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         return view('frontend.index', [
-            'newses' => $this->newsServices->getActiveThumbnail(),
+            'newses' => $this->newsServices->getActiveThumbnail()->count() >= 3 ? $this->newsServices->getActiveThumbnail() : $this->newsServices->getDefaultNewsThumnail(),
             'abouts' => AboutContent::orderBy('key', 'asc')->get(),
             'videos' => Galery::type('video')->latest()->limit(3)->get()
         ]);
