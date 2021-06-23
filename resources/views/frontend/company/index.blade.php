@@ -4,32 +4,32 @@
 
 @push('after-scripts')
     <style>
-        #company .prose ol > li::before {
+        .company-wrapper .prose ol > li::before {
             color: inherit;
         }
-        #company .prose *{
+        .company-wrapper .prose *{
             color: inherit;
         }
     </style>
 @endpush
 
 @section('content')
-    <section id="company" class="relative w-full">
+    <section class="relative w-full company-wrapper pb-8">
         <div class="container w-2/3 mx-auto">
             @include('frontend.includes.banner-company')
 
-            <div class="grid grid-cols-2 mt-6">
-                <div class="border-r border-white px-4" data-aos="fade-up" data-aos-duration="1000">
+            <div class="grid grid-cols-2 mt-6" id="vision-mission">
+                <div class="border-r border-white px-4" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
                     <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4 uppercase">@lang('labels.frontend.company.vision')</h4>
                     <div class="prose text-white">{!! $vision_content->value !!}</div>
                 </div>
-                <div class="border-l border-white px-4" data-aos="fade-up" data-aos-duration="1000">
+                <div class="border-l border-white px-4" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
                     <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">@lang('labels.frontend.company.mission')</h4>
                     <div class="prose text-white">{!! $mission_content->value !!}</div>
                 </div>
             </div>
-            <div class="grid grid-cols-1 mt-6" data-aos="fade-up" data-aos-duration="1000">
-                <div class="w-full">
+            <div class="grid grid-cols-1 mt-6" id="our-brand">
+                <div class="w-full" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
                     <h4 class="text-3xl text-center text-api-red font-semibold tracking-widest mb-4">@lang('labels.frontend.company.our-brand')</h4>
                     <div class="text-white prose max-w-full">{!! $brand_content->value !!}</div>
                 </div>
@@ -37,28 +37,30 @@
         </div>
     </section>
 
-    <section class="py-10 container mx-auto w-2/3" data-aos="fade-up" data-aos-duration="1000">
-        <h2 class="text-3xl font-extrabold text-white text-center mb-4">@lang('labels.frontend.company.our-team')</h2>
-        <div class="swiper-container swiper-team border-b-2 border-gray-100  shadow-lg">
-            <div class="swiper-wrapper">
-                @foreach ($teamBanner as $banner)
-                    <div class="swiper-slide">
-                        <img src="{{ $banner->image_location }}" alt="" class="w-full">
-                    </div>
-                @endforeach
+    <section class="py-10 container mx-auto w-2/3" id="our-team">
+        <div class="w-full" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
+            <h2 class="text-3xl font-extrabold text-white text-center mb-4">@lang('labels.frontend.company.our-team')</h2>
+            <div class="swiper-container swiper-team border-b-2 border-gray-100  shadow-lg">
+                <div class="swiper-wrapper">
+                    @foreach ($teamBanner as $banner)
+                        <div class="swiper-slide">
+                            <img src="{{ $banner->image_location }}" alt="" class="w-full">
+                        </div>
+                    @endforeach
+                </div>
+    
+                <div class="swiper-pagination"></div>
             </div>
-
-            <div class="swiper-pagination"></div>
         </div>
 
-        <div class="py-10">
+        <div class="py-10" id="our-value">
             <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.our-value.title')</h2>
 
             @foreach ($abouts as $about)
-                <div class="w-full mb-10" id="about-{{ $loop->iteration }}" data-aos="fade-up" data-aos-duration="1000">
+                <div class="w-full mb-10" id="about-{{ Str::slug($about->title) }}">
                     <div class="flex justify-center items-center flex-wrap
                     {{ $loop->iteration % 2 == 0 ? 'flex-row-reverse' : 'flex-row'  }}
-                    ">
+                    " data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
                         <div class="w-full sm:w-1/2 px-0 sm:px-4 relative">
                             <h4 class="font-bold text-api-red mb-2 text-3xl">{{ $about->title }}</h4>
                             <div class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl">
@@ -73,7 +75,7 @@
             @endforeach
         </div>
 
-        <div class="py-10 w-full">
+        <div class="py-10 w-full" id="work-place">
 
             <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.company.where-we-work')</h2>
             {{-- <div class="grid grid-cols-3 mt-6">
@@ -93,7 +95,7 @@
 
             <div class="grid grid-cols-3 gap-x-4 py-2">
                 @foreach (json_decode($workplace_content->value) as $workplace)
-                    <div class="p-4 bg-white rounded shadow-md" data-aos="fade-up" data-aos-delay="{{ $loop->iteration }}00">
+                    <div class="p-4 bg-white rounded shadow-md" data-aos-once="true" data-aos="fade-up" data-aos-delay="{{ $loop->iteration }}00">
                         <div class="leading-6 w-full tracking-tight">
                             {!! workplace_format($workplace) !!}
                         </div>
@@ -103,7 +105,7 @@
         </div>
     </section>
 
-    <section class="container mx-auto w-2/3 pb-5" data-aos="fade-up" data-aos-duration="1000">
+    <section class="container mx-auto w-2/3 pb-5" data-aos-once="true" data-aos="fade-up" data-aos-duration="1000">
         <h2 class="text-3xl font-extrabold text-black text-center mb-4">@lang('labels.frontend.company.distribution-point')</h2>
         <img src="{{ asset('img/frontend/dispoint.jpg') }}" alt="distribution_point" class="w-full my-4">
         {{-- <h5 class="text-2xl font-semibold text-center text-black mb-4 tracking-wider">Head Office</h5>

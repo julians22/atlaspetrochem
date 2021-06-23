@@ -69,7 +69,7 @@
         </span>
         <div class="grid grid-cols-1 sm:grid-cols-3 border-t-8 border-api-red h-full">
             @foreach ($abouts as $about)
-                <a href="{{ route('frontend.about') }}#about-{{$loop->iteration}}" class="block h-300px sm:h-auto">
+                <a href="{{ route('frontend.company') }}#about-{{Str::slug($about->title)}}" class="block h-300px sm:h-auto">
                     <div class="bg-no-repeat bg-top bg-cover group h-full" style="background-image: url('{{ $about->thumb_location ?: asset('img/frontend/section_img_'.$loop->iteration.'.jpg') }}')">
                         <div class="h-full w-full relative bg-api-redDarken bg-opacity-0 group-hover:bg-opacity-70 transition-colors duration-500">
                             <div class="absolute inset-0 transform skew-y-3 text-white px-8 text-center text-lg font-semibold flex items-center justify-center flex-wrap overflow-hidden">

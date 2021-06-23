@@ -21,10 +21,32 @@
                         </a>
                         <span class="spacer"></span>
                     </li>
-                    <li>
+                    <li class="group dropdown relative">
                         <a href="{{ route('frontend.company') }}" class="{{ active_class(Route::is('frontend.company'), 'text-api-red', 'hover:text-api-red') }} nav-link">
                             @lang('navs.frontend.company')
                         </a>
+                        <div class="absolute hidden group-hover:flex bg-white rounded inset-x-0 top-full flex-col shadow items-center p-1 border border-api-redLighten text-xs w-max"  id="company-menu">
+                            <div class="dropdown-item">
+                                <a href="#vision-mission" class="block w-full">VISI & MISI</a>
+                                <span></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <a href="#our-brand" class="block w-full">OUR BRAND</a>
+                                <span></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <a href="#our-team" class="block w-full">OUR TEAM</a>
+                                <span></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <a href="#our-value" class="block w-full">OUR VALUE</a>
+                                <span></span>
+                            </div>
+                            <div class="dropdown-item">
+                                <a href="#work-place" class="block w-full">WHERE WE WORK</a>
+                                <span></span>
+                            </div>
+                        </div>
                         <span class="spacer"></span>
                     </li>
                     {{-- <li>

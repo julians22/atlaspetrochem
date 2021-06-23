@@ -1,4 +1,4 @@
-section#company{
+section.company-wrapper{
     &:before{
         position: absolute;
         content: ' ';
@@ -15,4 +15,8 @@ section#company{
         top: 30px;
         z-index: -10;
     }
+}
+
+.active-content{
+    margin-top: 125px !important;
 }

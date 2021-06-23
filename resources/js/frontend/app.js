@@ -4,11 +4,23 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 import '../bootstrap';
 import '../plugins';
-
 import './navbarAnimation';
+
+const Gumshoe = require('gumshoejs');
+
+$(document).ready(function () {
+    var companySpy = new Gumshoe("#company-menu div a", {
+        navClass: false,
+        contentClass: 'active-content',
+        offset: function () {
+            var header = document.querySelector("#nav");
+            return header.getBoundingClientRect().height * 2;
+        },
+    });
+})
+
 // import Vue from 'vue';
 
 // window.Vue = Vue;
