@@ -2,13 +2,13 @@
 @if ($editors)
     <script>
         $(document).ready(function () {
-            
+
             @for ($i = 0; $i < count($editors); $i++)
                 tinymce.init({
                     selector: '{{$editors[$i]['id']}}',
                     menubar: 'file | edit | view | format | insert',
                     plugins: 'lists, paste, link, table, advlist',
-                    toolbar: 'undo redo | formatselect| ' +
+                    toolbar: 'undo redo | formatselect link| ' +
                         'bold italic backcolor| alignleft aligncenter ' +
                         'alignright alignjustify | bullist numlist outdent indent | ' +
                         'removeformat | help',

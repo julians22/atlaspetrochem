@@ -27,7 +27,13 @@ class NewsServices extends BaseService
     public function create(array $data): News
     {
         return DB::transaction(function () use ($data){
-            $news = $this->model::create($data);
+            $news = $this->model::create([
+                'title' => ['en' => $data['title-en'], 'id' => $data['title-id']],
+                'intro' => ['en' => $data['intro-en'], 'id' => $data['intro-id']],
+                'value' => ['en' => $data['value-en'], 'id' => $data['value-id']],
+                'thumb_location' => $data['thumb_location'],
+                'featured_image' => $data['featured_image']
+            ]);
 
             if ($news) {
                 return $news;
@@ -40,7 +46,14 @@ class NewsServices extends BaseService
     public function update(News $news, array $data): News
     {
         return DB::transaction(function () use ($news, $data){
-            if ($news->update($data)) {
+            $news->slug = NULL;
+            if ($news->update([
+                    'title' => ['en' => $data['title-en'], 'id' => $data['title-id']],
+                    'intro' => ['en' => $data['intro-en'], 'id' => $data['intro-id']],
+                    'value' => ['en' => $data['value-en'], 'id' => $data['value-id']],
+                    'thumb_location' => $data['thumb_location'],
+                    'featured_image' => $data['featured_image']
+                ])) {
                 return $news;
             }
 

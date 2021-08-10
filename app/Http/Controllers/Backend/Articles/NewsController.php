@@ -8,7 +8,6 @@ use App\Http\Requests\Backend\Article\News\UpdateNewsRequest;
 use App\Http\Requests\Backend\Auth\User\ManageUserRequest;
 use App\Models\Articles\News;
 use App\Services\Backend\Articles\NewsServices;
-use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
@@ -50,9 +49,12 @@ class NewsController extends Controller
     public function store(StoreNewsRequest $request)
     {
         $this->newsServices->create($request->only(
-            'title',
-            'intro',
-            'value',
+            'title-id',
+            'title-en',
+            'intro-id',
+            'intro-en',
+            'value-id',
+            'value-en',
             'thumb_location',
             'featured_image'
         ));
@@ -96,7 +98,14 @@ class NewsController extends Controller
     public function update(UpdateNewsRequest $request, News $news)
     {
         $this->newsServices->update($news, $request->only(
-            'title', 'intro', 'value', 'thumb_location', 'featured_image'
+            'title-id',
+            'title-en',
+            'intro-id',
+            'intro-en',
+            'value-id',
+            'value-en',
+            'thumb_location',
+            'featured_image'
         ));
 
         return redirect()->route('admin.articles.news')->withFlashSuccess('News success updated');

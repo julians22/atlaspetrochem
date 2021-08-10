@@ -118,9 +118,9 @@
                         @foreach (array_keys(config('locale.languages')) as $lang)
                             @if ($lang == 'en')
                                 <a href="{{ '/lang/'.$lang }}"><span class="{{ app()->getLocale() == 'en' ? 'text-api-red' : '' }}">EN</span></a>
-                                <span class="border border-black border-opacity-75 h-3 mx-1"></span>
                             @elseif($lang == 'id')
                                 <a href="{{ '/lang/'.$lang }}"><span class="{{ app()->getLocale() == 'id' ? 'text-api-red' : '' }}">ID</span></a>
+                                <span class="border border-black border-opacity-75 h-3 mx-1"></span>
                             @endif
                         @endforeach
                     </li>

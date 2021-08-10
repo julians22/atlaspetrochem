@@ -3,17 +3,20 @@
 namespace App\Models\Articles;
 
 use App\Models\Thumbnails\NewsThumbnail;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+use Spatie\Translatable\HasTranslations;
 
 class News extends Model
 {
-    use HasSlug, SoftDeletes;
+    use SoftDeletes, HasTranslations, HasSlug;
 
     public $table = 'news';
+
+    public $translatable = ['title', 'value', 'intro'];
 
     protected $fillable = [
         'title', 'value', 'slug', 'thumb_location', 'featured_image', 'intro'

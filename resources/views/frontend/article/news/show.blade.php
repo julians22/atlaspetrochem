@@ -42,7 +42,7 @@
             </div>
         </div>
 
-        <div class="w-full">
+        <div class="w-full prose">
             {!! $news->value !!}
         </div>
 

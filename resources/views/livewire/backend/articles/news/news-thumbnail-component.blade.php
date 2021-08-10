@@ -30,7 +30,12 @@
                     @if ($newsThumbs)
                         @foreach ($newsThumbs as $thumb)
                             <tr>
-                                <td>{{ $thumb->news->title }}</td>
+                                <td>
+                                    <div class="news-wraps">
+                                        {{ $thumb->news->title }}
+                                        <span class="badge badge-warning badge-pill" style="cursor: pointer">Change News</span>
+                                    </div>
+                                </td>
                                 <td>
                                     <div class="btn-group" role="group">
                                         @if ($thumb->sort)

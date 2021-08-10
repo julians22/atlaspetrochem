@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Arr;
+
 if (! function_exists('app_name')) {
     /**
      * Helper to grab the application name.
@@ -39,5 +41,17 @@ if (! function_exists('home_route')) {
         }
 
         return 'frontend.index';
+    }
+}
+
+if (! function_exists('list_locale')) {
+    function list_locale()
+    {
+        $locale = config('locale.languages');
+        if (session('locale') == 'en') {
+            $locale = Arr::sort($locale);
+            return $locale;
+        }
+        return $locale;
     }
 }
