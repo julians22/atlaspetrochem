@@ -6,17 +6,17 @@ use App\Models\Thumbnails\NewsThumbnail;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\HasTranslatableSlug;
 use Spatie\Sluggable\SlugOptions;
 use Spatie\Translatable\HasTranslations;
 
 class News extends Model
 {
-    use SoftDeletes, HasTranslations, HasSlug;
+    use SoftDeletes, HasTranslations, HasTranslatableSlug;
 
     public $table = 'news';
 
-    public $translatable = ['title', 'value', 'intro'];
+    public $translatable = ['title', 'value', 'intro', 'slug'];
 
     protected $fillable = [
         'title', 'value', 'slug', 'thumb_location', 'featured_image', 'intro'
