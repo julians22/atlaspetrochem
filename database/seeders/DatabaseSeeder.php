@@ -1,10 +1,13 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Articles\Galery;
 use App\Models\Articles\News;
 use App\Models\Category;
 use App\Models\Faq;
 use App\Models\Product;
+use Database\Seeders\Traits\TruncateTable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 

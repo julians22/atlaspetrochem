@@ -17,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        parent::register();
         // Sets third party service providers that are only needed on local/testing environments
         if ($this->app->environment() !== 'production') {
             /**

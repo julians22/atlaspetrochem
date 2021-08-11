@@ -1,6 +1,10 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\Company\CompanyContent;
+use Database\Seeders\Traits\DisableForeignKeys;
+use Database\Seeders\Traits\TruncateTable;
 use Illuminate\Database\Seeder;
 
 class CompanyContentSeeder extends Seeder

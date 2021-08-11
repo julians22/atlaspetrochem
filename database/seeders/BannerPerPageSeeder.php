@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\BannerPerPage;
 use Illuminate\Database\Seeder;
 
