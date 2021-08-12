@@ -1,7 +1,7 @@
 #mock-1{
+    max-width: 1920px;
+    margin: auto;
     .layout{
-        max-width: 1920px;
-        margin: auto;
         .outer {
             position: relative;
             overflow: hidden;
@@ -11,10 +11,16 @@
 
                 &.cloud-top-1{
                     z-index: 12;
-                    left: 332px;
-                    top: 95px;
-                    width: 418px;
-                    height: 255px;
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
+                    @media (min-width: 768px) {
+                        @include partialLayout(186px, 53px, 235px, 143px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(249px, 70px, 313px, 191px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(323px, 95px, 418px, 255px);
                     }
@@ -31,10 +37,16 @@
                 }
                 &.cloud-top-2{
                     z-index: 12;
-                    top: 323px;
-                    left: 776px;
-                    width: 544px;
-                    height: 366px;
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
+                    @media (min-width: 768px) {
+                        @include partialLayout(436px, 181px, 306px, 206px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(582px, 241px, 408px, 275px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(776px, 323px, 544px, 366px);
                     }
@@ -52,10 +64,16 @@
 
                 &.plane{
                     z-index: 13;
-                    left: 839px;
-                    top: 288px;
-                    width: 208px;
-                    height: 98px;
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
+                    @media (min-width: 768px) {
+                        @include partialLayout(454px, 169px, 117px, 55px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(606px, 225px, 156px, 73px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(839px, 288px, 208px, 98px);
                     }
@@ -72,11 +90,17 @@
                 }
 
                 &.baloon{
-                    left: 600px;
-                    top: 105px;
-                    width: 169px;
-                    height: 212px;
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
                     z-index: 11;
+                    @media (min-width: 768px) {
+                        @include partialLayout(337px, 59px, 95px, 119px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(450px, 78px, 127px, 159px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(600px, 105px, 169px, 215px);
                     }
@@ -93,11 +117,17 @@
                 }
 
                 &.cloud-bottom-1{
-                    left: 264px;
-                    top: 842px;
-                    width: 454px;
-                    height: 287px;
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
                     z-index: 11;   
+                    @media (min-width: 768px) {
+                        @include partialLayout(148px, 473px, 255px, 161px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(198px, 630px, 340px, 215px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(264px, 842px, 454px, 287px);
                     }
@@ -114,11 +144,17 @@
                 }
 
                 &.cloud-bottom-2{
-                    left: 648px;
-                    top: 797px;
-                    width: 529px;
-                    height: 327px;
-                    z-index: 11;                    
+                    left: 0px;
+                    top: 0px;
+                    width: 0px;
+                    height: 0px;
+                    z-index: 11;            
+                    @media (min-width: 768px) {
+                        @include partialLayout(364px, 448px, 297px, 184px);
+                    }
+                    @media (min-width: 1024px) {
+                        @include partialLayout(486px, 597px, 396px, 245px);
+                    }
                     @media (min-width: 1366px) {
                         @include partialLayout(648px, 797px, 529px, 327px);
                     }
@@ -136,12 +172,21 @@
 
             }
             .text-open{
-                left: 227px;
-                top: 174px;
+                left: 0px;
+                top: 0px;
+                @media (min-width: 768px) {
+                    left: 112px;
+                    top: 92px;
+                }
+                @media (min-width: 1024px) {
+                    left: 150px;
+                    top: 123px;
+                }
                 @media (min-width: 1440px) {
                     left: 211px;
                     top: 174px;
                     max-width: 375px;
+                    font-size: 54px;
                 }
                 @media (min-width: 1536px) {
                     left: 225px;
@@ -152,12 +197,12 @@
                     top: 233px;
                 }
                 width: 100%;
-                max-width: 356px;
+                max-width: 200px;
                 position: absolute;
                 z-index: 13;
                 text-align: center;
-                font-size: 54px;
-                font-weight: 900;
+                font-size: 35px;
+                font-weight: 800;
                 line-height: 1.05;
             }
 
@@ -166,6 +211,54 @@
                 content: "";
                 width: 100%;
                 padding-top: (498 / 427) * 100%;
+            }
+
+            >.inner {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+    }
+
+    .reds{
+        .outer {
+            position: relative;
+
+            &:before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: (482 / 1281) * 100%;
+            }
+
+            >.inner {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+    }
+
+    .foots{
+        .outer {
+            position: relative;
+
+            &:before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: (1058 / 1281) * 100%;
             }
 
             >.inner {

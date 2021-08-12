@@ -35,7 +35,7 @@
                 <img src="{{ asset('img/mocks/partial/ALT1-webAtlasPetrochemIndo-04.png') }}" alt="" class="partial">
 
                 <div class="text-open text-center" data-aos="slide-down" data-aos-duration="1500">
-                    <div class="text-green-500">
+                    <div class="text-green-400">
                         <span class="block" data-aos="fade-right" data-aos-duration="1000" data-aos-anchor=".text-open">GREENER</span>
                         <span class="block" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300" data-aos-anchor=".text-open">QUALITY</span>
                     </div>
@@ -47,5 +47,19 @@
                 </div>
             </div>
         </div>
+
+        <div class="reds">
+            <div class="outer">
+                <div class="inner" style="background-image: url('{{ asset('img/mocks/partial/red-api-reward.jpg') }}') "></div>
+            </div>
+        </div>
+
+        <div class="foots">
+            <div class="outer">
+                <div class="inner" style="background-image: url('{{ asset('img/mocks/partial/foots.jpg') }}')"></div>
+            </div>
+        </div>
+
+
     </div><!-- #mock-1 -->
 @endsection
