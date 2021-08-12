@@ -9,8 +9,6 @@ import '../bootstrap';
 import '../plugins';
 import './navbarAnimation';
 
-require('./modenizer');
-
 const Gumshoe = require('gumshoejs');
 
 $(document).ready(function () {
@@ -23,18 +21,6 @@ $(document).ready(function () {
         },
     });
 })
-
-if (Modernizr.cssanimations) {
-    // supported
-    // Swal.fire({
-    //     icon: 'success',
-    //     title: 'Nice',
-    //     text: 'Your browser is support the animation feature',
-    // });
-    console.log('Yess!!');
-} else {
-    alert('Your device is not support the animatmation')
-}
 
 // import Vue from 'vue';
 

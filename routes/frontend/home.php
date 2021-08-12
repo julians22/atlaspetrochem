@@ -17,10 +17,11 @@ use App\Http\Controllers\Frontend\User\ProfileController;
  * All route names are prefixed with 'frontend.'.
  */
 
-Route::get('/', [HomeController::class, 'mock_1'])->name('index');
+Route::get('/alt1', [HomeController::class, 'mock_1'])->name('alt1');
+Route::get('/alt2', [HomeController::class, 'mock_2'])->name('alt2');
 
 
-Route::get('/old', [HomeController::class, 'index'])->name('index_old');
+Route::get('/', [HomeController::class, 'index'])->name('index');
 Route::get('/company', [CompanyController::class, 'index'])->name('company');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/product', [ProductController::class, 'index'])->name('product');

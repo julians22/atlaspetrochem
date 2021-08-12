@@ -12,9 +12,15 @@
 
                 <div class="text-white font-semibold flex">
                     <ul class="flex items-center bg-gray-700 rounded-full min-w-330px p-2 justify-around shadow-md ">
-                        <li>HOME</li>
-                        <li>COMPANY</li>
-                        <li>CONTACT</li>
+                        <li>
+                            <a href="{{ route('frontend.index') }}">HOME</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('frontend.company') }}">COMPANY</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('frontend.contact') }}">CONTACT</a>
+                        </li>
                     </ul>
 
                     <span class="bg-api-red ml-2 p-2 rounded-full flex items-center">
@@ -25,7 +31,7 @@
         </nav>
         <div class="layout">
             <div class="outer">
-                <div class="inner" style="background-image: url('{{ asset('img/mocks/background/asset_mock_1.png') }}')"></div>
+                <div class="inner" style="background-image: url('{{ asset('img/mocks/background/asset_mock_1.jpg') }}')"></div>
                 <img src="{{ asset('img/mocks/partial/cloud-top-1.png') }}" alt="" class="partial cloud-top-1 filter drop-shadow-xl">
                 <img src="{{ asset('img/mocks/partial/cloud-top-2.png') }}" alt="" class="partial cloud-top-2 filter drop-shadow-xl">
                 <img src="{{ asset('img/mocks/partial/ALT1-balon.png') }}" alt="" class="partial baloon filter drop-shadow-sm">

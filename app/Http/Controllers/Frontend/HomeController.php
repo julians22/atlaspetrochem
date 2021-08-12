@@ -36,4 +36,9 @@ class HomeController extends Controller
     {
         return view('mocks.mock_one');
     }
+    
+    public function mock_2()
+    {
+        return view('mocks.mock_two');
+    }
 }

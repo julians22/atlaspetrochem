@@ -23,7 +23,7 @@
         <!-- Check if the language is set to RTL, so apply the RTL layouts -->
         <!-- Otherwise apply the normal LTR layouts -->
         {{ style(mix('css/tailwind.css')) }}
-        {{ style(mix('css/frontend.css')) }}
+        {{ style(mix('css/mock.css')) }}
 
         @stack('after-styles')
     </head>
@@ -33,8 +33,7 @@
         @stack('before-scripts')
         @livewireScripts
         {!! script(mix('js/manifest.js')) !!}
-        {!! script(mix('js/vendor.js')) !!}
-        {!! script(mix('js/frontend.js')) !!}
+        {!! script(mix('js/mock.js')) !!}
 
         @stack('after-scripts')
 
