@@ -29,7 +29,7 @@ if (Modernizr.cssanimations) {
     Swal.fire({
         icon: 'success',
         title: 'Nice',
-        text: 'Your browser is support the animation working properly, enjoy!!!',
+        text: 'Your browser is support the animation feature',
     })
 } else {
     alert('Your device is not support the animatmation')
