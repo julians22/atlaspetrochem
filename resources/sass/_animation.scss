@@ -1,0 +1,51 @@
+@include keyframes(moveclouds) {
+    0%{
+        transform: translateX(-50px);
+    }
+    100%{
+        transform: translateX(50px);
+    }
+}
+
+@include keyframes(movebaloon){
+    0%{
+        transform: translateX(-40px);
+    }
+
+    100%{
+        transform: translateX(40px);
+    }
+}
+
+@include keyframes(planescale){
+    0%{
+        transform: translate(265px, 376px) scale(0);
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 1;
+    }
+
+    50%,
+    54%,
+    60% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    57%, 59%{
+        transform: translateX(5px);
+    }
+    56%, 58%{
+        transform: translateX(-5px);
+    }
+
+    60%{
+        opacity: 1;
+    }
+
+    70%, 100%{
+        opacity: 0;
+        transform: translate(-1000px, -400px);
+    }
+}

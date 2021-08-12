@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b20a8f84a7a183ebd8c7458d57f7484b",
+    "content-hash": "88b87b87a0cf96f1d4504feb07e0f1be",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
@@ -11501,7 +11501,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2"
+        "php": "^7.3"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

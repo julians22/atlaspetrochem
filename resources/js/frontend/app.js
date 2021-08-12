@@ -4,9 +4,12 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+import Swal from 'sweetalert2';
 import '../bootstrap';
 import '../plugins';
 import './navbarAnimation';
+
+require('./modenizer');
 
 const Gumshoe = require('gumshoejs');
 
@@ -20,6 +23,17 @@ $(document).ready(function () {
         },
     });
 })
+
+if (Modernizr.cssanimations) {
+    // supported
+    Swal.fire({
+        icon: 'success',
+        title: 'Nice',
+        text: 'Your browser is support the animation working properly, enjoy!!!',
+    })
+} else {
+    alert('Your device is not support the animatmation')
+}
 
 // import Vue from 'vue';
 

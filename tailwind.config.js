@@ -24,6 +24,9 @@ module.exports = {
                 "470px": "470px",
                 "485px": "485px"
             },
+            minWidth: {
+                "330px": "330px"
+            },
             letterSpacing: {
                 bannerParagraph: ".5em"
             }

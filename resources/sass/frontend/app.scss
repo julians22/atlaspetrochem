@@ -1,9 +1,11 @@
 @import "../global";
+@import "../animation";
 
 // Pages
 @import 'pages/dashboard';
 @import 'pages/company';
 @import 'pages/contact';
+@import 'pages/mockup';
 
 @import 'component/navbar';
 @import 'component/banner';
@@ -19,16 +21,7 @@ html, body{
 html{
     font-family: 'Montserrat', 'system-ui', sans-serif, monospace;
     font-weight: inherit;
-    background-image: url('../../image/background_layout.jpg');
-    background-position: top;
-    background-size: cover;
-    background-repeat: repeat-y;
-    min-height: 100%;
     scroll-behavior: smooth;
-
-    @media (min-width: 640px) {
-        background-repeat: no-repeat;
-    }
 }
 
 body{
@@ -47,6 +40,17 @@ body{
 
         @media (min-width: 640px) {
             height: calc(100vh - 100px);
+        }
+    }
+
+    #app{
+        background-image: url('../../image/background_layout.jpg');
+        background-position: top;
+        background-size: cover;
+        background-repeat: repeat-y;
+        min-height: 100%;
+        @media (min-width: 640px) {
+            background-repeat: no-repeat;
         }
     }
 }

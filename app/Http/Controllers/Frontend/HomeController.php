@@ -31,4 +31,9 @@ class HomeController extends Controller
             'videos' => Galery::type('video')->latest()->limit(3)->get()
         ]);
     }
+
+    public function mock_1()
+    {
+        return view('mocks.mock_one');
+    }
 }

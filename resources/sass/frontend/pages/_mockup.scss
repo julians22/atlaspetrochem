@@ -1,0 +1,183 @@
+#mock-1{
+    .layout{
+        max-width: 1920px;
+        margin: auto;
+        .outer {
+            position: relative;
+            overflow: hidden;
+
+            img.partial{
+                position: absolute;
+
+                &.cloud-top-1{
+                    z-index: 12;
+                    left: 332px;
+                    top: 95px;
+                    width: 418px;
+                    height: 255px;
+                    @media (min-width: 1366px) {
+                        @include partialLayout(323px, 95px, 418px, 255px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(350px, 100px, 441px, 269px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(374px, 107px, 470px, 287px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(471px, 134px, 588px, 359px);
+                    }
+                    -webkit-animation: moveclouds 8s linear -10s infinite alternate forwards;
+                }
+                &.cloud-top-2{
+                    z-index: 12;
+                    top: 323px;
+                    left: 776px;
+                    width: 544px;
+                    height: 366px;
+                    @media (min-width: 1366px) {
+                        @include partialLayout(776px, 323px, 544px, 366px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(818px, 340px, 573px, 386px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(873px, 363px, 611px, 412px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(1029px, 454px, 764px, 515px);
+                    }
+                    -webkit-animation: moveclouds 5s linear -5s infinite alternate-reverse;
+                }
+
+                &.plane{
+                    z-index: 13;
+                    left: 839px;
+                    top: 288px;
+                    width: 208px;
+                    height: 98px;
+                    @media (min-width: 1366px) {
+                        @include partialLayout(839px, 288px, 208px, 98px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(853px, 317px, 219px, 103px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(910px, 338px, 234px, 110px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(1138px, 423px, 293px, 138px);
+                    }
+                    -webkit-animation: planescale 5s ease-in-out infinite;
+                }
+
+                &.baloon{
+                    left: 600px;
+                    top: 105px;
+                    width: 169px;
+                    height: 212px;
+                    z-index: 11;
+                    @media (min-width: 1366px) {
+                        @include partialLayout(600px, 105px, 169px, 215px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(633px, 111px, 178px, 223px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(676px, 119px, 190px, 238px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(845px, 149px, 238px, 298px);
+                    }
+                    -webkit-animation: movebaloon 10s linear -10s infinite alternate forwards;
+                }
+
+                &.cloud-bottom-1{
+                    left: 264px;
+                    top: 842px;
+                    width: 454px;
+                    height: 287px;
+                    z-index: 11;   
+                    @media (min-width: 1366px) {
+                        @include partialLayout(264px, 842px, 454px, 287px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(278px, 887px, 479px, 303px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(297px, 946px, 511px, 323px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(372px, 1183px, 639px, 404px);
+                    }
+                    -webkit-animation: moveclouds 7s linear -10s infinite alternate forwards;
+                }
+
+                &.cloud-bottom-2{
+                    left: 648px;
+                    top: 797px;
+                    width: 529px;
+                    height: 327px;
+                    z-index: 11;                    
+                    @media (min-width: 1366px) {
+                        @include partialLayout(648px, 797px, 529px, 327px);
+                    }
+                    @media (min-width: 1440px) {
+                        @include partialLayout(683px, 839px, 558px, 345px);
+                    }
+                    @media (min-width: 1536px) {
+                        @include partialLayout(729px, 895px, 595px, 368px);
+                    }
+                    @media (min-width: 1920px) {
+                        @include partialLayout(912px, 1119px, 774px, 460px);
+                    }
+                    -webkit-animation: moveclouds 4s linear -5s infinite alternate-reverse;
+                }
+
+            }
+            .text-open{
+                left: 227px;
+                top: 174px;
+                @media (min-width: 1440px) {
+                    left: 211px;
+                    top: 174px;
+                    max-width: 375px;
+                }
+                @media (min-width: 1536px) {
+                    left: 225px;
+                    top: 186px;
+                }
+                @media (min-width: 1920px) {
+                    left: 282px;
+                    top: 233px;
+                }
+                width: 100%;
+                max-width: 356px;
+                position: absolute;
+                z-index: 13;
+                text-align: center;
+                font-size: 54px;
+                font-weight: 900;
+                line-height: 1.05;
+            }
+
+            &:before {
+                display: block;
+                content: "";
+                width: 100%;
+                padding-top: (498 / 427) * 100%;
+            }
+
+            >.inner {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+        }
+    }
+}
