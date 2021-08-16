@@ -120,27 +120,27 @@
                     z-index: 11;
 
                     @media (min-width: 768px) {
-                        @include partialLayout(337px, 59px, 95px, 119px);
+                        @include partialLayout(359px, 78px, 48px, 60px);
                     }
 
                     @media (min-width: 1024px) {
-                        @include partialLayout(450px, 78px, 127px, 159px);
+                        @include partialLayout(479px, 104px, 64px, 80px);
                     }
 
                     @media (min-width: 1366px) {
-                        @include partialLayout(600px, 105px, 169px, 215px);
+                        @include partialLayout(638px, 138px, 85px, 107px);
                     }
 
                     @media (min-width: 1440px) {
-                        @include partialLayout(633px, 111px, 178px, 223px);
+                        @include partialLayout(672px, 145px, 90px, 113px);
                     }
 
                     @media (min-width: 1536px) {
-                        @include partialLayout(676px, 119px, 190px, 238px);
+                        @include partialLayout(717px, 154px, 96px, 121px);
                     }
 
                     @media (min-width: 1920px) {
-                        @include partialLayout(845px, 149px, 238px, 298px);
+                        @include partialLayout(897px, 193px, 120px, 151px);
                     }
 
                     -webkit-animation: movebaloon 10s linear -10s infinite alternate forwards;
@@ -232,20 +232,30 @@
                     max-width: 325px;
                 }
 
+                @media (min-width: 1366px) {
+                    left: 200px;
+                    top: 168px;
+                }
+
                 @media (min-width: 1440px) {
                     left: 211px;
                     top: 174px;
+                    font-size: 57px;
                     max-width: 375px;
                 }
 
                 @media (min-width: 1536px) {
                     left: 225px;
                     top: 186px;
+                    font-size: 61px;
+                    max-width: 400px;
                 }
 
                 @media (min-width: 1920px) {
                     left: 282px;
                     top: 233px;
+                    font-size: 76px;
+                    max-width: 500px;
                 }
 
                 width: 100%;
