@@ -101,10 +101,6 @@
 
             <div class="absolute top-0 right-0 z-20 mt-2 mr-6 hidden md:block">
                 <ul class="flex items-start justify-around">
-                    <li class="mr-4">
-                        <a href="{{ route('frontend.alt1') }}" class="px-2 text-xs" target="_blank">Go to Alternative Page 1</a>
-                        <a href="{{ route('frontend.alt2') }}" class="px-2 text-xs" target="_blank">Go to Alternative Page 2</a>
-                    </li>
                     <li class="mr-4" x-data="{open : false}">
                         <a href="#" class="text-sm relative block link-stores" @click="open = true" :class="{ 'text-api-red': open === true }">
                             <span>(@lang('labels.frontend.online-store.title'))</span>
