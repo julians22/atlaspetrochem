@@ -8,18 +8,11 @@
 ![GitHub contributors](https://img.shields.io/github/contributors/rappasoft/laravel-boilerplate.svg)
 ![GitHub stars](https://img.shields.io/github/stars/rappasoft/laravel-boilerplate.svg?style=social)
 
-### Demo Credentials
 
-**User:** admin@admin.com  
-**Password:** secret
 
-### Official Documentation
+### Official Documentation Base App From:
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
-
-### Slack Channel
-
-Please join us in our Slack channel to get faster responses to your questions. Get your invite here: https://laravel-boilerplate.herokuapp.com
 
 ### Introduction
 
@@ -44,3 +37,15 @@ If you would like to help the continued efforts of this project, any size [donat
 ### License
 
 MIT: [http://anthony.mit-license.org](http://anthony.mit-license.org)
+
+
+
+Untuk mengetahui plugin yang digunakan pada project ini, dapat dilihat di file /package.json & composer.json
+
+Setelah unzip project jangan lupa tulis command composer install && npm install && npm run dev
+
+### Demo Credentials
+
+**User:** admin@admin.com
+**Password:** secret
+
